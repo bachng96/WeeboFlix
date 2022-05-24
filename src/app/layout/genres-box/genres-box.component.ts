@@ -13,7 +13,6 @@ export class GenresBoxComponent implements OnInit {
   ngOnInit(): void {
     this.animeService.getAllGenres().subscribe((p) => {
       this.genres = p;
-      console.log(this.genres);
     });
   }
 }
