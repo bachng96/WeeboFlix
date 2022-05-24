@@ -7,6 +7,7 @@ import { AnimeListComponent } from './components/anime-list/anime-list.component
 import { AnimeDetailComponent } from './components/anime-detail/anime-detail.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { GenresBoxComponent } from './layout/genres-box/genres-box.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FooterComponent } from './layout/footer/footer.component';
     AnimeListComponent,
     AnimeDetailComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    GenresBoxComponent
   ],
   imports: [
     BrowserModule,
