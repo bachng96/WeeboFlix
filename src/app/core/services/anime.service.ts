@@ -1,11 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AnimeService {
+<<<<<<< HEAD
   private BASE_URL = 'https://api.jikan.moe/v4/';
 
   constructor(private http: HttpClient) { }
@@ -26,5 +28,12 @@ export class AnimeService {
       )
       return newSet.sort((a, b) => a.name.localeCompare(b.name));
     }))
+=======
+  baseURL = 'https://api.jikan.moe/v4/';
+  constructor(private http: HttpClient) {}
+
+  getAllGenres() {
+    return this.http.get(`${this.baseURL}genres/anime`);
+>>>>>>> cd3946dc3b3a944746a4ffee6af07bbdee95e15a
   }
 }
