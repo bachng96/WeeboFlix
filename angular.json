@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "weeboflix"
+    }
+  },
+  "defaultProject": "weeboflix",
+  "cli": {
+    "analytics": false
+  }
 }
