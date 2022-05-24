@@ -7,11 +7,13 @@ import { AnimeService } from 'src/app/core/services/anime.service';
   styleUrls: ['./genres-box.component.scss'],
 })
 export class GenresBoxComponent implements OnInit {
+  public genres;
   constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
     this.animeService.getAllGenres().subscribe((p) => {
-      console.log(p);
+      this.genres = p;
+      console.log(this.genres);
     });
   }
 }
