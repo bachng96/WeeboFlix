@@ -1,0 +1,83 @@
+.navbar {
+  transition: 0.5;
+  background-color: transparent;
+  z-index: 6;
+  &-brand {
+    width: 100px;
+  }
+  &-inverse {
+    background-color: rgba(8, 8, 8, 0.74);
+  }
+}
+
+.bg-white {
+  background-color: white;
+}
+.input-search {
+  outline: none;
+  border: none;
+  height: 80%;
+  &:focus {
+    outline: none;
+  }
+}
+input:focus {
+  outline: none;
+}
+.button-toggle {
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.list-menu {
+  color: white;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  &--item {
+    margin-bottom: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  &--item:not(:last-child) {
+    border-bottom: 1px solid rgb(88, 88, 88);
+  }
+  &--item:hover {
+    color: #faa300;
+  }
+}
+.btn {
+  &--rounded {
+    background-color: #5a6268;
+    color: white;
+    border-radius: 10rem;
+    font-size: 15px;
+  }
+  &-filter {
+    padding: 0px 8px;
+    font-size: 15px;
+  }
+}
+
+// css for modal
+.modal-custom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: #2a2c3142;
+  transition: all 0.9;
+  color: white;
+  &--content {
+    height: 100%;
+    // transform: translateX(-330px);
+    max-width: 330px;
+    background-color: #2a2c31;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
