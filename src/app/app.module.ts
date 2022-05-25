@@ -11,6 +11,8 @@ import { GenresBoxComponent } from './layout/genres-box/genres-box.component';
 import { CaroselComponent } from './layout/carosel/carosel.component';
 import { AnimeFeaturedComponent } from './components/anime-featured/anime-featured.component';
 import { SocialMediaComponent } from './layout/social-media/social-media.component';
+import { HomeComponent } from './components/home/home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,7 @@ import { SocialMediaComponent } from './layout/social-media/social-media.compone
     CaroselComponent,
     AnimeFeaturedComponent,
     SocialMediaComponent,
+    HomeComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
