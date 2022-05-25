@@ -1,5 +1,4 @@
 .main-container {
-    width: 75%;
     float: left;
 }
 
@@ -61,7 +60,7 @@
 .tick {
     position: absolute;
     bottom: 0;
-    z-index: 10;
+    z-index: 1;
 }
 
 .tick.ltr {

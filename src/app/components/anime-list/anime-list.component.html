@@ -1,5 +1,5 @@
 <div class="container-xs">
-    <div class="main-container pl-4">
+    <div class="main-container pl-4 col-9">
       <div class="block_area">
         <div class="block_area-header"></div>
         <div class="tab-content">
@@ -21,7 +21,7 @@
                   />
                   <a
                     class="film-poster-ahref"
-                    [href]="item.url"
+                    routerLink="/details/{{item.id}}"
                     [title]="item.title"
                     ><i class="fas fa-play"></i
                   ></a>
@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <div class="side-bar">
+    <div class="side-bar col-3">
         <div class="block_area">
             <div class="block_area-header"></div>
             <div class="block_area-content">

@@ -9,6 +9,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { GenresBoxComponent } from './layout/genres-box/genres-box.component';
 import { CaroselComponent } from './layout/carosel/carosel.component';
+import { HomeComponent } from './components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { CaroselComponent } from './layout/carosel/carosel.component';
     AnimeDetailComponent,
     NavbarComponent,
     FooterComponent,
-    CaroselComponent
+    CaroselComponent,
+    HomeComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

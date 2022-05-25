@@ -1,7 +1,8 @@
-<div class="container-xs">
+<div class="container-xs d-flex app-container">
     <app-navbar></app-navbar>
-    <app-carosel></app-carosel>
-    <app-anime-list></app-anime-list>
+    <div class="flex-grow-1 ">
+        <router-outlet></router-outlet>
+    </div>
     <div class="clearfix"></div>
     <app-footer></app-footer>
 </div>

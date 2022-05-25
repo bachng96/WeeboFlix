@@ -21,7 +21,7 @@ export class GenresBoxComponent implements OnInit {
   }
 
   showAll() {
-    if (this.show == false) {
+    if (this.show == true) {
       this.partGenres = this.genres.slice(0, 24);
       this.show = !this.show;
     } else {
