@@ -10,9 +10,6 @@ export class AnimeFeaturedComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // 20220525151028
-  // https://api.jikan.moe/v4/anime?limit=5
-
   fakeAPI: Object[] = [
     {
       mal_id: 1,
