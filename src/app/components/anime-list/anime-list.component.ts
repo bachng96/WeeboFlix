@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimeService } from 'src/app/core/services/anime.service';
+import { Anime, Root } from './../../core/model/app.model';
 
 @Component({
   selector: 'app-anime-list',
@@ -7,13 +8,15 @@ import { AnimeService } from 'src/app/core/services/anime.service';
   styleUrls: ['./anime-list.component.scss']
 })
 export class AnimeListComponent implements OnInit {
+  animeList: Anime[]
 
   constructor(private animeService: AnimeService) { }
 
   ngOnInit(): void {
-    this.animeService.getAllGenres().subscribe(data => {
-      console.log(data);
-    });
+    this.animeService.getAllAnime().subscribe((data: Root) => {
+      this.animeList = data.data
+      console.log(this.animeList)
+    })
   }
 
 }

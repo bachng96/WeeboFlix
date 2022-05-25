@@ -84,6 +84,7 @@
     padding: 2px 4px;
     border-radius: 5px;
     background: #fff;
+    margin-bottom: 5px;
 }
 
 .tick-item.tick-eps {
@@ -178,4 +179,13 @@ a {
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.3);
+    display: inline-block;
+    margin: 3px 6px;
 }
