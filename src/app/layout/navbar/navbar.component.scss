@@ -1,3 +1,5 @@
+@import "../../style/variable";
+
 .navbar {
   transition: 0.5;
   background-color: transparent;
@@ -6,12 +8,12 @@
     width: 100px;
   }
   &-inverse {
-    background-color: rgba(8, 8, 8, 0.74);
+    background-color: rgba($color-black, 0.74);
   }
 }
 
 .bg-white {
-  background-color: white;
+  background-color: $color-white;
 }
 .input-search {
   outline: none;
@@ -30,7 +32,7 @@ input:focus {
 }
 
 .list-menu {
-  color: white;
+  color: $color-white;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -41,16 +43,16 @@ input:focus {
     cursor: pointer;
   }
   &--item:not(:last-child) {
-    border-bottom: 1px solid rgb(88, 88, 88);
+    border-bottom: 1px solid rgba($color-black, 0.8);
   }
   &--item:hover {
-    color: #faa300;
+    color: $color-yellow;
   }
 }
 .btn {
   &--rounded {
-    background-color: #5a6268;
-    color: white;
+    background-color: $color-dark-2;
+    color: $color-white;
     border-radius: 10rem;
     font-size: 15px;
   }
