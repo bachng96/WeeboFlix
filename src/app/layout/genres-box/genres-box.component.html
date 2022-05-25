@@ -1,6 +1,6 @@
-<div class="genres-box">
+<div class="genres-box p-4">
   <ul class="pl-0" >
     <li *ngFor="let item of partGenres">{{item.name}}</li>
   </ul>
-  <button (click)="showAll()">Show More</button>
+  <button class="btn btn-block btn-secondary" (click)="showAll()">Show More</button>
 </div>
