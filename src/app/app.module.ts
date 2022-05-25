@@ -17,7 +17,7 @@ import { CaroselComponent } from './layout/carosel/carosel.component';
     AnimeDetailComponent,
     NavbarComponent,
     FooterComponent,
-    CaroselComponent
+    CaroselComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
