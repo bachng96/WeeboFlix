@@ -10,6 +10,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { GenresBoxComponent } from './layout/genres-box/genres-box.component';
 import { CaroselComponent } from './layout/carosel/carosel.component';
 import { AnimeFeaturedComponent } from './components/anime-featured/anime-featured.component';
+import { SocialMediaComponent } from './layout/social-media/social-media.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { AnimeFeaturedComponent } from './components/anime-featured/anime-featur
     FooterComponent,
     CaroselComponent,
     AnimeFeaturedComponent,
+    SocialMediaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
