@@ -9,6 +9,7 @@ export class NavbarComponent implements OnInit {
   listGenre;
   toggle: boolean = false;
   ngOnInit(): void {}
+
   @HostListener('window:scroll', ['$event']) onScroll(event) {
     let element = document.querySelector('.navbar') as HTMLElement;
     if (window.pageYOffset > element.clientHeight) {
@@ -16,6 +17,11 @@ export class NavbarComponent implements OnInit {
     } else {
       element.classList.remove('navbar-inverse');
     }
+  }
+
+  close(event) {
+    event.stopPropagation();
+    this.toggle = false;
   }
 
   data: {

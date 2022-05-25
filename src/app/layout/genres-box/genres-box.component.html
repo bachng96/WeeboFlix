@@ -1,5 +1,6 @@
 <div class="genres-box">
-  <ul class="pl-0" >
-    <li *ngFor="let item of genres?.data">{{item.name}}</li>
+  <ul class="pl-0">
+    <li *ngFor="let item of partGenres">{{ item.name }}</li>
   </ul>
+  <button (click)="showAll()">Show More</button>
 </div>
