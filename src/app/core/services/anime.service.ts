@@ -8,23 +8,24 @@ import { map } from 'rxjs/operators';
 export class AnimeService {
   private BASE_URL = 'https://api.jikan.moe/v4/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getAllAnime() {
-    return this.http.get(this.BASE_URL + 'anime').pipe()
+    return this.http.get(this.BASE_URL + 'anime').pipe();
   }
 
   getAllGenres() {
-    return this.http.get(this.BASE_URL + 'genres/anime').pipe(map(anime => {
-      let keys = ['mal_id', 'name']
-      let newSet = anime['data'].filter(
-        (s => o => 
-          (k => !s.has(k) && s.add(k))
-          (keys.map(k => o[k]).join('|'))
-        )
-        (new Set)
-      )
-      return newSet.sort((a, b) => a.name.localeCompare(b.name));
-    }))
+    return this.http.get(this.BASE_URL + 'genres/anime').pipe(
+      map((anime) => {
+        let keys = ['mal_id', 'name'];
+        let newSet = anime['data'].filter(
+          (
+            (s) => (o) =>
+              ((k) => !s.has(k) && s.add(k))(keys.map((k) => o[k]).join('|'))
+          )(new Set())
+        );
+        return newSet.sort((a, b) => a.name.localeCompare(b.name));
+      })
+    );
   }
 }

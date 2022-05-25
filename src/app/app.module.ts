@@ -9,7 +9,10 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { GenresBoxComponent } from './layout/genres-box/genres-box.component';
 import { CaroselComponent } from './layout/carosel/carosel.component';
+import { AnimeFeaturedComponent } from './components/anime-featured/anime-featured.component';
+import { SocialMediaComponent } from './layout/social-media/social-media.component';
 import { HomeComponent } from './components/home/home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +22,8 @@ import { HomeComponent } from './components/home/home.component';
     NavbarComponent,
     FooterComponent,
     CaroselComponent,
+    AnimeFeaturedComponent,
+    SocialMediaComponent,
     HomeComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
