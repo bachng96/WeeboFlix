@@ -1,0 +1,31 @@
+@import "../../../style/variable";
+.login-form {
+  padding: 20px 50px;
+  background-image: url("../../../../assets/images/login-bg.jpg");
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: -1px;
+  border-radius: 13px;
+  position: relative;
+  &--button {
+    background-color: $color-yellow;
+    border-radius: 5px;
+  }
+}
+.register {
+  margin-top: 46px;
+  &--link {
+    color: $color-yellow;
+  }
+}
+.close-button {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  padding: 8px 10px;
+  background-color: $color-white;
+  border-radius: 50%;
+  color: $color-black;
+  cursor: pointer;
+}

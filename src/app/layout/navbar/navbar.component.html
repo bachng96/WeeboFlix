@@ -13,10 +13,17 @@
       <span class="btn btn-secondary btn-filter mx-2">filter</span>
     </div>
     <div class="ml-auto">
-      <span class="btn btn-warning">Login</span>
+      <button
+        class="btn btn-warning"
+        data-toggle="modal"
+        data-target="#exampleModal"
+      >
+        Login
+      </button>
     </div>
   </nav>
 
+  <!-- menu toggle -->
   <div class="modal-custom" *ngIf="toggle" (click)="close($event)">
     <div class="modal-custom--content shadow-lg">
       <div class="btn btn--rounded mt-3 mb-4 ml-3" (click)="toggle = false">
@@ -34,6 +41,20 @@
         <div class="row px-3">
           <app-genres-box (click)="$event.stopPropagation()"> </app-genres-box>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <app-login-form></app-login-form>
       </div>
     </div>
   </div>
