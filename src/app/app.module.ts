@@ -9,6 +9,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { GenresBoxComponent } from './layout/genres-box/genres-box.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { CaroselComponent } from './layout/carosel/carosel.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
     AnimeDetailComponent,
     NavbarComponent,
     FooterComponent,
+    CaroselComponent,
   ],
   imports: [
     BrowserModule,

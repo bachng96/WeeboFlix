@@ -1,6 +1,14 @@
 .navbar-brand {
   width: 100px;
 }
+.navbar {
+  transition: 0.5;
+  background-color: transparent;
+  z-index: 6;
+}
+.navbar-inverse {
+  background-color: rgba(8, 8, 8, 0.74);
+}
 .btn-filter {
   padding: 0px 8px;
   font-size: 15px;
