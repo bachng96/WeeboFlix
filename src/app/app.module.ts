@@ -17,6 +17,7 @@ import { AnimeFeaturedComponent } from './components/anime-featured/anime-featur
 import { SocialMediaComponent } from './layout/social-media/social-media.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginFormComponent } from './layout/navbar/login-form/login-form.component';
+import { WatchListComponent } from './components/watch-list/watch-list.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { LoginFormComponent } from './layout/navbar/login-form/login-form.compon
     SocialMediaComponent,
     HomeComponent,
     LoginFormComponent,
+    WatchListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, SwiperModule],
   providers: [],

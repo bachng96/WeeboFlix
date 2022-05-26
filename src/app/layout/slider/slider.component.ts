@@ -3,6 +3,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { SwiperComponent } from 'swiper/angular';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
 import { Params } from '@angular/router';
+import { debounceTime, map } from 'rxjs/operators';
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
@@ -18,12 +19,13 @@ export class SliderComponent implements OnInit {
   constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
-    this.animeService.getAllAnime().subscribe((p: Params) => {
-      this.animes = p.data;
-      this.animes.sort(this.dynamicSort('popularity'));
-      this.animes = this.animes.slice(0, 10);
-      console.log(this.animes);
-    });
+    setTimeout(() => {
+      this.animeService.getAllAnime().subscribe((p: Params) => {
+        this.animes = p.data;
+        this.animes.sort(this.dynamicSort('popularity'));
+        this.animes = this.animes.slice(0, 10);
+      });
+    }, 1500);
   }
   dynamicSort(property) {
     var sortOrder = 1;

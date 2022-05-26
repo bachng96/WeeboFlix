@@ -16,7 +16,6 @@ export class GenresBoxComponent implements OnInit {
     this.animeService.getAllGenres().subscribe((p) => {
       this.genres = p;
       this.partGenres = this.genres.slice(0, 24);
-      console.log(this.partGenres);
     });
   }
 
@@ -26,7 +25,6 @@ export class GenresBoxComponent implements OnInit {
       this.show = !this.show;
     } else {
       this.partGenres = this.genres;
-      console.log(this.partGenres);
       this.show = !this.show;
     }
   }
