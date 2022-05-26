@@ -1,0 +1,83 @@
+<form class="login-form" *ngIf="havaAccount">
+  <i class="fas fa-times close-button" data-dismiss="modal"></i>
+  <h3 class="text-center my-3">Wellcome back</h3>
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input
+      type="email"
+      class="form-control"
+      placeholder="Enter email"
+      id="email"
+    />
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Enter password"
+      id="pwd"
+    />
+  </div>
+  <div class="form-group form-check d-flex justify-content-between mt-4">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" /> Remember me
+    </label>
+    <span>Forget Password ?</span>
+  </div>
+  <div class="login-form--button text-center py-2 mt-5">Login</div>
+  <p class="register text-center">
+    Dont't have account ?
+    <span class="register--link" (click)="havaAccount = false"
+      >Register now ?</span
+    >
+  </p>
+</form>
+
+<form class="login-form" *ngIf="!havaAccount">
+  <i class="fas fa-times close-button" data-dismiss="modal"></i>
+  <h3 class="text-center my-3">Wellcome back</h3>
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input
+      type="email"
+      class="form-control"
+      placeholder="Enter email"
+      id="email"
+    />
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Enter password"
+      id="pwd"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Enter password"
+      id="pwd"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Enter password"
+      id="pwd"
+    />
+  </div>
+  <div class="login-form--button text-center py-2 mt-5">Login</div>
+  <p class="register text-center">
+    Have Account ?
+    <span class="register--link" (click)="havaAccount = true">Login now ?</span>
+  </p>
+</form>
