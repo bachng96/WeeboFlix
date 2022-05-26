@@ -10,9 +10,9 @@ import { Anime, Root } from './../../core/model/app.model';
   styleUrls: ['./anime-list.component.scss'],
 })
 export class AnimeListComponent implements OnInit {
-  animeList: Anime[]
+  animeList: Anime[];
 
-  constructor(private animeService: AnimeService) { }
+  constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
     setTimeout(
@@ -22,8 +22,6 @@ export class AnimeListComponent implements OnInit {
           console.log(this.animeList)
         })
       }
-    ,4000)
-      
+    ,1500)
   }
-
 }

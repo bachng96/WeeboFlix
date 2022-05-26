@@ -32,4 +32,7 @@ export class AnimeService {
       })
     );
   }
+  getTopAnime() {
+    return this.http.get(this.BASE_URL + 'top/anime');
+  }
 }
