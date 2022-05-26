@@ -22,6 +22,6 @@ export class AnimeListComponent implements OnInit {
           console.log(this.animeList)
         })
       }
-    ,1500)
+    ,2000)
   }
 }
