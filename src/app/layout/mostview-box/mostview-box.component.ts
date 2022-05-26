@@ -1,6 +1,7 @@
 import { AnimeService } from 'src/app/core/services/anime.service';
 import { Component, OnInit } from '@angular/core';
 import { Params } from '@angular/router';
+import { WatchListService } from 'src/app/core/services/watch-list.service';
 
 @Component({
   selector: 'app-mostview-box',
@@ -10,7 +11,10 @@ import { Params } from '@angular/router';
 export class MostviewBoxComponent implements OnInit {
   topAnime;
   filter = 'score';
-  constructor(private animeService: AnimeService) {}
+  constructor(
+    private animeService: AnimeService,
+    public watchListService: WatchListService
+  ) {}
 
   ngOnInit(): void {
     this.animeService.getTopAnime().subscribe((p: Params) => {

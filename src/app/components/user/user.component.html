@@ -1,5 +1,19 @@
-<div class="mt-5">
-  <button class="btn btn-warning"  routerLink="watch-list">Watch List</button>
-  <button class="btn btn-warning" routerLink="profile">Profile</button>
-  <router-outlet></router-outlet>
+<div class="user mt-5 ">
+  <div class="user__header border-bottom border-warning">
+    <div class="user__header--bg"></div>
+    <div class="user__header--text">
+      <h2 class="user__header--name mb-3">
+        Hieu Khac
+      </h2>
+      <div>
+        <a class="user__header--menu px-3" routerLink="profile" routerLinkActive="active">Profile</a>
+        <a class="user__header--menu px-3" routerLink="watch-list" routerLinkActive="active">Watch List</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="user__content mt-3">
+    <router-outlet></router-outlet>
+  </div>
 </div>
+

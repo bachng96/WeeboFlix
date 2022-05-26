@@ -1,0 +1,28 @@
+.user__header--name{
+  font-size: 30px;
+  color: white;
+  line-height: 1.4em;
+  font-weight: 500;
+}
+.user__header--bg{
+  background: url("https://cdn.pixabay.com/photo/2020/12/11/21/14/naruto-5823848_960_720.png") no-repeat center;
+  height: 20vh;
+  filter: blur(8px);
+}
+.user__header--text{
+  position: absolute;
+  top: 20vh;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+
+}
+.active{
+  color: #faa300;
+}
+.user__header--menu{
+  font-size: 20px;
+  text-decoration: none;
+  color: #ddd;
+
+}
