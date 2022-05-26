@@ -83,8 +83,41 @@ input:focus {
     overflow-x: hidden;
   }
 }
-.modal-content {
-  border-radius: 14px;
-  margin-top: 59px;
-  background-color: transparent;
+
+.avatar-user {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.dropdown-user {
+  width: 300px;
+
+  padding: 10px 30px 1px 30px;
+  background-color: $color-dark-1;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 31px;
+  right: 33px;
+  &--email {
+    font-size: 13px;
+  }
+  ul {
+    list-style: none;
+    li {
+      background-color: $color-dark-2;
+      border-radius: 28px;
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      &:hover {
+        color: $color-yellow;
+        background-color: rgba($color-dark-2, 0.5);
+      }
+    }
+  }
+}
+.log-out {
+  text-align: right;
 }

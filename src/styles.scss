@@ -1,3 +1,5 @@
+@import "app/style/variable";
+@import "app/style/animation";
 $primary: #ff550b;
 $secondary: #303030;
 $success: #015668;
@@ -13,8 +15,33 @@ $btn-border-radius: 0.25rem;
   margin: 0;
   padding: 0;
 }
+//custom toast
+.toast-container {
+  padding: 10px;
+}
 
-@import "app/style/variable";
-@import "app/style/animation";
+.toast-container .toast {
+}
+
+.toast-success {
+  background-color: $color-yellow;
+}
+
+.toast-success::after {
+  background-color: $color-yellow;
+}
+
+.toast-title {
+}
+
+.toast-message {
+}
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+.modal-content {
+  background-color: transparent !important;
+}

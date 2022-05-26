@@ -13,7 +13,12 @@ import { AnimeFeaturedComponent } from './components/anime-featured/anime-featur
 import { SocialMediaComponent } from './layout/social-media/social-media.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginFormComponent } from './layout/navbar/login-form/login-form.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastComponent } from './share/toast/toast.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +32,19 @@ import { LoginFormComponent } from './layout/navbar/login-form/login-form.compon
     SocialMediaComponent,
     HomeComponent,
     LoginFormComponent,
+    ToastComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    NgbModule,
+    NgbCarouselModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

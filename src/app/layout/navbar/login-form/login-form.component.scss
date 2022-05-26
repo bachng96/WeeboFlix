@@ -3,6 +3,7 @@
   padding: 20px 50px;
   background-image: url("../../../../assets/images/login-bg.jpg");
   color: white;
+
   background-size: cover;
   background-repeat: no-repeat;
   margin-left: -1px;
@@ -11,6 +12,7 @@
   &--button {
     background-color: $color-yellow;
     border-radius: 5px;
+    width: 100%;
   }
 }
 .register {
