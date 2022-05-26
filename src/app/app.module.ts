@@ -17,7 +17,9 @@ import { AnimeFeaturedComponent } from './components/anime-featured/anime-featur
 import { SocialMediaComponent } from './layout/social-media/social-media.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginFormComponent } from './layout/navbar/login-form/login-form.component';
-import { WatchListComponent } from './components/watch-list/watch-list.component';
+import { UserComponent } from './components/user/user.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { WatchListComponent } from './components/user/watch-list/watch-list.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { WatchListComponent } from './components/watch-list/watch-list.component
     SocialMediaComponent,
     HomeComponent,
     LoginFormComponent,
+    UserComponent,
+    ProfileComponent,
     WatchListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, SwiperModule],

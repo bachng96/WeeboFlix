@@ -25,7 +25,7 @@ export class SliderComponent implements OnInit {
         this.animes.sort(this.dynamicSort('popularity'));
         this.animes = this.animes.slice(0, 10);
       });
-    }, 1500);
+    }, 2000);
   }
   dynamicSort(property) {
     var sortOrder = 1;
