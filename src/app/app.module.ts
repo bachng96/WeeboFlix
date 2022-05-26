@@ -12,6 +12,7 @@ import { CaroselComponent } from './layout/carosel/carosel.component';
 import { AnimeFeaturedComponent } from './components/anime-featured/anime-featured.component';
 import { SocialMediaComponent } from './layout/social-media/social-media.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginFormComponent } from './layout/navbar/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomeComponent } from './components/home/home.component';
     CaroselComponent,
     AnimeFeaturedComponent,
     SocialMediaComponent,
-    HomeComponent
+    HomeComponent,
+    LoginFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
