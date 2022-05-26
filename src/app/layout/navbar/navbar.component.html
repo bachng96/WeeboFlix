@@ -1,1 +1,61 @@
-<p>navbar works!</p>
+<div>
+  <nav class="navbar navbar-expand-sm d-flex fixed-top">
+    <span (click)="toggle = !toggle">
+      <i class="fas fa-bars text-white mr-5 button-toggle ml-3"></i>
+    </span>
+    <img
+      class="navbar-brand"
+      src="https://animebee.to/assets/animebee/images/logo.png"
+    />
+    <div class="d-flex bg-white d-flex align-items-center">
+      <input type="text" class="input-search p-2" id="usr" />
+      <i class="fas fa-search"></i>
+      <span class="btn btn-secondary btn-filter mx-2">filter</span>
+    </div>
+    <div class="ml-auto">
+      <button
+        class="btn btn-warning"
+        data-toggle="modal"
+        data-target="#exampleModal"
+      >
+        Login
+      </button>
+    </div>
+  </nav>
+
+  <!-- menu toggle -->
+  <div class="modal-custom" *ngIf="toggle" (click)="close($event)">
+    <div class="modal-custom--content shadow-lg">
+      <div class="btn btn--rounded mt-3 mb-4 ml-3" (click)="toggle = false">
+        <i class="fas fa-chevron-left mr-2"></i> Close menu
+      </div>
+      <div class="modal-custom-content" *ngIf="toggle">
+        <ul class="list-menu" (click)="$event.stopPropagation()">
+          <li class="list-menu--item pl-3 pr-5 pb-3">Home</li>
+          <li class="list-menu--item pl-3 pr-5 pb-3">Movie</li>
+          <li class="list-menu--item pl-3 pr-5 pb-3">TV series</li>
+          <li class="list-menu--item pl-3 pr-5 pb-3">Top Airing</li>
+          <li class="list-menu--item pl-3 pr-5 pb-3">The best anime of 2021</li>
+          <li class="list-menu--item pl-3 pr-5 pb-3">Genre</li>
+        </ul>
+        <div class="row px-3">
+          <app-genres-box (click)="$event.stopPropagation()"> </app-genres-box>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <app-login-form></app-login-form>
+      </div>
+    </div>
+  </div>
+</div>

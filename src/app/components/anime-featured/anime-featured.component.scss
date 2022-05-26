@@ -1,0 +1,45 @@
+@import "../../style/variable";
+.feature-box {
+  background-color: $color-dark-2;
+  color: white;
+  &--item:nth-child(odd) {
+    background-color: $color-dark-1;
+  }
+
+  &--title {
+    padding: 10px;
+    color: $color-yellow;
+    font-size: 19px;
+    font-weight: bold;
+  }
+}
+.box-item {
+  background-color: $color-dark-1;
+  cursor: pointer;
+  &--img {
+    width: 50px;
+    height: 70px;
+    object-fit: cover;
+  }
+  &--infor {
+    &__desc ul li {
+      margin-right: 17px;
+      font-size: 11px;
+      color: rgba($color-white, 0.8);
+    }
+    &__name {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+  }
+  &--button-add {
+    cursor: pointer;
+    margin-right: 10px;
+    &:hover {
+      color: $color-yellow;
+    }
+  }
+}
+.cursor-pointer {
+  cursor: pointer;
+}

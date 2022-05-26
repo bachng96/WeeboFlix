@@ -1,0 +1,11 @@
+@import "style/variable";
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+.bg-black {
+  background-color: $color-dark;
+  background-color: #202125;
+}
