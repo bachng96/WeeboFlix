@@ -1,0 +1,23 @@
+<h2>Trending</h2>
+<swiper
+    [slidesPerView]="8"
+    [spaceBetween]="10"
+    [slidesPerGroup]="1"
+    [loop]="false"
+    [loopFillGroupWithBlank]="true"
+    [navigation]="true"
+    class="mySwiper"
+  >
+    <ng-template swiperSlide *ngFor="let item of animes;let i = index"><div class="slide__item">
+      <div class="slide__item--content">
+        <div class="slide__item--desc">
+          <p class="slide__item--title">{{item.title}}</p>
+          <span class="slide__item--number">{{i+1}}</span>
+        </div>
+        <div class="slide__item--image"><img [src]="item.images.jpg.large_image_url" alt=""></div>
+        <div class="clearfix"></div>
+      </div>
+      </div></ng-template
+    >
+  </swiper>
+
