@@ -1,1 +1,45 @@
-<p>app-anime-detail</p>
+<div class="aniDetail-container mt-5" *ngIf="animeDetail">
+    <div class="anime-cover" [ngStyle]="{ 'background-image': 'url('+animeDetail.images.jpg.large_image_url+')'}"></div>
+    <div class="anime-content-container mt-5">
+        <div class="anime-content pt-5 px-5 row m-0">
+            <div class="anime-poster col-2">
+                <div class="film-poster">
+                    <img [src]="animeDetail.images.jpg.large_image_url" alt="" class="film-poster-img img-fluid">
+                </div>
+            </div>
+            <div class="anime-detail pl-5 col-7">
+                <div class="anime-title text-white">
+                    <h3>{{animeDetail.title}}</h3>
+                </div>
+                <div class="anime-stats">
+                    <span class="item"><div class="tick-item tick-quality">HD</div></span>
+                    <span class="item ml-1"><div class="tick-item tick-dub">DUB</div></span>
+                    <span class="dot"></span>
+                    <span class="item">{{animeDetail.type}} Series</span>
+                    <span class="dot"></span>
+                    <span class="item">Episode {{animeDetail.episodes}}</span>
+                    <span class="dot"></span>
+                    <span class="item">{{animeDetail.duration}}</span>
+                </div>
+
+                <div class="anime-button d-flex my-4">
+                    <div class="btn btn-warning mr-4">
+                      <i class="fas fa-play mr-2"></i> <span> Watch now</span>
+                    </div>
+                    <div class="btn btn-light">
+                      <span>Detail</span> <i class="fas fa-chevron-right ml-2"></i>
+                    </div>
+                </div>
+
+                <div class="anime-descreption">
+                    <div class="text text-white">{{animeDetail.synopsis}}</div>
+                </div>
+
+            </div>
+
+            <div class="anime-info-warp col-3">
+
+            </div>
+        </div>
+    </div>
+</div>
