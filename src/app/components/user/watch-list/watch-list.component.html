@@ -1,0 +1,61 @@
+<div class="main-container mx-5 pl-4 col-11">
+  <h1 class="text-white"><i class="fas fa-heart"></i> Watch List</h1>
+  <div>
+    <button class="btn btn-warning px-3 mb-3">All</button>
+  <button class="btn btn-secondary px-3 ml-2 mb-3">Watching</button>
+  <button class="btn btn-secondary px-3 ml-2 mb-3">On-Hold</button>
+  <button class="btn btn-secondary px-3 ml-2 mb-3">Plan to watch</button>
+  <button class="btn btn-secondary px-3 ml-2 mb-3">Dropped</button>
+  <button class="btn btn-secondary px-3 ml-2 mb-3">Completed</button>
+  </div>
+  <div class="block_area">
+    <div class="block_area-header"></div>
+    <div class="tab-content">
+      <div class="film_list">
+        <div class="film_list-wrap">
+          <div class="flw-item" *ngFor="let item of watchList">
+            <div class="film-poster">
+              <div class="tick ltr">
+                <div class="tick-item tick-dub bg-danger text-white">DUB</div>
+              </div>
+              <div class="tick rtl">
+                <div class="tick-item tick-eps">EP {{item.episodes}}/{{item.episodes}}</div>
+              </div>
+              <img
+                class="film-poster-img lazyloaded"
+                data-src="{{item.images.jpg.large_image_url}}"
+                [alt]="item.title"
+                [src]="item.images.jpg.large_image_url"
+              />
+              <a
+                class="film-poster-ahref"
+                routerLink="/details/{{item.mal_id}}"
+                [title]="item.title"
+                ><i class="fas fa-play"></i
+              ></a>
+            </div>
+            <div class="film-detail">
+              <h3 class="film-name">
+                <a
+                  class="dynamic-name"
+                  [href]="item.url"
+                  [title]="item.title"
+                  >{{item.title}}</a
+                >
+              </h3>
+              <div class="fd-infor">
+                <span class="fdi-item"> {{item.type}} </span>
+                <span class="dot"></span>
+                <span class="fdi-item fdi-duration">{{item.duration}}</span>
+                <span class="dot"></span>
+                <span class="fdi-item fdi-year">{{item.year}}</span>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

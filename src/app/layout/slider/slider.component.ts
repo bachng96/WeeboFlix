@@ -19,13 +19,15 @@ export class SliderComponent implements OnInit {
   constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
+    console.log(this.animes);
+
     setTimeout(() => {
       this.animeService.getAllAnime().subscribe((p: Params) => {
         this.animes = p.data;
         this.animes.sort(this.dynamicSort('popularity'));
         this.animes = this.animes.slice(0, 10);
       });
-    }, 1500);
+    }, 2000);
   }
   dynamicSort(property) {
     var sortOrder = 1;

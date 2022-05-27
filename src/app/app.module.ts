@@ -17,13 +17,16 @@ import { AnimeFeaturedComponent } from './components/anime-featured/anime-featur
 import { SocialMediaComponent } from './layout/social-media/social-media.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginFormComponent } from './layout/navbar/login-form/login-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserComponent } from './components/user/user.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { WatchListComponent } from './components/user/watch-list/watch-list.component';
 import { ToastComponent } from './share/toast/toast.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
-import { WatchListComponent } from './components/watch-list/watch-list.component';
+import { SpinnerComponent } from './layout/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +43,11 @@ import { WatchListComponent } from './components/watch-list/watch-list.component
     SocialMediaComponent,
     HomeComponent,
     LoginFormComponent,
+    UserComponent,
+    ProfileComponent,
     WatchListComponent,
     ToastComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
