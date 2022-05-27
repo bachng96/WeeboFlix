@@ -10,7 +10,7 @@ import { WatchListComponent } from './components/user/watch-list/watch-list.comp
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'details', component: AnimeDetailComponent },
+  { path: 'details/:id', component: AnimeDetailComponent },
   {
     path: 'user',
     component: UserComponent,

@@ -1,6 +1,7 @@
-<div class="container-xs">
-    <div class="main-container pl-3 col-9">
-      <div class="block_area">
+
+  <div class="container-xs">
+    <div class="main-container pl-3 col-9"  >
+      <div class="block_area" *ngIf="animeList;else spinner">
         <div class="block_area-header"></div>
         <div class="tab-content">
           <div class="film_list">
@@ -50,8 +51,15 @@
           </div>
         </div>
       </div>
+      <ng-template #spinner>
+        <div class="d-flex justify-content-center">
+          <app-spinner></app-spinner>
+        </div>
+      </ng-template>
     </div>
 
+
+    <!-- left -->
     <div class="side-bar col-3">
         <div class="block_area">
             <div class="block_area-header"></div>
@@ -67,3 +75,5 @@
       </div>
     </div>
 </div>
+
+

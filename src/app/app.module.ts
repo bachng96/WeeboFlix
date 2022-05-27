@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { SpinnerComponent } from './layout/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
     ProfileComponent,
     WatchListComponent,
     ToastComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

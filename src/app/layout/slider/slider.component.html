@@ -1,5 +1,6 @@
 <h2>Trending</h2>
-<swiper
+<div *ngIf="animes; else spinner">
+  <swiper
     [slidesPerView]="8"
     [spaceBetween]="20"
     [slidesPerGroup]="1"
@@ -20,4 +21,10 @@
       </div></ng-template
     >
   </swiper>
+</div>
+<ng-template #spinner>
+  <div class="d-flex justify-content-center">
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>
 

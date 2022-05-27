@@ -15,13 +15,11 @@ export class AnimeListComponent implements OnInit {
   constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
-    setTimeout(
-      () => {
-        this.animeService.getAllAnime().subscribe((data: Root) => {
-          this.animeList = data.data
-          console.log(this.animeList)
-        })
-      }
-    ,2000)
+    setTimeout(() => {
+      this.animeService.getAllAnime().subscribe((data: Root) => {
+        this.animeList = data.data;
+        console.log(this.animeList);
+      });
+    }, 2000);
   }
 }

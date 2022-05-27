@@ -1,4 +1,5 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from 'src/app/core/services/user.service';
 import { LoginFormComponent } from './login-form/login-form.component';
@@ -11,7 +12,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
 export class NavbarComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
-    public userService: UserService
+    public userService: UserService,
+    private router: Router
   ) {}
   listGenre;
   toggleUser: boolean = false;
@@ -35,6 +37,11 @@ export class NavbarComponent implements OnInit {
   open() {
     const modalRef = this.modalService.open(LoginFormComponent);
     modalRef.componentInstance.name = 'World';
+  }
+  logout() {
+    this.toggleUser = false;
+    this.userService.logout();
+    this.router.navigateByUrl('/');
   }
   data: {
     mal_id: 10465;
