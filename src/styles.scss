@@ -1,5 +1,7 @@
+
 @import "app/style/variable";
 @import "app/style/animation";
+
 $primary: #ff550b;
 $secondary: #303030;
 $success: #015668;
@@ -37,6 +39,7 @@ $btn-border-radius: 0.25rem;
 .toast-message {
 }
 
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 
@@ -45,3 +48,10 @@ $btn-border-radius: 0.25rem;
 .modal-content {
   background-color: transparent !important;
 }
+
+
+@import '../node_modules/swiper/swiper-bundle.min.css';
+@import '../node_modules/swiper/swiper.min.css';
+@import '../node_modules/swiper/components/pagination/pagination.min.css';
+@import '../node_modules/swiper/components/navigation/navigation.min.css';
+

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { debounceTime, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +11,11 @@ export class AnimeService {
   constructor(private http: HttpClient) {}
 
   getAllAnime() {
-    return this.http.get(this.BASE_URL + 'anime').pipe();
+    return this.http.get(this.BASE_URL + 'anime')
+  }
+
+  getAnimeById(id: string) {
+    return this.http.get(this.BASE_URL + 'anime/' + id + '/full')
   }
 
   getAllGenres() {
@@ -27,5 +31,8 @@ export class AnimeService {
         return newSet.sort((a, b) => a.name.localeCompare(b.name));
       })
     );
+  }
+  getTopAnime() {
+    return this.http.get(this.BASE_URL + 'top/anime');
   }
 }

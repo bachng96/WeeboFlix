@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
+import { debounce, debounceTime, map } from 'rxjs/operators';
 import { AnimeService } from 'src/app/core/services/anime.service';
 import { Anime, Root } from './../../core/model/app.model';
 
@@ -8,15 +10,18 @@ import { Anime, Root } from './../../core/model/app.model';
   styleUrls: ['./anime-list.component.scss'],
 })
 export class AnimeListComponent implements OnInit {
-  animeList: Anime[]
+  animeList: Anime[];
 
-  constructor(private animeService: AnimeService) { }
+  constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
-    this.animeService.getAllAnime().subscribe((data: Root) => {
-      this.animeList = data.data
-      console.log(this.animeList)
-    })
+    setTimeout(
+      () => {
+        this.animeService.getAllAnime().subscribe((data: Root) => {
+          this.animeList = data.data
+          console.log(this.animeList)
+        })
+      }
+    ,2000)
   }
-
 }
