@@ -53,6 +53,7 @@ import { WatchListComponent } from './components/watch-list/watch-list.component
     ToastrModule.forRoot(),
     NgbModule,
     NgbCarouselModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent],
