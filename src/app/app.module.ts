@@ -59,7 +59,7 @@ import { SpinnerComponent } from './layout/spinner/spinner.component';
     ToastrModule.forRoot(),
     NgbModule,
     NgbCarouselModule,
-    SwiperModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent],

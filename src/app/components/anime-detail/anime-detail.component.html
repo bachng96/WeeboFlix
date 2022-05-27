@@ -37,8 +37,39 @@
 
             </div>
 
-            <div class="anime-info-warp col-3">
-
+            <div class="anime-info-warp col-3 py-2 d-flex flex-column justify-content-center">
+                <div class="ani ani-title">
+                    <span class="ani-head">Japaness:</span>
+                    <span class="name">{{animeDetail.title_japanese}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Year Publish:</span>
+                    <span class="name">{{animeDetail.year}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Status:</span>
+                    <span class="name">{{animeDetail.status}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Genres:</span>
+                    <span class="item mr-1" *ngFor="let genre of animeDetail.genres">{{genre.name}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Favorite:</span>
+                    <span class="name">{{animeDetail.favorites}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Season:</span>
+                    <span class="name">{{animeDetail.season}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Rating:</span>
+                    <span class="name">{{animeDetail.rating}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Score:</span>
+                    <span class="name">{{animeDetail.score}}</span>
+                </div>
             </div>
         </div>
     </div>
