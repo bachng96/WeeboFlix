@@ -1,4 +1,28 @@
 <app-carosel></app-carosel>
 <app-slider></app-slider>
 <app-anime-featured></app-anime-featured>
-<app-anime-list></app-anime-list>
+<div class="container-xs row mx-0 mb-4">
+    <div class="main-container col-9">
+        <app-anime-list [animeList]="animeList" [animeHeader]="'Latest'"></app-anime-list>
+        <app-anime-list [animeList]="animeList" [animeHeader]="'New On Weeboflix'"></app-anime-list>
+        <app-anime-list [animeList]="animeList" [animeHeader]="'Top UpComming'"></app-anime-list>
+    </div>
+    <div class="side-bar col-3">
+        <div class="block_area">
+          <div class="block_area-header">
+              <div class="left">
+                  <h2 class="ani-list-heading">Genres</h2>
+              </div>
+          </div>
+          <div class="block_area-content">
+            <app-genres-box></app-genres-box>
+          </div>
+        </div>
+        <div class="block_area">
+          <div class="block_area-header"></div>
+          <div class="block_area-content">
+            <app-mostview-box></app-mostview-box>
+          </div>
+        </div>
+      </div>
+</div>

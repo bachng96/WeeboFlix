@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { timer } from 'rxjs';
 import { debounce, debounceTime, map } from 'rxjs/operators';
 import { AnimeService } from 'src/app/core/services/anime.service';
@@ -10,18 +10,11 @@ import { Anime, Root } from './../../core/model/app.model';
   styleUrls: ['./anime-list.component.scss'],
 })
 export class AnimeListComponent implements OnInit {
-  animeList: Anime[];
+  @Input() animeList: Anime[];
+  @Input() animeHeader: string;
 
   constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
-    setTimeout(
-      () => {
-        this.animeService.getAllAnime().subscribe((data: Root) => {
-          this.animeList = data.data
-          console.log(this.animeList)
-        })
-      }
-    ,2000)
   }
 }
