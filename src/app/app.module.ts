@@ -20,6 +20,12 @@ import { LoginFormComponent } from './layout/navbar/login-form/login-form.compon
 import { UserComponent } from './components/user/user.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { WatchListComponent } from './components/user/watch-list/watch-list.component';
+import { ToastComponent } from './share/toast/toast.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -39,8 +45,20 @@ import { WatchListComponent } from './components/user/watch-list/watch-list.comp
     UserComponent,
     ProfileComponent,
     WatchListComponent,
+    ToastComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, SwiperModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    NgbModule,
+    NgbCarouselModule,
+    SwiperModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

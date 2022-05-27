@@ -1,5 +1,13 @@
-<form class="login-form" *ngIf="havaAccount">
-  <i class="fas fa-times close-button" data-dismiss="modal"></i>
+<form
+  class="login-form"
+  *ngIf="havaAccount"
+  [formGroup]="signForm"
+  (ngSubmit)="onLogin()"
+>
+  <i
+    class="fas fa-times close-button"
+    (click)="activeModal.close('Close click')"
+  ></i>
   <h3 class="text-center my-3">Wellcome back</h3>
   <div class="form-group">
     <label for="email">Email address:</label>
@@ -8,6 +16,7 @@
       class="form-control"
       placeholder="Enter email"
       id="email"
+      formControlName="email"
     />
   </div>
   <div class="form-group">
@@ -17,6 +26,7 @@
       class="form-control"
       placeholder="Enter password"
       id="pwd"
+      formControlName="password"
     />
   </div>
   <div class="form-group form-check d-flex justify-content-between mt-4">
@@ -25,7 +35,9 @@
     </label>
     <span>Forget Password ?</span>
   </div>
-  <div class="login-form--button text-center py-2 mt-5">Login</div>
+  <button class="login-form--button text-center py-2 mt-5" type="submit">
+    Login
+  </button>
   <p class="register text-center">
     Dont't have account ?
     <span class="register--link" (click)="havaAccount = false"
@@ -34,6 +46,7 @@
   </p>
 </form>
 
+<!-- register Form ..... -->
 <form class="login-form" *ngIf="!havaAccount">
   <i class="fas fa-times close-button" data-dismiss="modal"></i>
   <h3 class="text-center my-3">Wellcome back</h3>
@@ -75,7 +88,9 @@
       id="pwd"
     />
   </div>
-  <div class="login-form--button text-center py-2 mt-5">Login</div>
+  <button class="login-form--button text-center py-2 mt-5" type="submit">
+    Login
+  </button>
   <p class="register text-center">
     Have Account ?
     <span class="register--link" (click)="havaAccount = true">Login now ?</span>
