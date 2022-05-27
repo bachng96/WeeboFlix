@@ -13,11 +13,32 @@
       <span class="btn btn-secondary btn-filter mx-2">filter</span>
     </div>
     <div class="ml-auto">
+
+      <div *ngIf="userService.user" style="position: relative">
+        <img
+          [src]="userService.user != null ? userService.user.avatar : ''"
+          class="rounded-circle avatar-user shadow-lg"
+          (click)="toggleUser = !toggleUser"
+        />
+
+        <div class="dropdown-user shadow-lg" *ngIf="toggleUser">
+          <p class="dropdown-user--email">anvu1308@gmail.com</p>
+
+          <ul>
+            <li><i class="fas fa-user mr-2"></i><span>Profile</span></li>
+            <li>
+              <i class="fas fa-sign-out-alt mr-2"></i><span>Logout </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <button class="btn btn-warning mr-2">Trai tim</button>
+
       <button
         class="btn btn-warning"
-        data-toggle="modal"
-        data-target="#exampleModal"
+        (click)="open()"
+        *ngIf="!userService.user"
       >
         Login
       </button>
@@ -42,20 +63,6 @@
         <div class="row px-3">
           <app-genres-box (click)="$event.stopPropagation()"> </app-genres-box>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div
-    class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <app-login-form></app-login-form>
       </div>
     </div>
   </div>

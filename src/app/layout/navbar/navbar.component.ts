@@ -1,12 +1,20 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from 'src/app/core/services/user.service';
+import { LoginFormComponent } from './login-form/login-form.component';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private modalService: NgbModal,
+    public userService: UserService
+  ) {}
   listGenre;
+  toggleUser: boolean = false;
   toggle: boolean = false;
   ngOnInit(): void {}
 
@@ -24,6 +32,10 @@ export class NavbarComponent implements OnInit {
     this.toggle = false;
   }
 
+  open() {
+    const modalRef = this.modalService.open(LoginFormComponent);
+    modalRef.componentInstance.name = 'World';
+  }
   data: {
     mal_id: 10465;
     url: 'https://myanimelist.net/anime/10465/Manyuu_Hikenchou';
