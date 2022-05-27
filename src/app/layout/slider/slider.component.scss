@@ -4,6 +4,7 @@
   position: relative;
   height: 100%;
   background-color: black;
+  cursor: pointer;
 }
 .slide__item--content{
   width: 100%;
@@ -22,8 +23,8 @@
     width: 40px;
     text-align: center;
     font-weight: 600;
-    cursor: default;
     background: linear-gradient(180deg,#4a4b51 0,rgba(74,75,81,0) 99%);
+
 }
 .slide__item--title{
   text-align: left;
