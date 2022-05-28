@@ -8,7 +8,7 @@ import { WatchListService } from 'src/app/core/services/watch-list.service';
   styleUrls: ['./watch-list.component.scss'],
 })
 export class WatchListComponent implements OnInit {
-  watchList;
+  public watchList;
   constructor(private watchListService: WatchListService) {}
 
   ngOnInit(): void {

@@ -24,6 +24,9 @@
                 EP {{ item.episodes }}/{{ item.episodes }}
               </div>
             </div>
+            <div class="dropdown" *ngIf="dropDown">
+              <button class="btn btn-light"><i class="fas fa-ellipsis-v"></i></button>
+            </div>
             <img
               class="film-poster-img lazyloaded"
               data-src="{{ item.images.jpg.large_image_url }}"
@@ -43,10 +46,13 @@
               <a
                 class="dynamic-name"
                 [href]="item.url"
-                [title]="item.title"
+                [title]="item.title"+
                 >{{ item.title }}</a
               >
             </h3>
+            <div class="fdi-btn_add">
+              <button class="btn btn-secondary"><i class="fas fa-plus"></i></button>
+            </div>
             <div class="fd-infor">
               <span class="fdi-item"> {{ item.type }} </span>
               <span class="dot"></span>
@@ -66,7 +72,7 @@
 <!-- <div class="container-xs">
 
   <div class="main-container pl-3 col-9">
-    
+
   </div>
 </div> -->
 

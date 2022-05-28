@@ -12,9 +12,9 @@ import { Anime, Root } from './../../core/model/app.model';
 export class AnimeListComponent implements OnInit {
   @Input() animeList: Anime[];
   @Input() animeHeader: string;
+  @Input() dropDown: boolean;
 
   constructor(private animeService: AnimeService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

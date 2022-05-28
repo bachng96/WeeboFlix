@@ -60,6 +60,12 @@
     bottom: 0;
     z-index: 1;
 }
+.dropdown{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 4;
+}
 
 .tick.ltr {
     left: 10px;
@@ -103,7 +109,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    
+
 }
 
 .flw-item .film-poster .film-poster-ahref {
@@ -142,6 +148,10 @@
     background: rgba(32,33,37,.8);
     z-index: 1;
     -moz-transition: all .4s ease 0s;
+}
+.fdi-btn_add{
+  position: absolute;
+  z-index:4;
 }
 
 .flw-item .film-poster .film-poster-ahref:hover i {
