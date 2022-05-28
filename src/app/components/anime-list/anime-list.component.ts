@@ -18,7 +18,7 @@ export class AnimeListComponent implements OnInit {
   @Output() removeItem = new EventEmitter();
   @Output() changeWLStatus = new EventEmitter();
   status;
-  toggleButton: boolean = false;
+  toggleButton;
 
   constructor(
     private animeService: AnimeService,
@@ -31,5 +31,8 @@ export class AnimeListComponent implements OnInit {
   }
   changeStatus(e, item) {
     this.changeWLStatus.emit([e.getAttribute('value'), item]);
+  }
+  toggle(item) {
+    item.show = !item.show;
   }
 }

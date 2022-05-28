@@ -14,7 +14,7 @@
   <div class="tab-content">
     <div class="film_list">
       <div class="film_list-wrap">
-        <div class="flw-item" *ngFor="let item of animeList">
+        <div class="flw-item" *ngFor="let item of animeList; let i = index">
           <div class="film-poster">
             <div class="tick ltr">
               <div class="tick-item tick-dub bg-danger text-white">DUB</div>
@@ -26,8 +26,8 @@
             </div>
             <div class="dropdown" *ngIf="dropDown">
               <div class="position-relative">
-              <button class="btn btn-light" (click)="toggleButton = !toggleButton"><i class="fas fa-ellipsis-v"></i></button>
-              <div class="dropdown-button shadow-lg" *ngIf="toggleButton">
+              <button class="btn btn-light" (click)="toggle(item)"><i class="fas fa-ellipsis-v"></i></button>
+              <div class="dropdown-button shadow-lg" *ngIf="item.show">
                 <ul>
                   <li (click)="changeStatus($event.target, item)" value="watching">Watching</li>
                   <li (click)="changeStatus($event.target, item)" value="onhold">On-Hold</li>

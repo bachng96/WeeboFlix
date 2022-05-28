@@ -32,7 +32,6 @@ export class WatchListComponent implements OnInit {
     let index = this.watchList.findIndex((c) => c.mal_id == e[1].mal_id);
     this.watchList[index].statusWatchList = e[0];
     this.filter = this.watchList;
-    console.log(this.filter);
   }
   showStatusView(e) {
     this.filter = this.watchList;
