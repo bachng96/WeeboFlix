@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { timer } from 'rxjs';
 import { debounce, debounceTime, map } from 'rxjs/operators';
 import { AnimeService } from 'src/app/core/services/anime.service';
+import { WatchListService } from 'src/app/core/services/watch-list.service';
 import { Anime, Root } from './../../core/model/app.model';
 
 @Component({
@@ -13,8 +14,22 @@ export class AnimeListComponent implements OnInit {
   @Input() animeList: Anime[];
   @Input() animeHeader: string;
   @Input() dropDown: boolean;
+  @Input() buttonAdd: boolean;
+  @Output() removeItem = new EventEmitter();
+  @Output() changeWLStatus = new EventEmitter();
+  status;
+  toggleButton: boolean = false;
 
-  constructor(private animeService: AnimeService) {}
+  constructor(
+    private animeService: AnimeService,
+    public watchListService: WatchListService
+  ) {}
 
   ngOnInit(): void {}
+  remove(item) {
+    this.removeItem.emit(item);
+  }
+  changeStatus(e, item) {
+    this.changeWLStatus.emit([e.getAttribute('value'), item]);
+  }
 }

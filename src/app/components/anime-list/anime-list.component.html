@@ -25,7 +25,22 @@
               </div>
             </div>
             <div class="dropdown" *ngIf="dropDown">
-              <button class="btn btn-light"><i class="fas fa-ellipsis-v"></i></button>
+              <div class="position-relative">
+              <button class="btn btn-light" (click)="toggleButton = !toggleButton"><i class="fas fa-ellipsis-v"></i></button>
+              <div class="dropdown-button shadow-lg" *ngIf="toggleButton">
+                <ul>
+                  <li (click)="changeStatus($event.target, item)" value="watching">Watching</li>
+                  <li (click)="changeStatus($event.target, item)" value="onhold">On-Hold</li>
+                  <li (click)="changeStatus($event.target, item)" value="plantowatch">Plan to watch</li>
+                  <li (click)="changeStatus($event.target, item)" value="dropped">Dropped</li>
+                  <li (click)="changeStatus($event.target, item)" value="completed">Completed</li>
+                  <li class="text-danger"  (click)="remove(item)">Remove</li>
+                </ul>
+              </div>
+            </div>
+            </div>
+            <div class="fd-button" *ngIf="buttonAdd" (click)="watchListService.addToWatchList(item)">
+              <button class="btn btn-light"><i class="fas fa-plus"></i></button>
             </div>
             <img
               class="film-poster-img lazyloaded"
@@ -46,13 +61,11 @@
               <a
                 class="dynamic-name"
                 [href]="item.url"
-                [title]="item.title"+
+                [title]="item.title"
                 >{{ item.title }}</a
               >
             </h3>
-            <div class="fdi-btn_add">
-              <button class="btn btn-secondary"><i class="fas fa-plus"></i></button>
-            </div>
+
             <div class="fd-infor">
               <span class="fdi-item"> {{ item.type }} </span>
               <span class="dot"></span>
