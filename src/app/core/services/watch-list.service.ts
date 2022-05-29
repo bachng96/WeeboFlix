@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class WatchListService {
   private watchList = [];
+
   constructor() {
     let savedWatchList = localStorage.getItem('watchList');
     if (savedWatchList) {
@@ -20,5 +21,12 @@ export class WatchListService {
   }
   getWatchList() {
     return this.watchList;
+  }
+  removeWatchListItem(p) {
+    let index = this.watchList.findIndex((c) => c.mal_id == p.mal_id);
+    if (index >= 0) {
+      this.watchList.splice(index, 1);
+    }
+    localStorage.setItem('watchList', JSON.stringify(this.watchList));
   }
 }
