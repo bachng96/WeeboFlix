@@ -1,5 +1,5 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AnimeService } from 'src/app/core/services/anime.service';
 import { UserService } from 'src/app/core/services/user.service';
@@ -15,12 +15,23 @@ export class NavbarComponent implements OnInit {
     private modalService: NgbModal,
     public userService: UserService,
     private router: Router,
+    private route: ActivatedRoute,
     private animeService: AnimeService
   ) {}
   listGenre;
   toggleUser: boolean = false;
   toggle: boolean = false;
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const parsedUrl = new URL(window.location.href);
+    const baseUrl = parsedUrl.origin;
+    console.log(baseUrl);
+
+    this.userService.toggleNavbar.subscribe((res) => {
+      if (res) {
+        this.open();
+      }
+    });
+  }
 
   getRandomAnime() {
     this.animeService.getRandomAnime().subscribe((data) => {
@@ -52,6 +63,11 @@ export class NavbarComponent implements OnInit {
     this.userService.logout();
     this.router.navigateByUrl('/');
   }
+  gotoProfile() {
+    this.toggleUser = false;
+    this.router.navigateByUrl('/user/profile');
+  }
+
   data: {
     mal_id: 10465;
     url: 'https://myanimelist.net/anime/10465/Manyuu_Hikenchou';

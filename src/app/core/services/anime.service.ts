@@ -7,17 +7,19 @@ import { debounceTime, map } from 'rxjs/operators';
 })
 export class AnimeService {
   private BASE_URL = 'https://api.jikan.moe/v4/';
-
+  private BASE_URL_V3 = 'https://api.jikan.moe/v3/';
   constructor(private http: HttpClient) {}
 
   getAllAnime() {
-    return this.http.get(this.BASE_URL + 'anime')
+    return this.http.get(this.BASE_URL + 'anime');
   }
 
   getAnimeById(id: string) {
-    return this.http.get(this.BASE_URL + 'anime/' + id + '/full')
+    return this.http.get(this.BASE_URL + 'anime/' + id + '/full');
   }
-
+  getTopAnimeByType() {
+    return this.http.get(this.BASE_URL_V3 + 'top/anime/1/upcoming');
+  }
   getAllGenres() {
     return this.http.get(this.BASE_URL + 'genres/anime').pipe(
       map((anime) => {
