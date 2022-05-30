@@ -49,6 +49,7 @@ export class AnimeService {
         current_page +
         '&limit=24'
     );
+  }
 
   getRandomAnime() {
     return this.http.get(this.BASE_URL + 'random/anime');
