@@ -39,7 +39,19 @@ export class AnimeService {
     return this.http.get(this.BASE_URL + 'top/anime');
   }
 
+  getAnimeByFilter(letter: string, current_page: number) {
+    return this.http.get(
+      this.BASE_URL +
+        'anime?' +
+        'letter=' +
+        letter +
+        '&page=' +
+        current_page +
+        '&limit=24'
+    );
+
   getRandomAnime() {
     return this.http.get(this.BASE_URL + 'random/anime');
-  }
+  };
+    
 }
