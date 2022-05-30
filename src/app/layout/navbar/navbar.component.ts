@@ -1,6 +1,7 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AnimeService } from 'src/app/core/services/anime.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { LoginFormComponent } from './login-form/login-form.component';
 
@@ -13,12 +14,20 @@ export class NavbarComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     public userService: UserService,
-    private router: Router
+    private router: Router,
+    private animeService: AnimeService
   ) {}
   listGenre;
   toggleUser: boolean = false;
   toggle: boolean = false;
   ngOnInit(): void {}
+
+  getRandomAnime() {
+    this.animeService.getRandomAnime().subscribe((data) => {
+      let id = data['data']['mal_id'];
+      this.router.navigate(['details', id]);
+    });
+  }
 
   @HostListener('window:scroll', ['$event']) onScroll(event) {
     let element = document.querySelector('.navbar') as HTMLElement;

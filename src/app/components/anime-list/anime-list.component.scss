@@ -30,12 +30,13 @@
 }
 
 .film_list .film_list-wrap .flw-item {
-    width: calc(16.66% - 14px);
+    min-width: calc(16.66% - 15px);
     margin: 0 7px 14px;
     float: left;
     background: #2a2c31;
     border-radius: 0;
     position: relative;
+    padding: 0;
 }
 
 .film_list .film_list-wrap .flw-item .film-poster {

@@ -120,3 +120,19 @@ input:focus {
 .log-out {
   text-align: right;
 }
+
+.random-btn {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  border-radius: 10rem;
+  font-size: 15px;
+  padding: 0px 8px;
+}
+
+.random-btn:hover {
+  color: $color-yellow;
+}
