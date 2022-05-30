@@ -1,6 +1,7 @@
 @import "../../style/variable";
 
 .navbar {
+  z-index: 2;
   transition: 0.5;
   background-color: transparent;
   &-brand {
