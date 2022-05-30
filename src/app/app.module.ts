@@ -28,6 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpinnerComponent } from './share/spinner/spinner.component';
 import { ToastsContainerComponent } from './share/toasts-container/toasts-container.component';
+import { WatchComponent } from './components/watch/watch.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ToastsContainerComponent } from './share/toasts-container/toasts-contai
     WatchListComponent,
     SpinnerComponent,
     ToastsContainerComponent,
+    WatchComponent,
   ],
   imports: [
     BrowserModule,
