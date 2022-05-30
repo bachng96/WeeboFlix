@@ -27,6 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpinnerComponent } from './layout/spinner/spinner.component';
+import { AnimeFilterByLetterComponent } from './components/anime-filter-by-letter/anime-filter-by-letter.component';
+import { PaginationComponent } from './layout/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { SpinnerComponent } from './layout/spinner/spinner.component';
     WatchListComponent,
     ToastComponent,
     SpinnerComponent,
+    AnimeFilterByLetterComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +63,7 @@ import { SpinnerComponent } from './layout/spinner/spinner.component';
     ToastrModule.forRoot(),
     NgbModule,
     NgbCarouselModule,
-    SwiperModule
+    SwiperModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

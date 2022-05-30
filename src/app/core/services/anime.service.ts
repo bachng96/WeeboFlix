@@ -11,11 +11,11 @@ export class AnimeService {
   constructor(private http: HttpClient) {}
 
   getAllAnime() {
-    return this.http.get(this.BASE_URL + 'anime')
+    return this.http.get(this.BASE_URL + 'anime');
   }
 
   getAnimeById(id: string) {
-    return this.http.get(this.BASE_URL + 'anime/' + id + '/full')
+    return this.http.get(this.BASE_URL + 'anime/' + id + '/full');
   }
 
   getAllGenres() {
@@ -34,5 +34,16 @@ export class AnimeService {
   }
   getTopAnime() {
     return this.http.get(this.BASE_URL + 'top/anime');
+  }
+  getAnimeByFilter(letter: string, current_page: number) {
+    return this.http.get(
+      this.BASE_URL +
+        'anime?' +
+        'letter=' +
+        letter +
+        '&page=' +
+        current_page +
+        '&limit=24'
+    );
   }
 }
