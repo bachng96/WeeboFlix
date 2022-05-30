@@ -1,6 +1,7 @@
 @import "../../style/variable";
 
 .navbar {
+  z-index: 2;
   transition: 0.5;
   background-color: transparent;
   &-brand {
@@ -120,3 +121,29 @@ input:focus {
 .log-out {
   text-align: right;
 }
+
+.wishlist-icon {
+  color: $color-yellow;
+  font-size: 30px;
+  margin-right: 20px;
+  position: relative;
+  top: 5px;
+  cursor: pointer;
+}
+
+.random-btn {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  border-radius: 10rem;
+  font-size: 15px;
+  padding: 0px 8px;
+}
+
+.random-btn:hover {
+  color: $color-yellow;
+}
+

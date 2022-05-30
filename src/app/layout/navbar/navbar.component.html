@@ -5,18 +5,24 @@
     </span>
     <a routerLink="home">
       <img
-      class="navbar-brand"
-      src="https://animebee.to/assets/animebee/images/logo.png"
-    />
+        class="navbar-brand"
+        src="https://animebee.to/assets/animebee/images/logo.png"
+      />
     </a>
 
-    <div class="d-flex bg-white d-flex align-items-center">
+    <div class="d-flex bg-white align-items-center">
       <input type="text" class="input-search p-2" id="usr" />
       <i class="fas fa-search"></i>
       <span class="btn btn-secondary btn-filter mx-2">filter</span>
     </div>
+
+    <div class="random-btn" (click)="getRandomAnime()">
+      <div class="random-icon"><i class="fas fa-random"></i></div>
+      <div class="name"><span>Random</span></div>
+    </div>
+
     <div class="ml-auto d-flex">
-      <button class="btn btn-warning mr-2" routerLink="/user/watch-list">Trai tim</button>
+      <i class="fas fa-heart wishlist-icon" routerLink="/user/watch-list"></i>
 
       <div *ngIf="userService.user" style="position: relative">
         <img
@@ -29,7 +35,9 @@
           <p class="dropdown-user--email">anvu1308@gmail.com</p>
 
           <ul>
-            <li routerLink="/user/profile"><i class="fas fa-user mr-2"></i><span>Profile</span></li>
+            <li routerLink="/user/profile" (click)="gotoProfile()">
+              <i class="fas fa-user mr-2"></i><span>Profile</span>
+            </li>
             <li (click)="logout()">
               <i class="fas fa-sign-out-alt mr-2"></i><span>Logout </span>
             </li>
@@ -54,7 +62,9 @@
       </div>
       <div class="modal-custom-content" *ngIf="toggle">
         <ul class="list-menu" (click)="$event.stopPropagation()">
-          <li class="list-menu--item pl-3 pr-5 pb-3">Home</li>
+          <li class="list-menu--item pl-3 pr-5 pb-3" routerLink="/home">
+            Home
+          </li>
           <li class="list-menu--item pl-3 pr-5 pb-3">Movie</li>
           <li class="list-menu--item pl-3 pr-5 pb-3">TV series</li>
           <li class="list-menu--item pl-3 pr-5 pb-3">Top Airing</li>

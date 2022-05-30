@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AuthGuard } from './core/guard/auth.guard';
 import { AnimeDetailComponent } from './components/anime-detail/anime-detail.component';
 import { AnimeFilterByLetterComponent } from './components/anime-filter-by-letter/anime-filter-by-letter.component';
 import { HomeComponent } from './components/home/home.component';
@@ -21,6 +21,7 @@ const routes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'watch-list', component: WatchListComponent },
     ],
+    canActivate: [AuthGuard],
   },
   { path: '**', redirectTo: 'home' },
 ];

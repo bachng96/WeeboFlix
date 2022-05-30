@@ -1,14 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AnimeService } from 'src/app/core/services/anime.service';
+import { ToastService } from 'src/app/core/services/toast.service';
+import { UserService } from 'src/app/core/services/user.service';
+import { dynamicFilterByType } from '../../share/functionReuseble';
 @Component({
   selector: 'app-anime-featured',
   templateUrl: './anime-featured.component.html',
   styleUrls: ['./anime-featured.component.scss'],
 })
 export class AnimeFeaturedComponent implements OnInit {
-  constructor() {}
+  listAnimeMovie: [];
+  MovieType;
+  TVType;
+  specialType;
+  ovaType;
+  constructor(
+    private userService: UserService,
+    public toastService: ToastService,
+    private animeService: AnimeService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.animeService.getTopAnimeByType().subscribe((res: any) => {
+      this.listAnimeMovie = res.top;
+      this.MovieType = dynamicFilterByType(this.listAnimeMovie, 'Movie');
+      this.TVType = dynamicFilterByType(this.listAnimeMovie, 'TV');
+      this.specialType = this.listAnimeMovie.slice(40, 45);
+      this.ovaType = this.listAnimeMovie.slice(35, 40);
+    });
+  }
+  addWhislit(e) {
+    e.stopPropagation();
+    this.userService.checkLogin(() => {
+      this.showDanger('add to wishlist success !');
+    });
+  }
+  showDanger(dangerTpl) {
+    this.toastService.show(dangerTpl, {
+      classname: 'bg-success text-light',
+      delay: 3000,
+    });
+  }
 
   fakeAPI: Object[] = [
     {

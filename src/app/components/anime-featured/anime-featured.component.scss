@@ -4,6 +4,7 @@
   color: white;
   &--item:nth-child(odd) {
     background-color: $color-dark-1;
+    cursor: pointer;
   }
 
   &--title {
@@ -30,6 +31,8 @@
     &__name {
       font-size: 18px;
       margin-top: 5px;
+      height: 20px;
+      overflow: hidden;
     }
   }
   &--button-add {

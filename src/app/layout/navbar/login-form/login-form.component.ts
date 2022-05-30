@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/core/services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastService } from 'src/app/core/services/toast.service';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -24,7 +25,7 @@ export class LoginFormComponent implements OnInit {
   });
   constructor(
     private userService: UserService,
-    private ToastService: ToastrService,
+    public toastService: ToastService,
     public activeModal: NgbActiveModal
   ) {}
   ngOnInit(): void {}
@@ -44,8 +45,14 @@ export class LoginFormComponent implements OnInit {
     this.userService.login(this.user).subscribe((res) => {
       if (res) {
         this.activeModal.close('Close click');
-        this.ToastService.success('Login success ! ', 'Notification');
+        this.showDanger('Login success !');
       }
+    });
+  }
+  showDanger(dangerTpl) {
+    this.toastService.show(dangerTpl, {
+      classname: 'bg-success text-light',
+      delay: 3000,
     });
   }
 }
