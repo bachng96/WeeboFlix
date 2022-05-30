@@ -4,6 +4,7 @@ import { SwiperComponent } from 'swiper/angular';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
 import { Params } from '@angular/router';
 import { debounceTime, map } from 'rxjs/operators';
+import { Anime } from 'src/app/core/model/app.model';
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
@@ -15,7 +16,7 @@ SwiperCore.use([Pagination, Navigation]);
   encapsulation: ViewEncapsulation.None,
 })
 export class SliderComponent implements OnInit {
-  animes;
+  public animes: Anime[];
   constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {

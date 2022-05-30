@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './core/guard/auth.guard';
 import { AnimeDetailComponent } from './components/anime-detail/anime-detail.component';
+import { AnimeFilterByLetterComponent } from './components/anime-filter-by-letter/anime-filter-by-letter.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { UserComponent } from './components/user/user.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'details/:id', component: AnimeDetailComponent },
   { path: 'watch/:id', component: WatchComponent},
+  { path: 'az-list/:key', component: AnimeFilterByLetterComponent },
   {
     path: 'user',
     component: UserComponent,
