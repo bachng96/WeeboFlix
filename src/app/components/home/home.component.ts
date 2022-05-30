@@ -24,6 +24,6 @@ export class HomeComponent implements OnInit {
           console.log(this.animeList)
         })
       }
-    ,2000)
+    ,1000)
   }
 }

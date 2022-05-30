@@ -13,8 +13,8 @@
   </div>
   <div class="tab-content">
     <div class="film_list">
-      <div class="film_list-wrap">
-        <div class="flw-item" *ngFor="let item of animeList">
+      <div class="film_list-wrap d-flex flex-wrap">
+        <div class="flw-item col-lg-1 col-md-3 col-sm-4" *ngFor="let item of animeList; let i = index">
           <div class="film-poster">
             <div class="tick ltr">
               <div class="tick-item tick-dub bg-danger text-white">DUB</div>
@@ -23,6 +23,24 @@
               <div class="tick-item tick-eps">
                 EP {{ item.episodes }}/{{ item.episodes }}
               </div>
+            </div>
+            <div class="dropdown" *ngIf="dropDown">
+              <div class="position-relative">
+              <button class="btn btn-light" (click)="toggle(item)"><i class="fas fa-ellipsis-v"></i></button>
+              <div class="dropdown-button shadow-lg" *ngIf="item.show">
+                <ul>
+                  <li (click)="changeStatus($event.target, item)" value="watching">Watching</li>
+                  <li (click)="changeStatus($event.target, item)" value="onhold">On-Hold</li>
+                  <li (click)="changeStatus($event.target, item)" value="plantowatch">Plan to watch</li>
+                  <li (click)="changeStatus($event.target, item)" value="dropped">Dropped</li>
+                  <li (click)="changeStatus($event.target, item)" value="completed">Completed</li>
+                  <li class="text-danger"  (click)="remove(item)">Remove</li>
+                </ul>
+              </div>
+            </div>
+            </div>
+            <div class="fd-button" *ngIf="buttonAdd" (click)="watchListService.addToWatchList(item)">
+              <button class="btn btn-light"><i class="fas fa-plus"></i></button>
             </div>
             <img
               class="film-poster-img lazyloaded"
@@ -47,6 +65,7 @@
                 >{{ item.title }}</a
               >
             </h3>
+
             <div class="fd-infor">
               <span class="fdi-item"> {{ item.type }} </span>
               <span class="dot"></span>
@@ -66,7 +85,7 @@
 <!-- <div class="container-xs">
 
   <div class="main-container pl-3 col-9">
-    
+
   </div>
 </div> -->
 

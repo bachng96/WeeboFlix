@@ -1,6 +1,7 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AnimeService } from 'src/app/core/services/anime.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { LoginFormComponent } from './login-form/login-form.component';
 
@@ -14,7 +15,8 @@ export class NavbarComponent implements OnInit {
     private modalService: NgbModal,
     public userService: UserService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private animeService: AnimeService
   ) {}
   listGenre;
   toggleUser: boolean = false;
@@ -28,6 +30,13 @@ export class NavbarComponent implements OnInit {
       if (res) {
         this.open();
       }
+    });
+  }
+
+  getRandomAnime() {
+    this.animeService.getRandomAnime().subscribe((data) => {
+      let id = data['data']['mal_id'];
+      this.router.navigate(['details', id]);
     });
   }
 

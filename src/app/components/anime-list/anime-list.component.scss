@@ -1,3 +1,5 @@
+@import "../../style/variable";
+
 .main-container {
     float: left;
 }
@@ -28,12 +30,13 @@
 }
 
 .film_list .film_list-wrap .flw-item {
-    width: calc(16.66% - 14px);
+    min-width: calc(16.66% - 15px);
     margin: 0 7px 14px;
     float: left;
     background: #2a2c31;
     border-radius: 0;
     position: relative;
+    padding: 0;
 }
 
 .film_list .film_list-wrap .flw-item .film-poster {
@@ -60,6 +63,22 @@
     bottom: 0;
     z-index: 1;
 }
+.dropdown{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 4;
+}
+.fd-button{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #fec862;
+  font-size: 20px;
+  z-index: 4;
+  cursor: pointer;
+}
+
 
 .tick.ltr {
     left: 10px;
@@ -103,7 +122,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    
+
 }
 
 .flw-item .film-poster .film-poster-ahref {
@@ -143,6 +162,7 @@
     z-index: 1;
     -moz-transition: all .4s ease 0s;
 }
+
 
 .flw-item .film-poster .film-poster-ahref:hover i {
     opacity: 1;
@@ -190,4 +210,29 @@ a {
     background: rgba(255,255,255,.3);
     display: inline-block;
     margin: 3px 6px;
+}
+
+.dropdown-button {
+  width: 150px;
+  padding: 10px 30px 1px 30px;
+  background-color: $color-dark-1;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 31px;
+  right: 33px;
+  ul {
+    list-style: none;
+    width: 100%;
+    li {
+      padding: 5px;
+      margin-top: 10px;
+      font-size: 12px;
+      width: 100%;
+      cursor: pointer;
+      &:hover {
+        color: $color-yellow;
+      }
+    }
+  }
 }
