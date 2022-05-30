@@ -1,13 +1,10 @@
 @import "../../../style/variable";
 .login-form {
   padding: 20px 50px;
-  background-image: url("../../../../assets/images/login-bg.jpg");
+  background-color: $color-dark-1;
   color: white;
   width: 45%;
-  background-size: cover;
-  background-repeat: no-repeat;
   margin-left: -1px;
-  border-radius: 13px;
   position: relative;
   &--button {
     background-color: $color-yellow;

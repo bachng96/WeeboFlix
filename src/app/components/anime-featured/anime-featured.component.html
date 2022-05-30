@@ -8,23 +8,23 @@
         <div class="feature-box--list">
           <div
             class="feature-box--item d-flex px-2 py-1"
-            *ngFor="let item of fakeAPI"
+            *ngFor="let item of MovieType"
+            routerLink="/details/{{ item.mal_id }}"
           >
-            <img
-              [src]="item.images.jpg.large_image_url"
-              class="box-item--img"
-            />
+            <img [src]="item.image_url" class="box-item--img" />
             <div class="box-item--infor ml-2">
               <h5 class="box-item--infor__name">{{ item.title }}</h5>
               <div class="box-item--infor__desc">
                 <ul class="d-flex">
-                  <li>TV</li>
-                  <li>EP 1017/9999</li>
-                  <li>24 min/ep</li>
+                  <li>type: {{ item.type }}</li>
+                  <li>EP: {{ item.start_date }}</li>
                 </ul>
               </div>
             </div>
-            <div class="d-flex align-items-center ml-auto box-item--button-add">
+            <div
+              class="d-flex align-items-center ml-auto box-item--button-add"
+              (click)="addWhislit($event)"
+            >
               <i class="fas fa-plus"></i>
             </div>
           </div>
@@ -43,23 +43,23 @@
         <div class="feature-box--list">
           <div
             class="feature-box--item d-flex px-2 py-1"
-            *ngFor="let item of fakeAPI"
+            *ngFor="let item of TVType"
+            routerLink="/details/{{ item.mal_id }}"
           >
-            <img
-              [src]="item.images.jpg.large_image_url"
-              class="box-item--img"
-            />
+            <img [src]="item.image_url" class="box-item--img" />
             <div class="box-item--infor ml-2">
               <h5 class="box-item--infor__name">{{ item.title }}</h5>
               <div class="box-item--infor__desc">
                 <ul class="d-flex">
-                  <li>TV</li>
-                  <li>EP 1017/9999</li>
-                  <li>24 min/ep</li>
+                  <li>type: {{ item.type }}</li>
+                  <li>EP: {{ item.start_date }}</li>
                 </ul>
               </div>
             </div>
-            <div class="d-flex align-items-center ml-auto box-item--button-add">
+            <div
+              class="d-flex align-items-center ml-auto box-item--button-add"
+              (click)="addWhislit($event)"
+            >
               <i class="fas fa-plus"></i>
             </div>
           </div>
@@ -74,27 +74,27 @@
 
     <div class="col-md-6 col-lg-3">
       <div class="feature-box">
-        <div class="feature-box--title">Most Popular</div>
+        <div class="feature-box--title">Top Airing</div>
         <div class="feature-box--list">
           <div
             class="feature-box--item d-flex px-2 py-1"
-            *ngFor="let item of fakeAPI"
+            *ngFor="let item of specialType"
+            routerLink="/details/{{ item.mal_id }}"
           >
-            <img
-              [src]="item.images.jpg.large_image_url"
-              class="box-item--img"
-            />
+            <img [src]="item.image_url" class="box-item--img" />
             <div class="box-item--infor ml-2">
               <h5 class="box-item--infor__name">{{ item.title }}</h5>
               <div class="box-item--infor__desc">
                 <ul class="d-flex">
-                  <li>TV</li>
-                  <li>EP 1017/9999</li>
-                  <li>24 min/ep</li>
+                  <li>type: {{ item.type }}</li>
+                  <li>EP: {{ item.start_date }}</li>
                 </ul>
               </div>
             </div>
-            <div class="d-flex align-items-center ml-auto box-item--button-add">
+            <div
+              class="d-flex align-items-center ml-auto box-item--button-add"
+              (click)="addWhislit($event)"
+            >
               <i class="fas fa-plus"></i>
             </div>
           </div>
@@ -113,23 +113,23 @@
         <div class="feature-box--list">
           <div
             class="feature-box--item d-flex px-2 py-1"
-            *ngFor="let item of fakeAPI"
+            *ngFor="let item of ovaType"
+            routerLink="/details/{{ item.mal_id }}"
           >
-            <img
-              [src]="item.images.jpg.large_image_url"
-              class="box-item--img"
-            />
+            <img [src]="item.image_url" class="box-item--img" />
             <div class="box-item--infor ml-2">
               <h5 class="box-item--infor__name">{{ item.title }}</h5>
               <div class="box-item--infor__desc">
                 <ul class="d-flex">
-                  <li>TV</li>
-                  <li>EP 1017/9999</li>
-                  <li>24 min/ep</li>
+                  <li>type: {{ item.type }}</li>
+                  <li>EP: {{ item.start_date }}</li>
                 </ul>
               </div>
             </div>
-            <div class="d-flex align-items-center ml-auto box-item--button-add">
+            <div
+              class="d-flex align-items-center ml-auto box-item--button-add"
+              (click)="addWhislit($event)"
+            >
               <i class="fas fa-plus"></i>
             </div>
           </div>
