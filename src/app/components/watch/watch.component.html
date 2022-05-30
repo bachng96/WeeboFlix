@@ -1,0 +1,5 @@
+
+<div class="container mt-5">
+
+    <iframe *ngIf="animeDetail" [src]="sanitizer.bypassSecurityTrustResourceUrl(animeDetail.trailer.embed_url)" frameborder="0"></iframe>
+</div>

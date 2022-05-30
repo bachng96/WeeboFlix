@@ -30,6 +30,7 @@ import { AnimeFilterByLetterComponent } from './components/anime-filter-by-lette
 import { PaginationComponent } from './layout/pagination/pagination.component';
 import { SpinnerComponent } from './share/spinner/spinner.component';
 import { ToastsContainerComponent } from './share/toasts-container/toasts-container.component';
+import { WatchComponent } from './components/watch/watch.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { ToastsContainerComponent } from './share/toasts-container/toasts-contai
     AnimeFilterByLetterComponent,
     PaginationComponent,
     ToastsContainerComponent,
+    WatchComponent,
   ],
   imports: [
     BrowserModule,
