@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnimeService } from 'src/app/core/services/anime.service';
 import { ToastService } from 'src/app/core/services/toast.service';
 import { UserService } from 'src/app/core/services/user.service';
+import { WatchListService } from 'src/app/core/services/watch-list.service';
 import { dynamicFilterByType } from '../../share/functionReuseble';
 @Component({
   selector: 'app-anime-featured',
@@ -17,7 +18,8 @@ export class AnimeFeaturedComponent implements OnInit {
   constructor(
     private userService: UserService,
     public toastService: ToastService,
-    private animeService: AnimeService
+    private animeService: AnimeService,
+    private watchlist: WatchListService
   ) {}
 
   ngOnInit(): void {
@@ -29,9 +31,10 @@ export class AnimeFeaturedComponent implements OnInit {
       this.ovaType = this.listAnimeMovie.slice(35, 40);
     });
   }
-  addWhislit(e) {
+  addWhislit(e, item) {
     e.stopPropagation();
     this.userService.checkLogin(() => {
+      this.watchlist.addToWatchList(item);
       this.showDanger('add to wishlist success !');
     });
   }

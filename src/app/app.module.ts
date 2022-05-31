@@ -26,8 +26,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpinnerComponent } from './share/spinner/spinner.component';
 import { ToastsContainerComponent } from './share/toasts-container/toasts-container.component';
+import { AnimeByTypeComponent } from './components/anime-by-type/anime-by-type.component';
+import { CartComponent } from './share/cart/cart.component';
+import { TimeBoxComponent } from './share/time-box/time-box.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +53,9 @@ import { ToastsContainerComponent } from './share/toasts-container/toasts-contai
     WatchListComponent,
     SpinnerComponent,
     ToastsContainerComponent,
+    AnimeByTypeComponent,
+    CartComponent,
+    TimeBoxComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +68,7 @@ import { ToastsContainerComponent } from './share/toasts-container/toasts-contai
     NgbModule,
     NgbCarouselModule,
     SwiperModule,
+    NgbPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

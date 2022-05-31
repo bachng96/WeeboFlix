@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
+import { Anime } from '../model/app.model';
 
 @Injectable({
   providedIn: 'root',
@@ -17,8 +19,26 @@ export class AnimeService {
   getAnimeById(id: string) {
     return this.http.get(this.BASE_URL + 'anime/' + id + '/full');
   }
+  getAnimeByYear(date_start, type: string, page: number = 1) {
+    return this.http.get<Anime[]>(this.BASE_URL + 'anime?', {
+      params: {
+        start_date: date_start,
+        end_date: date_start + 1,
+        type: type,
+        page: page.toString(),
+      },
+    });
+  }
   getTopAnimeByType() {
     return this.http.get(this.BASE_URL_V3 + 'top/anime/1/upcoming');
+  }
+  getAnimeByType(type: string, page: number = 1): Observable<Anime[]> {
+    return this.http.get<Anime[]>(this.BASE_URL + 'anime?', {
+      params: {
+        type: type,
+        page: page.toString(),
+      },
+    });
   }
   getAllGenres() {
     return this.http.get(this.BASE_URL + 'genres/anime').pipe(
