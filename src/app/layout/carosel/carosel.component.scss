@@ -28,7 +28,6 @@
     position: relative;
 
     filter: blur(0px);
-    z-index: 1;
   }
   &-effetc {
     width: 100%;
@@ -42,8 +41,16 @@
       rgba(0, 0, 0, 0) 80%,
       #2e2727 100%
     );
-    z-index: 3;
   }
+}
+
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .btn {
