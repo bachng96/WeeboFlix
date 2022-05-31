@@ -17,7 +17,6 @@ export class WatchComponent implements OnInit {
   ngOnInit(): void {
     this.router.params.subscribe(params => {
       this.animeService.getAnimeById(params.id).subscribe(data => {
-        console.log(data['data'])
         this.animeDetail = data['data'];
       })
     })
