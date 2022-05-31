@@ -17,12 +17,7 @@ export class WatchComponent implements OnInit {
   ngOnInit(): void {
     this.router.params.subscribe(params => {
       this.animeService.getAnimeById(params.id).subscribe(data => {
-        console.log(data['data'])
         this.animeDetail = data['data'];
-        if(!this.animeDetail.trailer.embed_url){
-          console.log("when no trailer is found")
-          console.log(this.sanitizer.bypassSecurityTrustResourceUrl(this.animeDetail.trailer.embed_url)) 
-        }
       })
     })
   }

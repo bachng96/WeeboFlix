@@ -8,7 +8,6 @@ import { Anime } from 'src/app/core/model/app.model';
 })
 export class CaroselComponent implements OnInit {
   ngOnInit(): void {
-    console.log(this.animeData)
   }
   animeData = [
     {
