@@ -4,6 +4,31 @@ import { Observable } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 import { Anime } from '../model/app.model';
 
+enum Type {
+  'tv',
+  'movie',
+  'ova',
+  'special',
+  'ona',
+  'music',
+}
+enum Status {
+  'airing',
+  'complete',
+  'upcoming',
+}
+enum Rating {
+  'g',
+  'pg',
+  'pg13',
+  'r17',
+  'r',
+  'rx',
+}
+enum Sort {
+  'desc',
+  'asc',
+}
 @Injectable({
   providedIn: 'root',
 })
@@ -59,7 +84,7 @@ export class AnimeService {
     return this.http.get(this.BASE_URL + 'top/anime');
   }
 
-  getAnimeByFilter(letter: string, current_page: number) {
+  getAnimeByFilterLetter(letter: string, current_page: number) {
     return this.http.get(
       this.BASE_URL +
         'anime?' +
@@ -71,6 +96,50 @@ export class AnimeService {
     );
   }
 
+  getAnimeByFilter(
+    keyword: string,
+    letter: string,
+    current_page: number,
+    min_score: number,
+    max_score: number,
+    type: Type,
+    status: Status,
+    rating: Rating,
+    genres: string,
+    start_date: string,
+    end_date: string,
+    sort: Sort
+  ) {
+    return this.http.get(
+      this.BASE_URL +
+        'anime?' +
+        'q=' +
+        keyword +
+        '&letter=' +
+        letter +
+        '&page=' +
+        current_page +
+        '&limit=24' +
+        '&min_score=' +
+        min_score +
+        '&max_score=' +
+        max_score +
+        '&type=' +
+        type +
+        '&status=' +
+        status +
+        '&rating=' +
+        rating +
+        '&genres=' +
+        genres +
+        '&start_date=' +
+        start_date +
+        '&end_date=' +
+        end_date +
+        '&sort=' +
+        sort
+    );
+  }
   getRandomAnime() {
     return this.http.get(this.BASE_URL + 'random/anime');
   };

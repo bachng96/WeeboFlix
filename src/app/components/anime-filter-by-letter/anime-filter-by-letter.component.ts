@@ -51,7 +51,7 @@ export class AnimeFilterByLetterComponent implements OnInit {
     this.route.params.subscribe((q) => {
       this.filterKey = q.key;
       this.animeSerivce
-        .getAnimeByFilter(this.filterKey, this.current_page)
+        .getAnimeByFilterLetter(this.filterKey, this.current_page)
         .subscribe((p: Params) => {
           this.filter = p.data;
           this.sumPage = p.pagination.last_visible_page;
@@ -64,7 +64,7 @@ export class AnimeFilterByLetterComponent implements OnInit {
   changeFilter(e) {
     this.filterKey = e;
     this.animeSerivce
-      .getAnimeByFilter(this.filterKey, this.current_page)
+      .getAnimeByFilterLetter(this.filterKey, this.current_page)
       .subscribe((p: Params) => {
         this.filter = p.data;
       });
@@ -72,7 +72,7 @@ export class AnimeFilterByLetterComponent implements OnInit {
   changePage(e) {
     this.current_page = e;
     this.animeSerivce
-      .getAnimeByFilter(this.filterKey, this.current_page)
+      .getAnimeByFilterLetter(this.filterKey, this.current_page)
       .subscribe((p: Params) => {
         this.filter = p.data;
       });
@@ -80,7 +80,7 @@ export class AnimeFilterByLetterComponent implements OnInit {
   onPaginationClick(e) {
     this.current_page = e;
     this.animeSerivce
-      .getAnimeByFilter(this.filterKey, this.current_page)
+      .getAnimeByFilterLetter(this.filterKey, this.current_page)
       .subscribe((p: Params) => {
         this.filter = p.data;
       });

@@ -34,6 +34,7 @@ import { CartComponent } from './share/cart/cart.component';
 import { TimeBoxComponent } from './share/time-box/time-box.component';
 import { AnimeFilterByLetterComponent } from './components/anime-filter-by-letter/anime-filter-by-letter.component';
 import { PaginationComponent } from './layout/pagination/pagination.component';
+import { AnimeFilterComponent } from './components/anime-filter/anime-filter.component';
 import { WatchComponent } from './components/watch/watch.component';
 
 
@@ -58,6 +59,7 @@ import { WatchComponent } from './components/watch/watch.component';
     SpinnerComponent,
     AnimeFilterByLetterComponent,
     PaginationComponent,
+    AnimeFilterComponent,
     ToastsContainerComponent,
     AnimeByTypeComponent,
     CartComponent,

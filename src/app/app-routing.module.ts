@@ -1,3 +1,4 @@
+import { AnimeFilterComponent } from './components/anime-filter/anime-filter.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './core/guard/auth.guard';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'type/:type', component: AnimeByTypeComponent },
   { path: 'watch/:id', component: WatchComponent},
   { path: 'az-list/:key', component: AnimeFilterByLetterComponent },
+  { path: 'filter', component: AnimeFilterComponent },
   {
     path: 'user',
     component: UserComponent,
