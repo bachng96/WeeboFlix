@@ -1,3 +1,9 @@
+<div class="user__header border-bottom border-warning">
+  <div class="user__header--bg"></div>
+  <div class="user__header--text">
+  </div>
+</div>
+<div class="container">
 <div class="text-white">
   <h1>Filter</h1>
   <div class="d-flex justify-content-around">
@@ -5,8 +11,8 @@
       <p>Type</p>
       <div class="dropdown">
         <div class="position-relative">
-          <button class="btn btn-light" (click)="toggle()">All</button>
-          <div class="dropdown-button shadow-lg" *ngIf="show">
+          <button class="btn btn-light" (click)="toggle($event.target.value)" value="type">All</button>
+          <div class="dropdown-button shadow-lg" *ngIf="showType">
             <ul>
               <li (click)="changeStatus($event.target,'type')" value="tv">TV</li>
               <li (click)="changeStatus($event.target,'type')" value="movie">Movie</li>
@@ -23,8 +29,8 @@
       <p>Status</p>
       <div class="dropdown">
         <div class="position-relative">
-          <button class="btn btn-light" (click)="toggle()">All</button>
-          <div class="dropdown-button shadow-lg" *ngIf="show">
+          <button class="btn btn-light" (click)="toggle($event.target.value)" value="status">All</button>
+          <div class="dropdown-button shadow-lg" *ngIf="showStatus">
             <ul>
               <li (click)="changeStatus($event.target,'status')" value="airing">Airing</li>
               <li (click)="changeStatus($event.target,'status')" value="complete">Complete</li>
@@ -46,8 +52,8 @@
       <p>Rating</p>
       <div class="dropdown">
         <div class="position-relative">
-          <button class="btn btn-light" (click)="toggle()">All</button>
-          <div class="dropdown-button shadow-lg" *ngIf="show">
+          <button class="btn btn-light" (click)="toggle($event.target.value)" value="rating">All</button>
+          <div class="dropdown-button shadow-lg" *ngIf="showRating">
             <ul>
               <li (click)="changeStatus($event.target, 'rating')" value="g">g</li>
               <li (click)="changeStatus($event.target, 'rating')" value="pg">pg</li>
@@ -64,8 +70,8 @@
       <p>Sort</p>
       <div class="dropdown">
         <div class="position-relative">
-          <button class="btn btn-light" (click)="toggle()">All</button>
-          <div class="dropdown-button shadow-lg" *ngIf="show">
+          <button class="btn btn-light"(click)="toggle($event.target.value)" value="sort">All</button>
+          <div class="dropdown-button shadow-lg" *ngIf="showSort">
             <ul>
               <li (click)="changeStatus($event.target, 'sort')" value="desc">desc</li>
               <li (click)="changeStatus($event.target, 'sort')" value="asc">asc</li>
@@ -129,11 +135,23 @@
     </form>
 
     <hr/>
-    <pre>From date model: {{ fromDate | json }}</pre>
-    <pre>To date model: {{ toDate | json }}</pre>
-
   </div>
+</div>
+
+<div class="text-white">
+  <h1>Genres</h1>
+  <ul class="d-flex flex-wrap ">
+    <li *ngFor="let item of listGenres" class="mx-2 list-style-none {{(item.show ? 'active' : '')}}" (click)="changeFilter($event.target,item)" [value]="item.mal_id">{{item.name}}</li>
+  </ul>
+</div>
+<div class="text-white">
+  <h1>Search</h1>
+  <input type="text" value="" name="keyword" [(ngModel)]="keyword" />
 </div>
 <div class="">
   <app-anime-list [animeList]="filter"></app-anime-list>
+</div>
+</div>
+<div class="">
+  <ngb-pagination [collectionSize]="totalPages*10" [(page)]=" current_page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="onPaginationClick($event)"></ngb-pagination>
 </div>

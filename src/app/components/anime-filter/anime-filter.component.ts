@@ -49,26 +49,37 @@ export class AnimeFilterComponent implements OnInit {
   status: Status;
   rating: Rating;
   genres: string = '';
-  start_date: string = '1700';
-  end_date: string = '2300';
+  start_date: string;
+  end_date: string;
   sort: Sort;
-  show = false;
+  showType = false;
+  showStatus = false;
+  showRating = false;
+  showSort = false;
   public filter: Anime;
   hoveredDate: NgbDate | null = null;
   fromDate: NgbDate | null;
   toDate: NgbDate | null;
+  keyword: string = '';
+  totalPages: number;
+  public listGenres = [];
+  public genresArr = [];
 
   constructor(
     private animeService: AnimeService,
     private calendar: NgbCalendar,
     public formatter: NgbDateParserFormatter
   ) {
-    this.fromDate = calendar.getToday();
+    this.fromDate = NgbDate.from({ year: 1000, month: 1, day: 1 });
 
-    this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
+    this.toDate = calendar.getToday();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.animeService.getAllGenres().subscribe((p) => {
+      this.listGenres = p;
+    });
+  }
   onDateSelection(date: NgbDate) {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
@@ -114,8 +125,16 @@ export class AnimeFilterComponent implements OnInit {
       ? NgbDate.from(parsed)
       : currentValue;
   }
-  toggle() {
-    this.show = !this.show;
+  toggle(e) {
+    if (e == 'type') {
+      this.showType = !this.showType;
+    } else if (e == 'status') {
+      this.showStatus = !this.showStatus;
+    } else if (e == 'rating') {
+      this.showRating = !this.showRating;
+    } else if (e == 'sort') {
+      this.showSort = !this.showSort;
+    }
   }
   changeStatus(e, b) {
     if (b == 'type') {
@@ -129,8 +148,11 @@ export class AnimeFilterComponent implements OnInit {
     }
   }
   filterAnime() {
+    this.start_date = this.formatter.format(this.fromDate);
+    this.end_date = this.formatter.format(this.toDate);
     this.animeService
       .getAnimeByFilter(
+        this.keyword,
         this.letter,
         this.current_page,
         this.min_score,
@@ -145,9 +167,40 @@ export class AnimeFilterComponent implements OnInit {
       )
       .subscribe((p: Params) => {
         this.filter = p.data;
+        this.totalPages = p.pagination.last_visible_page;
       });
-    console.log(this.formatter.format(this.fromDate));
-
-    console.log(this.formatter.format(this.toDate));
+  }
+  changeFilter(e, item) {
+    if (this.genresArr.indexOf(e.getAttribute('value')) > 0) {
+      this.genresArr.splice(this.genresArr.indexOf(e.getAttribute('value')), 1);
+    } else if (this.genresArr.indexOf(e.getAttribute('value')) == 0) {
+      this.genresArr.pop();
+    } else {
+      this.genresArr.push(e.getAttribute('value'));
+    }
+    this.genres = this.genresArr.join(',');
+    item.show = !item.show;
+  }
+  onPaginationClick(e) {
+    this.current_page = e;
+    this.animeService
+      .getAnimeByFilter(
+        this.keyword,
+        this.letter,
+        this.current_page,
+        this.min_score,
+        this.max_score,
+        this.type,
+        this.status,
+        this.rating,
+        this.genres,
+        this.start_date,
+        this.end_date,
+        this.sort
+      )
+      .subscribe((p: Params) => {
+        this.filter = p.data;
+        this.totalPages = p.pagination.last_visible_page;
+      });
   }
 }

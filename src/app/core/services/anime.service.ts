@@ -73,6 +73,7 @@ export class AnimeService {
   }
 
   getAnimeByFilter(
+    keyword: string,
     letter: string,
     current_page: number,
     min_score: number,
@@ -88,7 +89,9 @@ export class AnimeService {
     return this.http.get(
       this.BASE_URL +
         'anime?' +
-        'letter=' +
+        'q=' +
+        keyword +
+        '&letter=' +
         letter +
         '&page=' +
         current_page +
