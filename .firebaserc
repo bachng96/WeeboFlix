@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "weeboflix-hn22-fr-angular-01": {
+      "hosting": {
+        "weeboflix": [
+          "weeboflix-hn22-fr-angular-01"
+        ]
+      }
+    }
+  }
+}

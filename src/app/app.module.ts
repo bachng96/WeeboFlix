@@ -32,6 +32,10 @@ import { ToastsContainerComponent } from './share/toasts-container/toasts-contai
 import { AnimeByTypeComponent } from './components/anime-by-type/anime-by-type.component';
 import { CartComponent } from './share/cart/cart.component';
 import { TimeBoxComponent } from './share/time-box/time-box.component';
+import { AnimeFilterByLetterComponent } from './components/anime-filter-by-letter/anime-filter-by-letter.component';
+import { PaginationComponent } from './layout/pagination/pagination.component';
+import { WatchComponent } from './components/watch/watch.component';
+
 
 @NgModule({
   declarations: [
@@ -52,10 +56,13 @@ import { TimeBoxComponent } from './share/time-box/time-box.component';
     ProfileComponent,
     WatchListComponent,
     SpinnerComponent,
+    AnimeFilterByLetterComponent,
+    PaginationComponent,
     ToastsContainerComponent,
     AnimeByTypeComponent,
     CartComponent,
     TimeBoxComponent,
+    WatchComponent,
   ],
   imports: [
     BrowserModule,

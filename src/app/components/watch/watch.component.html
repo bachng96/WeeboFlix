@@ -1,0 +1,61 @@
+
+<div class="container-fluid mt-5 watch" *ngIf="animeDetail">
+    <div class="anime-cover-warp">
+        <div class="anime-cover" [ngStyle]="{ 'background-image': 'url('+animeDetail.images.jpg.large_image_url+')'}"></div>
+    </div>
+    <div class="main-container pt-5 d-flex">
+        <div class="ep-container col-xl-3 col-md-4 col-sm-12">
+            <p class="text-white ml-3 mt-2">List of episodes:</p>
+            <div class="ep-list mx-3">
+                <a class="ep-item py-2" *ngFor="let ep of epList" href="">
+                    {{ep}}
+                </a>
+            </div>
+        </div>
+        <div class="vid-container col-xl-6 col-md-8 col-sm-12 px-0">
+            <iframe *ngIf="animeDetail.trailer.embed_url" [src]="embed_url" frameborder="0"></iframe>
+            <div *ngIf="!animeDetail.trailer.embed_url" style="height: 100%;">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="detail-container col-xl-3 col-md-12 col-sm-12">
+            <div class="anime-info-warp py-2 d-flex flex-column justify-content-center">
+                <div class="ani ani-pic">
+                    <img src="{{animeDetail.images.jpg.large_image_url}}" alt="">
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Japaness:</span>
+                    <span class="name">{{animeDetail.title_japanese}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Year Publish:</span>
+                    <span class="name">{{animeDetail.year}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Status:</span>
+                    <span class="name">{{animeDetail.status}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Genres:</span>
+                    <span class="item mr-1" *ngFor="let genre of animeDetail.genres">{{genre.name}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Favorite:</span>
+                    <span class="name">{{animeDetail.favorites}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Season:</span>
+                    <span class="name">{{animeDetail.season}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Rating:</span>
+                    <span class="name">{{animeDetail.rating}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Score:</span>
+                    <span class="name">{{animeDetail.score}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

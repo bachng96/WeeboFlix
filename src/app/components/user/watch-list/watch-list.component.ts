@@ -11,11 +11,6 @@ import { WatchListService } from 'src/app/core/services/watch-list.service';
 export class WatchListComponent implements OnInit {
   public watchList;
   public filter;
-  public watchingList;
-  public onHoldList;
-  public planToWatchList;
-  public droppedList;
-  public completedList;
   constructor(private watchListService: WatchListService) {}
 
   ngOnInit(): void {
