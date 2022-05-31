@@ -66,8 +66,8 @@ input:focus {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 99999;
   cursor: pointer;
-  z-index: 100;
   width: 100%;
   height: 100%;
   background-color: #2a2c3142;
@@ -119,4 +119,29 @@ input:focus {
 }
 .log-out {
   text-align: right;
+}
+
+.wishlist-icon {
+  color: $color-yellow;
+  font-size: 30px;
+  margin-right: 20px;
+  position: relative;
+  top: 5px;
+  cursor: pointer;
+}
+
+.random-btn {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  border-radius: 10rem;
+  font-size: 15px;
+  padding: 0px 8px;
+}
+
+.random-btn:hover {
+  color: $color-yellow;
 }

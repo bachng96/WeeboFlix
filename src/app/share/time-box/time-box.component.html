@@ -1,0 +1,11 @@
+<div class="genres-box p-4">
+  <ul class="pl-0">
+    <li
+      *ngFor="let item of amountTime"
+      class="genres-box--item"
+      (click)="choseItem(item)"
+    >
+      {{ item }}
+    </li>
+  </ul>
+</div>

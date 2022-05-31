@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { tap, map } from 'rxjs/operators';
 import jwtDecode from 'jwt-decode';
 
@@ -10,6 +10,7 @@ export class UserService {
   private baseURL = 'https://reqres.in/';
   private tokenSave = 'token';
   public user = null;
+  toggleNavbar = new EventEmitter();
   constructor(private http: HttpClient) {
     let token = localStorage.getItem(this.tokenSave);
     if (token) {
@@ -45,5 +46,11 @@ export class UserService {
   isAdmin(): boolean {
     if (this.user && this.user.isAdmin) return true;
     return false;
+  }
+  checkLogin(next) {
+    if (this.isLogin() === false) {
+      this.toggleNavbar.emit('open login form');
+    }
+    next();
   }
 }

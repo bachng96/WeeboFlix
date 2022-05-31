@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
+import { Anime } from '../model/app.model';
 
 enum Type {
   'tv',
@@ -32,7 +34,7 @@ enum Sort {
 })
 export class AnimeService {
   private BASE_URL = 'https://api.jikan.moe/v4/';
-
+  private BASE_URL_V3 = 'https://api.jikan.moe/v3/';
   constructor(private http: HttpClient) {}
 
   getAllAnime() {
@@ -42,7 +44,27 @@ export class AnimeService {
   getAnimeById(id: string) {
     return this.http.get(this.BASE_URL + 'anime/' + id + '/full');
   }
-
+  getAnimeByYear(date_start, type: string, page: number = 1) {
+    return this.http.get<Anime[]>(this.BASE_URL + 'anime?', {
+      params: {
+        start_date: date_start,
+        end_date: date_start + 1,
+        type: type,
+        page: page.toString(),
+      },
+    });
+  }
+  getTopAnimeByType() {
+    return this.http.get(this.BASE_URL_V3 + 'top/anime/1/upcoming');
+  }
+  getAnimeByType(type: string, page: number = 1): Observable<Anime[]> {
+    return this.http.get<Anime[]>(this.BASE_URL + 'anime?', {
+      params: {
+        type: type,
+        page: page.toString(),
+      },
+    });
+  }
   getAllGenres() {
     return this.http.get(this.BASE_URL + 'genres/anime').pipe(
       map((anime) => {
@@ -57,9 +79,11 @@ export class AnimeService {
       })
     );
   }
+
   getTopAnime() {
     return this.http.get(this.BASE_URL + 'top/anime');
   }
+
   getAnimeByFilterLetter(letter: string, current_page: number) {
     return this.http.get(
       this.BASE_URL +
@@ -116,4 +140,8 @@ export class AnimeService {
         sort
     );
   }
+  getRandomAnime() {
+    return this.http.get(this.BASE_URL + 'random/anime');
+  };
+    
 }

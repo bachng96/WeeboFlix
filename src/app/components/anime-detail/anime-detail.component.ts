@@ -14,12 +14,10 @@ export class AnimeDetailComponent implements OnInit {
   constructor(private router: ActivatedRoute, private animeService: AnimeService) { }
 
   ngOnInit(): void {
-    let id = this.router.snapshot.params.id
-    console.log(id)
-    this.animeService.getAnimeById(id).subscribe(data => {
-      this.animeDetail = data['data']
-      console.log(this.animeDetail)
-    })
+    let id = this.router.params.subscribe(params => {
+      this.animeService.getAnimeById(params.id).subscribe(data => {
+        this.animeDetail = data['data'];
+      })})
   }
 
 }

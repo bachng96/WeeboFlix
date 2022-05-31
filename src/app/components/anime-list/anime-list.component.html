@@ -1,8 +1,7 @@
-
 <div class="block_area">
   <div class="block_area-header d-flex justify-content-between">
     <div class="left">
-      <h2 class="ani-list-heading">{{animeHeader}}</h2>
+      <h2 class="ani-list-heading">{{ animeHeader }}</h2>
     </div>
     <div class="right">
       <a
@@ -13,74 +12,119 @@
   </div>
   <div class="tab-content">
     <div class="film_list">
-      <div class="film_list-wrap">
-        <div class="flw-item" *ngFor="let item of animeList; let i = index">
-          <div class="film-poster">
-            <div class="tick ltr">
-              <div class="tick-item tick-dub bg-danger text-white">DUB</div>
-            </div>
-            <div class="tick rtl">
-              <div class="tick-item tick-eps">
-                EP {{ item.episodes }}/{{ item.episodes }}
+      <div class="film_list-wrap d-flex flex-wrap">
+        <div class="row p-0">
+          <div
+            [ngClass]="
+              bigger === 'true'
+                ? ' col-lg-3 col-md-3 col-sm-4 p-1'
+                : ' col-lg-2 col-md-3 col-sm-6 p-1'
+            "
+            *ngFor="let item of animeList; let i = index"
+          >
+            <div class="flw-item">
+              <div class="film-poster">
+                <div class="tick ltr">
+                  <div class="tick-item tick-dub bg-danger text-white">DUB</div>
+                </div>
+                <div class="tick rtl">
+                  <div class="tick-item tick-eps">
+                    EP {{ item.episodes }}/{{ item.episodes }}
+                  </div>
+                </div>
+                <div class="dropdown" *ngIf="dropDown">
+                  <div class="position-relative">
+                    <button class="btn btn-light" (click)="toggle(item)">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-button shadow-lg" *ngIf="item.show">
+                      <ul>
+                        <li
+                          (click)="changeStatus($event.target, item)"
+                          value="watching"
+                        >
+                          Watching
+                        </li>
+                        <li
+                          (click)="changeStatus($event.target, item)"
+                          value="onhold"
+                        >
+                          On-Hold
+                        </li>
+                        <li
+                          (click)="changeStatus($event.target, item)"
+                          value="plantowatch"
+                        >
+                          Plan to watch
+                        </li>
+                        <li
+                          (click)="changeStatus($event.target, item)"
+                          value="dropped"
+                        >
+                          Dropped
+                        </li>
+                        <li
+                          (click)="changeStatus($event.target, item)"
+                          value="completed"
+                        >
+                          Completed
+                        </li>
+                        <li class="text-danger" (click)="remove(item)">
+                          Remove
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="fd-button"
+                  *ngIf="buttonAdd"
+                  (click)="watchListService.addToWatchList(item)"
+                >
+                  <button class="btn btn-light">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <img
+                  class="film-poster-img lazyloaded"
+                  data-src="{{ item.images.jpg.large_image_url }}"
+                  [alt]="item.title"
+                  [src]="item.images.jpg.large_image_url"
+                />
+                <a
+                  class="film-poster-ahref"
+                  routerLink="/details/{{ item.mal_id }}"
+                  [title]="item.title"
+                  ><i class="fas fa-play"></i
+                ></a>
               </div>
-            </div>
-            <div class="dropdown" *ngIf="dropDown">
-              <div class="position-relative">
-              <button class="btn btn-light" (click)="toggle(item)"><i class="fas fa-ellipsis-v"></i></button>
-              <div class="dropdown-button shadow-lg" *ngIf="item.show">
-                <ul>
-                  <li (click)="changeStatus($event.target, item)" value="watching">Watching</li>
-                  <li (click)="changeStatus($event.target, item)" value="onhold">On-Hold</li>
-                  <li (click)="changeStatus($event.target, item)" value="plantowatch">Plan to watch</li>
-                  <li (click)="changeStatus($event.target, item)" value="dropped">Dropped</li>
-                  <li (click)="changeStatus($event.target, item)" value="completed">Completed</li>
-                  <li class="text-danger"  (click)="remove(item)">Remove</li>
-                </ul>
+
+              <div class="film-detail">
+                <h3 class="film-name">
+                  <a
+                    class="dynamic-name"
+                    [href]="item.url"
+                    [title]="item.title"
+                    >{{ item.title }}</a
+                  >
+                </h3>
+
+                <div class="fd-infor">
+                  <span class="fdi-item"> {{ item.type }} </span>
+                  <span class="dot"></span>
+                  <span class="fdi-item fdi-duration">{{ item.duration }}</span>
+                  <span class="dot"></span>
+                  <span class="fdi-item fdi-year">{{ item.year }}</span>
+                </div>
               </div>
-            </div>
-            </div>
-            <div class="fd-button" *ngIf="buttonAdd" (click)="watchListService.addToWatchList(item)">
-              <button class="btn btn-light"><i class="fas fa-plus"></i></button>
-            </div>
-            <img
-              class="film-poster-img lazyloaded"
-              data-src="{{ item.images.jpg.large_image_url }}"
-              [alt]="item.title"
-              [src]="item.images.jpg.large_image_url"
-            />
-            <a
-              class="film-poster-ahref"
-              routerLink="/details/{{ item.mal_id }}"
-              [title]="item.title"
-              ><i class="fas fa-play"></i
-            ></a>
-          </div>
-
-          <div class="film-detail">
-            <h3 class="film-name">
-              <a
-                class="dynamic-name"
-                [href]="item.url"
-                [title]="item.title"
-                >{{ item.title }}</a
-              >
-            </h3>
-
-            <div class="fd-infor">
-              <span class="fdi-item"> {{ item.type }} </span>
-              <span class="dot"></span>
-              <span class="fdi-item fdi-duration">{{ item.duration }}</span>
-              <span class="dot"></span>
-              <span class="fdi-item fdi-year">{{ item.year }}</span>
+              <div class="clearfix"></div>
             </div>
           </div>
-          <div class="clearfix"></div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 <!-- <div class="container-xs">
 
@@ -88,4 +132,3 @@
 
   </div>
 </div> -->
-

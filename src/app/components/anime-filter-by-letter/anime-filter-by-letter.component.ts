@@ -58,12 +58,10 @@ export class AnimeFilterByLetterComponent implements OnInit {
           for (let i = 1; i <= this.sumPage; i++) {
             this.listPage.push(i);
           }
-          console.log(p.pagination.last_visible_page);
         });
     });
   }
   changeFilter(e) {
-    console.log(e);
     this.filterKey = e;
     this.animeSerivce
       .getAnimeByFilterLetter(this.filterKey, this.current_page)
