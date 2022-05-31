@@ -10,10 +10,39 @@
       />
     </a>
 
-    <div class="d-flex bg-white align-items-center">
-      <input type="text" class="input-search p-2" id="usr" />
+    <div class="d-flex bg-white align-items-center search-box">
+      <input
+        type="text"
+        class="input-search p-2"
+        id="usr"
+        [formControl]="search"
+      />
       <i class="fas fa-search"></i>
       <span class="btn btn-secondary btn-filter mx-2">filter</span>
+      <div class="search-box--results" *ngIf="showDropdown">
+        <div class="search-box--list">
+          <div
+            class="search-box--item d-flex"
+            *ngFor="let anime of searchResults"
+            (click)="seeDetail(anime.mal_id)"
+          >
+            <img [src]="anime.images.jpg.large_image_url" />
+            <div class="item--infor align-items-center d-flex">
+              <div>
+                <p>{{ anime.title }}</p>
+                <ul class="d-flex">
+                  <li>{{ anime.aired.from | date: "dd/MM/yyyy" }}</li>
+                  <li>{{ anime.type }}</li>
+                  <li>{{ anime.duration }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="text-center bg-yellow py-2" (click)="seeAllResult()">
+            View all results
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="random-btn" (click)="getRandomAnime()">
