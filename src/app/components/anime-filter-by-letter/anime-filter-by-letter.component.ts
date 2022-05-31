@@ -40,6 +40,7 @@ export class AnimeFilterByLetterComponent implements OnInit {
   public filter: Anime;
   public filterKey: string = '';
   public sumPage: number;
+  public totalAnime: number;
   public listPage = [];
   public current_page: number = 1;
 
@@ -55,6 +56,7 @@ export class AnimeFilterByLetterComponent implements OnInit {
         .getAnimeByFilterLetter(this.filterKey, this.current_page)
         .subscribe((p: Params) => {
           this.filter = p.data;
+          this.totalAnime = p.pagination.items.total;
           this.sumPage = p.pagination.last_visible_page;
           for (let i = 1; i <= this.sumPage; i++) {
             this.listPage.push(i);

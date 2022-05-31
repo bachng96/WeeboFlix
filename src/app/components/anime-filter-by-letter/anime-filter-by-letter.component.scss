@@ -1,3 +1,4 @@
+@import "../../style/variable";
 .main-container{
   margin: 100px auto;
   width: 70%;
@@ -5,4 +6,12 @@
 li {
   list-style: none;
   padding-right: 5px;
+}
+
+h3{
+  color: $color-yellow;
+}
+.btn:not(:disabled):not(.disabled):focus{
+  background-color:$color-yellow ;
+  border-color: $color-yellow;
 }
