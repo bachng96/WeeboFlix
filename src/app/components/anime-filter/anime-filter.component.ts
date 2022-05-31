@@ -1,6 +1,12 @@
 import { AnimeService } from 'src/app/core/services/anime.service';
 import { Component, OnInit } from '@angular/core';
-import { Anime } from 'src/app/core/model/app.model';
+import {
+  Anime,
+  Rating,
+  Sort,
+  Status,
+  Type,
+} from 'src/app/core/model/app.model';
 import { Params } from '@angular/router';
 
 import {
@@ -8,32 +14,6 @@ import {
   NgbDate,
   NgbDateParserFormatter,
 } from '@ng-bootstrap/ng-bootstrap';
-
-enum Type {
-  'tv',
-  'movie',
-  'ova',
-  'special',
-  'ona',
-  'music',
-}
-enum Status {
-  'airing',
-  'complete',
-  'upcoming',
-}
-enum Rating {
-  'g',
-  'pg',
-  'pg13',
-  'r17',
-  'r',
-  'rx',
-}
-enum Sort {
-  'desc',
-  'asc',
-}
 
 @Component({
   selector: 'app-anime-filter',

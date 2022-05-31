@@ -42,6 +42,7 @@ export class AnimeFilterByLetterComponent implements OnInit {
   public sumPage: number;
   public listPage = [];
   public current_page: number = 1;
+
   constructor(
     private animeSerivce: AnimeService,
     private route: ActivatedRoute
@@ -61,14 +62,6 @@ export class AnimeFilterByLetterComponent implements OnInit {
         });
     });
   }
-  changeFilter(e) {
-    this.filterKey = e;
-    this.animeSerivce
-      .getAnimeByFilterLetter(this.filterKey, this.current_page)
-      .subscribe((p: Params) => {
-        this.filter = p.data;
-      });
-  }
   changePage(e) {
     this.current_page = e;
     this.animeSerivce
@@ -76,6 +69,7 @@ export class AnimeFilterByLetterComponent implements OnInit {
       .subscribe((p: Params) => {
         this.filter = p.data;
       });
+    console.log(e);
   }
   onPaginationClick(e) {
     this.current_page = e;
