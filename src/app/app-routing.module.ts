@@ -1,3 +1,4 @@
+import { AnimeFilterComponent } from './components/anime-filter/anime-filter.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'details/:id', component: AnimeDetailComponent },
   { path: 'az-list/:key', component: AnimeFilterByLetterComponent },
+  { path: 'filter', component: AnimeFilterComponent },
   {
     path: 'user',
     component: UserComponent,

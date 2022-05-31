@@ -29,6 +29,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpinnerComponent } from './layout/spinner/spinner.component';
 import { AnimeFilterByLetterComponent } from './components/anime-filter-by-letter/anime-filter-by-letter.component';
 import { PaginationComponent } from './layout/pagination/pagination.component';
+import { AnimeFilterComponent } from './components/anime-filter/anime-filter.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { PaginationComponent } from './layout/pagination/pagination.component';
     SpinnerComponent,
     AnimeFilterByLetterComponent,
     PaginationComponent,
+    AnimeFilterComponent,
   ],
   imports: [
     BrowserModule,
