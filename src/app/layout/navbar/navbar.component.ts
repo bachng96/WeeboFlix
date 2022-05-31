@@ -4,7 +4,6 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AnimeService } from 'src/app/core/services/anime.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { LoginFormComponent } from './login-form/login-form.component';
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',

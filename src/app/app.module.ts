@@ -26,10 +26,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
-import { AnimeFilterByLetterComponent } from './components/anime-filter-by-letter/anime-filter-by-letter.component';
-import { PaginationComponent } from './layout/pagination/pagination.component';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpinnerComponent } from './share/spinner/spinner.component';
 import { ToastsContainerComponent } from './share/toasts-container/toasts-container.component';
+import { AnimeByTypeComponent } from './components/anime-by-type/anime-by-type.component';
+import { CartComponent } from './share/cart/cart.component';
+import { TimeBoxComponent } from './share/time-box/time-box.component';
+import { AnimeFilterByLetterComponent } from './components/anime-filter-by-letter/anime-filter-by-letter.component';
+import { PaginationComponent } from './layout/pagination/pagination.component';
 import { WatchComponent } from './components/watch/watch.component';
 
 
@@ -55,6 +59,9 @@ import { WatchComponent } from './components/watch/watch.component';
     AnimeFilterByLetterComponent,
     PaginationComponent,
     ToastsContainerComponent,
+    AnimeByTypeComponent,
+    CartComponent,
+    TimeBoxComponent,
     WatchComponent,
   ],
   imports: [
@@ -68,6 +75,7 @@ import { WatchComponent } from './components/watch/watch.component';
     NgbModule,
     NgbCarouselModule,
     SwiperModule,
+    NgbPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

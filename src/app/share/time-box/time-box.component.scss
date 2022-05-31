@@ -1,0 +1,47 @@
+li:nth-of-type(7n + 1) {
+  color: #d0e6a5;
+}
+li:nth-of-type(7n + 2) {
+  color: #ffdd95;
+}
+li:nth-of-type(7n + 3) {
+  color: #fc887b;
+}
+li:nth-of-type(7n + 4) {
+  color: #ccabda;
+}
+li:nth-of-type(7n + 5) {
+  color: #abccd8;
+}
+li:nth-of-type(7n + 6) {
+  color: #d8b2ab;
+}
+li:nth-of-type(7n + 7) {
+  color: #86e3ce;
+}
+.genres-box {
+  width: 100%;
+  background: #2a2c31;
+  &--item {
+    cursor: pointer;
+  }
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+li {
+  flex-basis: 30%;
+  display: block;
+  padding: 9px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 500;
+}
