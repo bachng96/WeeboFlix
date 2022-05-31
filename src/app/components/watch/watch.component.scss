@@ -1,4 +1,91 @@
 iframe {
-    height: 360px;
-    width: 720px;
+    height: 100%;
+    width: 100%;
+}
+
+.watch {
+    height: 90vh;
+}
+
+.anime-cover {
+    height: 80vh;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(20px);
+    opacity: .35;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.main-container {
+    position: relative;
+    height: 90%;
+}
+
+.ep-container {
+    min-width: 20%;
+    max-width: 25%;
+    background-color: #27282b;
+    max-height: 100%;
+}
+
+.vid-container {
+    height: 100%;
+    background-color: black;
+}
+
+.ep-item {
+    display: inline-block;
+    cursor: pointer;
+    width: calc(20% - 4px);
+    background-color: #35373d;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    margin: 2px;
+}
+
+.item {
+    font-size: 12px;
+    font-family: arial;
+    font-weight: 600;
+    display: inline-block;
+    line-height: 1.2em;
+    padding: 2px 4px;
+    border-radius: 5px;
+    background: #fff;
+    margin-bottom: 5px;
+}
+
+.ani-pic img {
+    width: 50%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.ani {
+    font-size: 13px;
+    line-height: 1.4em;
+    margin-bottom: 10px;
+}
+
+.ani-head {
+    font-weight: 750;
+    margin-right: 5px;
+    color: #fff;
+}
+
+.ani > .name {
+    color: white;
+}
+
+.name {
+    font-weight: 200;
+    margin-right: 5px;
+    color: #212529;
 }
