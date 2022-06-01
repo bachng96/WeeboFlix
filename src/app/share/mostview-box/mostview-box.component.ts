@@ -11,6 +11,10 @@ import { WatchListService } from 'src/app/core/services/watch-list.service';
 export class MostviewBoxComponent implements OnInit {
   topAnime;
   filter = 'score';
+  score = false;
+  scored_by = false;
+  favorites = false;
+  flag: string;
   constructor(
     private animeService: AnimeService,
     public watchListService: WatchListService
@@ -27,6 +31,28 @@ export class MostviewBoxComponent implements OnInit {
     this.filter = e.getAttribute('value');
     this.topAnime.sort(this.dynamicSort(`${this.filter}`));
     this.topAnime = this.topAnime.slice(0, 10);
+    if (e.getAttribute('value') == 'score' && this.flag != 'score') {
+      this.flag = 'score';
+      this.score = !this.score;
+      this.scored_by = false;
+      this.favorites = false;
+    } else if (
+      e.getAttribute('value') == 'scored_by' &&
+      this.flag != 'scored_by'
+    ) {
+      this.flag = 'scored_by';
+      this.scored_by = !this.scored_by;
+      this.favorites = false;
+      this.score = false;
+    } else if (
+      e.getAttribute('value') == 'favorites' &&
+      this.flag != 'favorites'
+    ) {
+      this.flag = 'favorites';
+      this.favorites = !this.favorites;
+      this.scored_by = false;
+      this.score = false;
+    }
   }
   dynamicSort(property) {
     var sortOrder = 1;

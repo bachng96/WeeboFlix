@@ -1,3 +1,4 @@
+import { AnimeByGenresComponent } from './components/anime-by-genres/anime-by-genres.component';
 import { AnimeFilterComponent } from './components/anime-filter/anime-filter.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -16,7 +17,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'details/:id', component: AnimeDetailComponent },
   { path: 'type/:type', component: AnimeByTypeComponent },
-  { path: 'watch/:id', component: WatchComponent},
+  { path: 'genres/:genres', component: AnimeByGenresComponent },
+  { path: 'watch/:id', component: WatchComponent },
+  { path: 'az-list', component: AnimeFilterByLetterComponent },
   { path: 'az-list/:key', component: AnimeFilterByLetterComponent },
   { path: 'filter', component: AnimeFilterComponent },
   {
