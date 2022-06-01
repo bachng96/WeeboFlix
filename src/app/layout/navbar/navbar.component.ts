@@ -31,8 +31,7 @@ export class NavbarComponent implements OnInit {
     private modalService: NgbModal,
     public userService: UserService,
     private router: Router,
-    private animeService: AnimeService,
-    private http: HttpClient
+    private animeService: AnimeService
   ) {}
 
   ngOnInit(): void {
@@ -72,7 +71,8 @@ export class NavbarComponent implements OnInit {
     });
   }
   seeAllResult() {
-    console.log(this.searchKeyword);
+    this.router.navigateByUrl('/type/params-' + this.searchKeyword);
+    this.showDropdown = false;
   }
   @HostListener('window:scroll', ['$event']) onScroll(event) {
     let element = document.querySelector('.navbar') as HTMLElement;

@@ -1,0 +1,157 @@
+<div class="user__header border-bottom border-warning">
+  <div class="user__header--bg"></div>
+  <div class="user__header--text">
+  </div>
+</div>
+<div class="container">
+<div class="text-white">
+  <h1>Filter</h1>
+  <div class="d-flex justify-content-around">
+    <div class="d-flex">
+      <p>Type</p>
+      <div class="dropdown">
+        <div class="position-relative">
+          <button class="btn btn-light" (click)="toggle($event.target.value)" value="type">All</button>
+          <div class="dropdown-button shadow-lg" *ngIf="showType">
+            <ul>
+              <li (click)="changeStatus($event.target,'type')" value="tv">TV</li>
+              <li (click)="changeStatus($event.target,'type')" value="movie">Movie</li>
+              <li (click)="changeStatus($event.target,'type')" value="ova">Ova</li>
+              <li (click)="changeStatus($event.target,'type')" value="special">Special</li>
+              <li (click)="changeStatus($event.target,'type')" value="ona">Ona</li>
+              <li (click)="changeStatus($event.target,'type')" value="music">Music</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex">
+      <p>Status</p>
+      <div class="dropdown">
+        <div class="position-relative">
+          <button class="btn btn-light" (click)="toggle($event.target.value)" value="status">All</button>
+          <div class="dropdown-button shadow-lg" *ngIf="showStatus">
+            <ul>
+              <li (click)="changeStatus($event.target,'status')" value="airing">Airing</li>
+              <li (click)="changeStatus($event.target,'status')" value="complete">Complete</li>
+              <li (click)="changeStatus($event.target,'status')" value="upcoming">Up Coming</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex">
+      <p>Min score</p>
+      <input type="number" value="0" name="min_score" [(ngModel)]="min_score" />
+    </div>
+    <div class="d-flex">
+      <p>Max score</p>
+      <input type="number" value="10" name="max_score" [(ngModel)]="max_score"  />
+    </div>
+    <div class="d-flex">
+      <p>Rating</p>
+      <div class="dropdown">
+        <div class="position-relative">
+          <button class="btn btn-light" (click)="toggle($event.target.value)" value="rating">All</button>
+          <div class="dropdown-button shadow-lg" *ngIf="showRating">
+            <ul>
+              <li (click)="changeStatus($event.target, 'rating')" value="g">g</li>
+              <li (click)="changeStatus($event.target, 'rating')" value="pg">pg</li>
+              <li (click)="changeStatus($event.target, 'rating')" value="pg13">pg13</li>
+              <li (click)="changeStatus($event.target, 'rating')" value="r17">r17</li>
+              <li (click)="changeStatus($event.target, 'rating')" value="r">r</li>
+              <li (click)="changeStatus($event.target, 'rating')" value="rx">rx</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex">
+      <p>Sort</p>
+      <div class="dropdown">
+        <div class="position-relative">
+          <button class="btn btn-light"(click)="toggle($event.target.value)" value="sort">All</button>
+          <div class="dropdown-button shadow-lg" *ngIf="showSort">
+            <ul>
+              <li (click)="changeStatus($event.target, 'sort')" value="desc">desc</li>
+              <li (click)="changeStatus($event.target, 'sort')" value="asc">asc</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="text-white" (click)="filterAnime()">Filter</button>
+</div>
+<div class="text-white">
+  <h1>Released</h1>
+  <div>
+    <form class="row row-cols-sm-auto">
+      <div class="col-5">
+        <div class="dp-hidden position-absolute">
+          <div class="input-group">
+            <input name="datepicker"
+                   class="form-control"
+                   ngbDatepicker
+                   #datepicker="ngbDatepicker"
+                   [autoClose]="'outside'"
+                   (dateSelect)="onDateSelection($event)"
+                   [displayMonths]="2"
+                   [dayTemplate]="t"
+                   outsideDays="hidden"
+                   [startDate]="fromDate!"
+                   tabindex="-1">
+            <ng-template #t let-date let-focused="focused">
+              <span class="custom-day"
+                    [class.focused]="focused"
+                    [class.range]="isRange(date)"
+                    [class.faded]="isHovered(date) || isInside(date)"
+                    (mouseenter)="hoveredDate = date"
+                    (mouseleave)="hoveredDate = null">
+                {{ date.day }}
+              </span>
+            </ng-template>
+          </div>
+        </div>
+        <div class="input-group">
+          <input #dpFromDate
+                 class="form-control" placeholder="yyyy-mm-dd"
+                 name="dpFromDate"
+                 [value]="formatter.format(fromDate)"
+                 (input)="fromDate = validateInput(fromDate, dpFromDate.value)">
+          <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="input-group">
+          <input #dpToDate
+                 class="form-control" placeholder="yyyy-mm-dd"
+                 name="dpToDate"
+                 [value]="formatter.format(toDate)"
+                 (input)="toDate = validateInput(toDate, dpToDate.value)">
+          <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>
+        </div>
+      </div>
+    </form>
+
+    <hr/>
+  </div>
+</div>
+
+<div class="text-white">
+  <h1>Genres</h1>
+  <ul class="d-flex flex-wrap ">
+    <li *ngFor="let item of listGenres" class="mx-2 list-style-none {{(item.show ? 'active' : '')}}" (click)="changeFilter($event.target,item)" [value]="item.mal_id">{{item.name}}</li>
+  </ul>
+</div>
+<div class="text-white">
+  <h1>Search</h1>
+  <input type="text" value="" name="keyword" [(ngModel)]="keyword" />
+</div>
+<div class="">
+  <app-anime-list [animeList]="filter"></app-anime-list>
+</div>
+</div>
+<div class="">
+  <ngb-pagination [collectionSize]="totalPages*10" [(page)]=" current_page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="onPaginationClick($event)"></ngb-pagination>
+</div>
