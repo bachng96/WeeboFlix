@@ -10,20 +10,23 @@
           <div class="row p-0" *ngIf="listAnimeByType; else spinner">
             <div class="anime-by-type--title col-12">
               <h3 class="mt-4 text-white">
-                Anime {{ type }} <span *ngIf="year"> of {{ year }} </span>({{
+                <span *ngIf="searchByName"
+                  >Search results for "{{ searchKeyword }}"
+                </span>
+                <span *ngIf="!searchByName">Anime {{ type }} </span>
+                <span *ngIf="year"> of {{ year }} </span>({{
                   pagination.items.total
                 }})
               </h3>
             </div>
             <div class="anime-by-type--list">
               <div class="row p-0">
-                <app-anime-list [animeList]="listAnimeDisplayBig" bigger="true">
-                </app-anime-list>
                 <app-anime-list [animeList]="listAnimeByType"></app-anime-list>
               </div>
             </div>
             <ngb-pagination
-              [collectionSize]="120"
+              [collectionSize]="pagination.items.total"
+              *ngIf="pagination.items.total > 5"
               [(page)]="page"
               [maxSize]="5"
               [rotate]="true"
@@ -52,8 +55,6 @@
             <h4 class="genres-title p-3">Genres</h4>
             <app-genres-box></app-genres-box>
           </div>
-
-          <app-mostview-box></app-mostview-box>
         </div>
       </div>
     </div>
