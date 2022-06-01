@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
       () => {
         this.animeService.getAllAnime().subscribe((data: Root) => {
           this.animeList = data.data.slice(0, 12)
+          console.log(this.animeList)
         })
       }
     ,1000)

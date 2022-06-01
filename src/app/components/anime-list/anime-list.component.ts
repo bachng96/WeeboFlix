@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { timer } from 'rxjs';
 import { debounce, debounceTime, map } from 'rxjs/operators';
 import { AnimeService } from 'src/app/core/services/anime.service';
@@ -23,11 +23,11 @@ export class AnimeListComponent implements OnInit {
 
   constructor(
     private animeService: AnimeService,
-    public watchListService: WatchListService
+    public watchListService: WatchListService,
+    private ElByClassName: ElementRef
   ) {}
 
   ngOnInit(): void {
-    console.log(this.animeList);
   }
   remove(item) {
     this.removeItem.emit(item);
@@ -37,5 +37,13 @@ export class AnimeListComponent implements OnInit {
   }
   toggle(item) {
     item.show = !item.show;
+  }
+  over(id) {
+    let el = this.ElByClassName.nativeElement.querySelector(`.${id}`);
+    console.log(el)
+    el.style.display = 'block';
+  }
+  out() {
+
   }
 }

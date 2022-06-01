@@ -13,6 +13,10 @@ export class WatchComponent implements OnInit {
   animeDetail: Anime
   embed_url
   epList = []
+  reviewsList = []
+  reviewsShowList = []
+  isShowAll = false
+
   constructor(private router: ActivatedRoute, private animeService: AnimeService, public sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
@@ -27,9 +31,24 @@ export class WatchComponent implements OnInit {
         for(let i = 0; i < this.animeDetail.episodes; i++) {
           this.epList.push(i + 1)
         }
-        console.log(this.epList)
       }
     })
+
+    this.animeService.getAnimeReviews(id).subscribe(data => {
+      this.reviewsList = data['data'];
+      this.reviewsShowList = this.reviewsList.slice(0, 3)
+      console.log(this.reviewsList)
+    })
+  }
+
+  showAll() {
+    if(this.isShowAll) {
+      this.reviewsShowList = this.reviewsList.slice(0, 3)
+      this.isShowAll = false
+    }else {
+      this.isShowAll = true
+      this.reviewsShowList = this.reviewsList
+    }
   }
   
 }
