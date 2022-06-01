@@ -48,7 +48,7 @@
 .film-poster {
   width: 100%;
   position: relative;
-  overflow: hidden;
+
 }
 
 .film_list .film_list-wrap .flw-item .film-detail {
@@ -70,6 +70,7 @@
   right: 5px;
   z-index: 4;
 }
+
 .fd-button {
   position: absolute;
   top: 5px;
@@ -237,6 +238,6 @@ a {
 .active{
   color: $color-yellow;
 }
-.disabled-dropdown{
-  pointer-events: none;
+.dropdown-toggle::after {
+  display: none;
 }
