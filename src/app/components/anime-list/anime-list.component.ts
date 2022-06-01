@@ -12,7 +12,7 @@ import { Anime, Root } from './../../core/model/app.model';
 })
 export class AnimeListComponent implements OnInit {
   @Input() animeList: Anime[];
-  @Input() bigger: string = 'false';
+  @Input() bigger: boolean = false;
   @Input() animeHeader: string;
   @Input() dropDown: boolean;
   @Input() buttonAdd: boolean;
@@ -35,7 +35,12 @@ export class AnimeListComponent implements OnInit {
   changeStatus(e, item) {
     this.changeWLStatus.emit([e.getAttribute('value'), item]);
   }
-  toggle(item) {
+  toggle(e, item) {
+    e.stopPropagation();
     item.show = !item.show;
+  }
+  addToWatchList(item) {
+    item.show = false;
+    this.watchListService.addToWatchList(item);
   }
 }

@@ -1,4 +1,5 @@
-<div class="block_area">
+
+<div class="block_area"  >
   <div class="block_area-header d-flex justify-content-between">
     <div class="left">
       <h2 class="ani-list-heading">{{ animeHeader }}</h2>
@@ -15,8 +16,8 @@
       <div class="film_list-wrap d-flex flex-wrap">
         <div class="row col-12">
           <div
-            
-            class="col-2 mt-2 px-1"
+
+            class="mt-2 px-1 {{bigger ? 'col-3' : 'col-2'}}"
             *ngFor="let item of animeList; let i = index"
           >
             <div class="flw-item">
@@ -29,54 +30,29 @@
                     EP {{ item.episodes }}/{{ item.episodes }}
                   </div>
                 </div>
-                <div class="dropdown" *ngIf="dropDown">
-                  <div class="position-relative">
-                    <button class="btn btn-light" (click)="toggle(item)">
-                      <i class="fas fa-ellipsis-v"></i>
-                    </button>
-                    <div class="dropdown-button shadow-lg" *ngIf="item.show">
-                      <ul>
-                        <li
-                          (click)="changeStatus($event.target, item)"
-                          value="watching"
-                        >
-                          Watching
-                        </li>
-                        <li
-                          (click)="changeStatus($event.target, item)"
-                          value="onhold"
-                        >
-                          On-Hold
-                        </li>
-                        <li
-                          (click)="changeStatus($event.target, item)"
-                          value="plantowatch"
-                        >
-                          Plan to watch
-                        </li>
-                        <li
-                          (click)="changeStatus($event.target, item)"
-                          value="dropped"
-                        >
-                          Dropped
-                        </li>
-                        <li
-                          (click)="changeStatus($event.target, item)"
-                          value="completed"
-                        >
-                          Completed
-                        </li>
-                        <li class="text-danger" (click)="remove(item)">
-                          Remove
-                        </li>
-                      </ul>
+
+                <div class="col " *ngIf="dropDown">
+                  <div ngbDropdown class="dropDownMenu d-inline-block">
+                    <button type="button" class="btn btn-light" id="dropdownBasic1" ngbDropdownToggle><i class="fas fa-ellipsis-v"></i></button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <button (click)="changeStatus($event.target, item)"
+                      value="watching" class=" {{(item.statusWatchList == 'watching' ) ? 'active' : ''}}" ngbDropdownItem>Watching</button>
+                      <button (click)="changeStatus($event.target, item)"
+                      value="onhold" class="{{(item.statusWatchList == 'onhold') ? 'active' : ''}}" ngbDropdownItem>On-Hold </button>
+                      <button (click)="changeStatus($event.target, item)"
+                      value="plantowatch" class="{{(item.statusWatchList == 'plantowatch') ? 'active' : ''}}" ngbDropdownItem>Plan to watch</button>
+                      <button (click)="changeStatus($event.target, item)"
+                      value="dropped" class="{{(item.statusWatchList == 'dropped') ? 'active' : ''}}" ngbDropdownItem>Dropped</button>
+                      <button (click)="changeStatus($event.target, item)"
+                      value="completed" class="{{(item.statusWatchList == 'completed') ? 'active' : ''}}" ngbDropdownItem>Completed</button>
+                      <button class="text-danger" (click)="remove(item)"  ngbDropdownItem>Remove</button>
                     </div>
                   </div>
                 </div>
                 <div
                   class="fd-button"
                   *ngIf="buttonAdd"
-                  (click)="watchListService.addToWatchList(item)"
+                  (click)="addToWatchList(item)"
                 >
                   <button class="btn btn-light">
                     <i class="fas fa-plus"></i>
