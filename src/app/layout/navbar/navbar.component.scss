@@ -46,7 +46,7 @@ input:focus {
     border-bottom: 1px solid rgba($color-black, 0.8);
   }
   &--item:hover {
-    color: $color-yellow;
+    color: var(--color-primary);
   }
 }
 .btn {
@@ -113,7 +113,7 @@ input:focus {
       margin-top: 10px;
       cursor: pointer;
       &:hover {
-        color: $color-yellow;
+        color: var(--color-primary);
         background-color: rgba($color-dark-2, 0.5);
       }
     }
@@ -123,15 +123,16 @@ input:focus {
   text-align: right;
 }
 .bg-yellow {
-  background-color: $color-yellow;
+  background-color: var(--color-primary);
 }
 .wishlist-icon {
-  color: $color-yellow;
+  color: var(--color-primary);
   font-size: 30px;
   margin-right: 20px;
   position: relative;
   top: 5px;
   cursor: pointer;
+  position: relative;
 }
 
 .random-btn {
@@ -145,8 +146,12 @@ input:focus {
   font-size: 15px;
   padding: 0px 8px;
   &:hover {
-    color: $color-yellow;
+    color: var(--color-primary);
   }
+}
+.btn-login {
+  background-color: var(--color-primary);
+  border: none;
 }
 .search-box {
   position: relative;
@@ -188,4 +193,38 @@ input:focus {
       }
     }
   }
+}
+// -------------------------------------------       dropdown palette    -------------------------------------------
+.dropwdown-palette {
+  color: black;
+  position: relative;
+  top: -4px;
+  transition: all 0.8s;
+  &--color {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    &__yellow {
+      background-color: $color-yellow;
+    }
+    &__green {
+      background-color: #cae962;
+    }
+    &__sky {
+      background-color: skyblue;
+    }
+  }
+  &--btn {
+    margin-top: 10px;
+    text-align: center;
+    padding: 3px 0px;
+    color: white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: var(--color-primary);
+  }
+}
+.active-color {
+  border: 2px solid white;
 }

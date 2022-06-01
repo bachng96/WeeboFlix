@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/core/services/user.service';
-import { ToastrService } from 'ngx-toastr';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastService } from 'src/app/core/services/toast.service';
 @Component({
@@ -11,6 +10,7 @@ import { ToastService } from 'src/app/core/services/toast.service';
 })
 export class LoginFormComponent implements OnInit {
   havaAccount: boolean = true;
+  loading: boolean = false;
   signForm = new FormGroup({
     email: new FormControl('', [
       Validators.required,
@@ -42,10 +42,14 @@ export class LoginFormComponent implements OnInit {
     password: '23424',
   };
   onLogin() {
-    this.userService.login(this.user).subscribe((res) => {
+    this.userService.login(this.signForm.value).subscribe((res) => {
       if (res) {
-        this.activeModal.close('Close click');
-        this.showDanger('Login success !');
+        this.loading = true;
+        setTimeout(() => {
+          this.loading = false;
+          this.activeModal.close('Close click');
+          this.showDanger('Login success !');
+        }, 2000);
       }
     });
   }
@@ -53,6 +57,12 @@ export class LoginFormComponent implements OnInit {
     this.toastService.show(dangerTpl, {
       classname: 'bg-success text-light',
       delay: 3000,
+    });
+  }
+  demoLogin() {
+    this.signForm.setValue({
+      email: 'janet.weaver@reqres.in',
+      password: '23424',
     });
   }
 }

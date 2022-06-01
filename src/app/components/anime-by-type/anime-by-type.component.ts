@@ -13,7 +13,6 @@ export class AnimeByTypeComponent implements OnInit {
   pagination;
   page = 1;
   type: string;
-  listAnimeDisplayBig: Anime[];
   searchByName: boolean = false;
   year: number = null;
   searchKeyword: string = '';
@@ -30,8 +29,6 @@ export class AnimeByTypeComponent implements OnInit {
       this.animeService
         .getAnimeByName(this.searchKeyword)
         .subscribe((res: any) => {
-          console.log(res);
-
           this.pagination = res.pagination;
           this.listAnimeByType = res.data;
         });
@@ -60,7 +57,6 @@ export class AnimeByTypeComponent implements OnInit {
       .getAnimeByType(this.type, this.page)
       .subscribe((res: any) => {
         this.listAnimeByType = res.data;
-        this.listAnimeDisplayBig = res.data.slice(0, 4);
       });
   }
 }

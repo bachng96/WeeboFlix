@@ -7,13 +7,14 @@
 }
 .carousel {
   &--rate {
-    color: $color-yellow;
+    color: var(--color-primary);
     font-weight: 400;
   }
   &--title {
     margin: 20px 0px;
     font-size: 30px;
     font-weight: bold;
+    color: var(--color-primary);
   }
   &-caption {
     margin-top: 100px;
@@ -98,11 +99,11 @@
   }
 
   &--yellow {
-    background-color: $color-yellow;
+    background-color: var(--color-primary);
     color: $color-white;
 
     &::after {
-      background-color: $color-yellow;
+      background-color: var(--color-primary);
     }
   }
 
@@ -129,16 +130,16 @@
   &:link,
   &:visited {
     font-size: 16px;
-    color: $color-yellow;
+    color: var(--color-primary);
     display: inline-block;
     text-decoration: none;
-    border-bottom: 1px solid $color-yellow;
+    border-bottom: 1px solid var(--color-primary);
     padding: 3px;
     transition: all 0.2s;
   }
 
   &:hover {
-    background-color: $color-yellow;
+    background-color: var(--color-primary);
     color: $color-white;
     box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
     transform: translateY(-2px);
@@ -148,4 +149,7 @@
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
     transform: translateY(0);
   }
+}
+.color-primary {
+  background-color: var(--color-primary);
 }

@@ -58,7 +58,25 @@ li.page-item {
   position: relative;
   z-index: 2;
 }
-
+// themes
+.green-theme {
+  --color-primary: #fff;
+  --color: #1a1a1a;
+  --box-color: #fff;
+  --box-shadow: #fff;
+}
+.yellow-theme {
+  --color-primary: #a760ff;
+  --color: #f5f5f5;
+  --box-color: #fff;
+  --box-shadow: #fff;
+}
+.sky-theme {
+  --color-primary: #0aa1dd;
+  --color: #f5f5f5;
+  --box-color: #fff;
+  --box-shadow: #fff;
+}
 @import "../node_modules/swiper/swiper-bundle.min.css";
 @import "../node_modules/swiper/swiper.min.css";
 @import "../node_modules/swiper/components/pagination/pagination.min.css";

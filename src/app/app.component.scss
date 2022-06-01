@@ -2,8 +2,9 @@
 .app-container {
   min-height: 100vh;
   display: flex;
+  position: relative;
   flex-direction: column;
-  background-color: black;
+  background-color: $color-dark;
 }
 .bg-black {
   background-color: $color-dark;
@@ -12,5 +13,10 @@
 .toast {
   position: absolute;
   top: 20px;
+  right: 20px;
+}
+.toggle {
+  position: fixed;
+  bottom: 20px;
   right: 20px;
 }

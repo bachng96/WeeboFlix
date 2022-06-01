@@ -1,13 +1,23 @@
-<div class="user mt-5 ">
+<div class="user mt-5">
   <div class="user__header border-bottom border-warning">
     <div class="user__header--bg"></div>
     <div class="user__header--text">
       <h2 class="user__header--name mb-3">
-        Hieu Khac
+        Hi {{ userService.user.first_name }} {{ userService.user.last_name }}
       </h2>
       <div>
-        <a class="user__header--menu px-3" routerLink="profile" routerLinkActive="active">Profile</a>
-        <a class="user__header--menu px-3" routerLink="watch-list" routerLinkActive="active">Watch List</a>
+        <a
+          class="user__header--menu px-3"
+          routerLink="profile"
+          routerLinkActive="active"
+          >Profile</a
+        >
+        <a
+          class="user__header--menu px-3"
+          routerLink="watch-list"
+          routerLinkActive="active"
+          >Watch List</a
+        >
       </div>
     </div>
   </div>
@@ -16,4 +26,3 @@
     <router-outlet></router-outlet>
   </div>
 </div>
-

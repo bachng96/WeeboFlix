@@ -1,37 +1,34 @@
-li{
+li {
   list-style: none;
   margin: 0 20px;
 }
-img{
+img {
   width: 4rem;
 }
-.box{
-
+.box {
   color: white;
   width: 100%;
 }
-h2{
-  color: #faa309;
+h2 {
+  color: var(--color-primary);
 }
-.box-number{
-  border-bottom: 5px solid #faa309;
+.box-number {
+  border-bottom: 5px solid var(--color-primary);
   font-size: 25px;
-
 }
-.box-filter{
+.box-filter {
   background-color: #3d3e44;
 }
 
-.box-content li{
+.box-content li {
   background-color: #2a2c31;
   margin: 0 0;
   padding: 0 20px;
   border-bottom: 2px groove black;
 }
-h4{
+h4 {
   font-size: 16px;
 }
-button{
+button {
   margin-bottom: 0;
 }
-

@@ -21,10 +21,11 @@ export class UserService {
   }
   login(user) {
     return this.http.post(`${this.baseURL}api/login`, user).pipe(
-      map(
-        (res) =>
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbmV0LndlYXZlckByZXFyZXMuaW4iLCJmaXJzdF9uYW1lIjoiSmFuZXQiLCJsYXN0X25hbWUiOiJXZWF2ZXIiLCJpZCI6IjEiLCJpc0FkbWluIjpmYWxzZSwiYXZhdGFyIjoiaHR0cHM6Ly9yZXFyZXMuaW4vaW1nL2ZhY2VzLzItaW1hZ2UuanBnIiwiaWF0IjoxNTE2MjM5MDIyfQ.0Cg8VeRdMrMRjUw0D4W8hYENjNSu5pHzIlseUWKyPik'
-      ),
+      map((res) => {
+        console.log(res);
+
+        return 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbmV0LndlYXZlckByZXFyZXMuaW4iLCJmaXJzdF9uYW1lIjoiSmFuZXQiLCJsYXN0X25hbWUiOiJXZWF2ZXIiLCJpZCI6IjEiLCJpc0FkbWluIjpmYWxzZSwiYXZhdGFyIjoiaHR0cHM6Ly9yZXFyZXMuaW4vaW1nL2ZhY2VzLzItaW1hZ2UuanBnIiwiaWF0IjoxNTE2MjM5MDIyfQ.0Cg8VeRdMrMRjUw0D4W8hYENjNSu5pHzIlseUWKyPik';
+      }),
       tap((token: string) => {
         let decode = jwtDecode(token);
         this.user = decode;
