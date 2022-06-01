@@ -32,11 +32,11 @@ import { ToastsContainerComponent } from './share/toasts-container/toasts-contai
 import { AnimeByTypeComponent } from './components/anime-by-type/anime-by-type.component';
 import { TimeBoxComponent } from './share/time-box/time-box.component';
 import { AnimeFilterByLetterComponent } from './components/anime-filter-by-letter/anime-filter-by-letter.component';
-import { PaginationComponent } from './layout/pagination/pagination.component';
 import { AnimeFilterComponent } from './components/anime-filter/anime-filter.component';
 import { WatchComponent } from './components/watch/watch.component';
 import { ButtonComponent } from './share/button/button.component';
 import { ToggleComponent } from './share/toggle/toggle.component';
+import { AnimeByGenresComponent } from './components/anime-by-genres/anime-by-genres.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +58,6 @@ import { ToggleComponent } from './share/toggle/toggle.component';
     WatchListComponent,
     SpinnerComponent,
     AnimeFilterByLetterComponent,
-    PaginationComponent,
     AnimeFilterComponent,
     ToastsContainerComponent,
     AnimeByTypeComponent,

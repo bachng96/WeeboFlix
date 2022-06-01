@@ -17,10 +17,13 @@ export class HomeComponent implements OnInit {
   }
 
   getAnimeList() {
-    setTimeout(() => {
-      this.animeService.getAllAnime().subscribe((data: Root) => {
-        this.animeList = data.data.slice(0, 12);
-      });
-    }, 2000);
+    setTimeout(
+      () => {
+        this.animeService.getAllAnime().subscribe((data: Root) => {
+          this.animeList = data.data.slice(0, 12)
+          console.log(this.animeList)
+        })
+      }
+    ,1000)
   }
 }

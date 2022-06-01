@@ -39,8 +39,12 @@ iframe {
 }
 
 .ep-list {
-    max-height: 100%;
+    max-height: 85%;
     overflow: scroll;
+}
+
+.ep-list::-webkit-scrollbar {
+    display: none;
 }
 
 .ep-item {
@@ -94,3 +98,27 @@ iframe {
     margin-right: 5px;
     color: #212529;
 }
+
+.reviews-body-item-head-left img{
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+}
+
+.text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .reviews-body {
+      background-color: #212529;
+  }
+
+  .reviews-head {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+  }

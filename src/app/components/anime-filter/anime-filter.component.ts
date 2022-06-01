@@ -50,7 +50,7 @@ export class AnimeFilterComponent implements OnInit {
     private calendar: NgbCalendar,
     public formatter: NgbDateParserFormatter
   ) {
-    this.fromDate = NgbDate.from({ year: 1000, month: 1, day: 1 });
+    this.fromDate = NgbDate.from({ year: 2000, month: 1, day: 1 });
 
     this.toDate = calendar.getToday();
   }
@@ -58,6 +58,10 @@ export class AnimeFilterComponent implements OnInit {
   ngOnInit(): void {
     this.animeService.getAllGenres().subscribe((p) => {
       this.listGenres = p;
+    });
+    this.animeService.getAllAnime().subscribe((p: Params) => {
+      this.filter = p.data;
+      this.totalPages = p.pagination.last_visible_page;
     });
   }
   onDateSelection(date: NgbDate) {

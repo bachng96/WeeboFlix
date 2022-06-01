@@ -16,10 +16,13 @@ export class WatchListComponent implements OnInit {
   ngOnInit(): void {
     this.watchList = this.watchListService.getWatchList();
     this.watchList.map((item) => {
-      item.statusWatchList = '';
+      if (item.statusWatchList) {
+      } else {
+        item.statusWatchList = '';
+      }
     });
     this.filter = this.watchList;
-    console.log(this.filter);
+    console.log(this.watchList);
   }
   removeItem(e) {
     this.watchListService.removeWatchListItem(e);
@@ -27,9 +30,11 @@ export class WatchListComponent implements OnInit {
   changeStatus(e) {
     let index = this.watchList.findIndex((c) => c.mal_id == e[1].mal_id);
     this.watchList[index].statusWatchList = e[0];
+    this.watchListService.updateToWatchList(this.watchList);
     this.filter = this.watchList;
   }
   showStatusView(e) {
+    this.watchList = this.watchListService.getWatchList();
     this.filter = this.watchList;
     this.filter = this.filter.filter((item) => item.statusWatchList == e);
   }
