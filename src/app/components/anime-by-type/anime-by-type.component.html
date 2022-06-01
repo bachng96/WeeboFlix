@@ -19,11 +19,11 @@
                 }})
               </h3>
             </div>
-            <div class="anime-by-type--list">
-              <div class="row p-0">
-                <app-anime-list [animeList]="listAnimeDisplayBig" bigger="true">
-                </app-anime-list>
-                <app-anime-list [animeList]="listAnimeByType"></app-anime-list>
+            <div class="anime-by-type--list w-100">
+              <div class="">
+
+                <app-anime-list [animeList]="listAnimeDisplayBig" [bigger]="true"></app-anime-list>
+                <app-anime-list [animeList]="listAnimeByType" [bigger]="false"></app-anime-list>
               </div>
             </div>
             <ngb-pagination
@@ -56,6 +56,10 @@
           <div>
             <h4 class="genres-title p-3">Genres</h4>
             <app-genres-box></app-genres-box>
+          </div>
+          <div>
+            <h4 class="genres-title p-3">Top Box</h4>
+            <app-mostview-box></app-mostview-box>
           </div>
         </div>
       </div>
