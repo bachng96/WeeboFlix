@@ -46,9 +46,17 @@ export class AnimeService {
     return this.http.get(this.BASE_URL_V3 + 'top/anime/1/upcoming');
   }
   getAnimeByType(type: string, page: number = 1): Observable<Anime[]> {
-    return this.http.get<Anime[]>(this.BASE_URL + 'anime?', {
+    return this.http.get<Anime[]>(this.BASE_URL + 'anime?limit=24&', {
       params: {
         type: type,
+        page: page.toString(),
+      },
+    });
+  }
+  getAnimeByGenres(genres: string, page: number = 1): Observable<Anime[]> {
+    return this.http.get<Anime[]>(this.BASE_URL + 'anime?limit=24&', {
+      params: {
+        genres: genres,
         page: page.toString(),
       },
     });

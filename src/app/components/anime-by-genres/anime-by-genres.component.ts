@@ -21,12 +21,14 @@ export class AnimeByGenresComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.type = this.route.snapshot.params['type'];
-    this.animeService.getAnimeByType(this.type).subscribe((res: any) => {
-      this.pagination = res.pagination;
-
-      this.listAnimeByType = res.data;
-      this.listAnimeDisplayBig = res.data.slice(0, 4);
+    this.route.params.subscribe((p) => {
+      console.log(p.genres);
+      this.type = p.genres.toString();
+      this.animeService.getAnimeByGenres(this.type).subscribe((res: any) => {
+        this.pagination = res.pagination;
+        this.listAnimeByType = res.data;
+        this.listAnimeDisplayBig = res.data.slice(0, 4);
+      });
     });
   }
   animeByYear(e) {
@@ -37,6 +39,7 @@ export class AnimeByGenresComponent implements OnInit {
       .subscribe((res: any) => {
         this.pagination = res.pagination;
         this.listAnimeByType = res.data;
+        this.listAnimeDisplayBig = res.data.slice(0, 4);
       });
   }
   logPage() {
