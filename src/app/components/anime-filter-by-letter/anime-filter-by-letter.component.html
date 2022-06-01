@@ -1,22 +1,18 @@
 <div class="d-flex flex-column ">
 <div class="main-container ">
   <div class="d-flex">
-    <a routerLink="/home" class="text-decoration-none">Home</a>
-    <p>A-Z List</p>
+    <a routerLink="/home" class="text-decoration-none text-white">Home</a>
   </div>
-  <h3>Sort By Letters (**** Anime)</h3>
+  <h3>Sort By Letters ({{totalAnime}} Anime)</h3>
   <ul class="row">
-    <li class=""><button class="btn btn-secondary">All</button></li>
-    <li><button class="btn btn-secondary">0-9</button></li>
-    <li *ngFor="let item of alphabet"><button class="btn btn-secondary" value="{{item}}" (click)="changeFilter($event.target.value)">{{item | uppercase}}</button></li>
+    <li class=""><button class="btn btn-secondary mt-2">All</button></li>
+    <li *ngFor="let item of alphabet"><button class="btn btn-secondary btn-custom mt-2" value="{{item}}" routerLink="/az-list/{{item}}" >{{item | uppercase}}</button></li>
   </ul>
   <div>
     <app-anime-list [animeList]="filter" ></app-anime-list>
   </div>
-
-
 </div>
 <div class="">
-  <ngb-pagination [collectionSize]="120" [(page)]=" current_page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="onPaginationClick($event)"></ngb-pagination>
+  <ngb-pagination [collectionSize]="sumPage*10" [(page)]=" current_page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="onPaginationClick($event)"></ngb-pagination>
 </div>
 </div>

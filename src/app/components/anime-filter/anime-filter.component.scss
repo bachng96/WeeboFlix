@@ -56,5 +56,40 @@ li{
   list-style: none;
 }
 .active{
-  color: red;
+  color: $color-yellow;
+}
+.container{
+  background-color: $color-dark-1;
+  border-radius: 15px;
+}
+.btn-custom{
+  background-color: $color-dark-1;
+  border: none;
+  color: $color-yellow;
+  margin-left: 5px;
+}
+.input-score input{
+  width: 5rem;
+  color: $color-yellow;
+}
+.input-score p{
+  white-space: nowrap;
+  margin-right: 5px;
+}
+.filter-item{
+  border: 1px solid #575a64;
+  border-radius: 5px;
+  padding: 7px;
+}
+.datepicker-input{
+}
+h1{
+
+  color: $color-yellow;
+}
+
+.btn-filter{
+  background-color: $color-yellow;
+  color: black;
+  font-weight: bold;
 }

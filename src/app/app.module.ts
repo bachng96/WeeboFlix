@@ -36,6 +36,7 @@ import { AnimeFilterByLetterComponent } from './components/anime-filter-by-lette
 import { PaginationComponent } from './layout/pagination/pagination.component';
 import { AnimeFilterComponent } from './components/anime-filter/anime-filter.component';
 import { WatchComponent } from './components/watch/watch.component';
+import { AnimeByGenresComponent } from './components/anime-by-genres/anime-by-genres.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { WatchComponent } from './components/watch/watch.component';
     CartComponent,
     TimeBoxComponent,
     WatchComponent,
+    AnimeByGenresComponent,
   ],
   imports: [
     BrowserModule,
