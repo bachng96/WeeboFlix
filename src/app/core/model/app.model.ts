@@ -197,3 +197,29 @@ export interface User {
 export interface WatchList {
   image: string;
 }
+
+export enum Type {
+  'tv',
+  'movie',
+  'ova',
+  'special',
+  'ona',
+  'music',
+}
+export enum Status {
+  'airing',
+  'complete',
+  'upcoming',
+}
+export enum Rating {
+  'g',
+  'pg',
+  'pg13',
+  'r17',
+  'r',
+  'rx',
+}
+export enum Sort {
+  'desc',
+  'asc',
+}
