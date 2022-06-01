@@ -3,15 +3,15 @@
   <div class="user__header--text">
   </div>
 </div>
-<div class="container">
-<div class="text-white">
+<div class="container mt-5 pb-5 mb-3">
+<div class="text-white ml-4 pt-4">
   <h1>Filter</h1>
-  <div class="d-flex justify-content-around">
-    <div class="d-flex">
-      <p>Type</p>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center filter-item">
+      <p class="mb-0">Type:</p>
       <div class="dropdown">
         <div class="position-relative">
-          <button class="btn btn-light" (click)="toggle($event.target.value)" value="type">All</button>
+          <button class="btn-custom" (click)="toggle($event.target.value)" value="type">All</button>
           <div class="dropdown-button shadow-lg" *ngIf="showType">
             <ul>
               <li (click)="changeStatus($event.target,'type')" value="tv">TV</li>
@@ -25,11 +25,11 @@
         </div>
       </div>
     </div>
-    <div class="d-flex">
-      <p>Status</p>
+    <div class="d-flex align-items-center filter-item">
+      <p class="mb-0">Status:</p>
       <div class="dropdown">
         <div class="position-relative">
-          <button class="btn btn-light" (click)="toggle($event.target.value)" value="status">All</button>
+          <button class="btn-custom" (click)="toggle($event.target.value)" value="status">All</button>
           <div class="dropdown-button shadow-lg" *ngIf="showStatus">
             <ul>
               <li (click)="changeStatus($event.target,'status')" value="airing">Airing</li>
@@ -40,19 +40,23 @@
         </div>
       </div>
     </div>
-    <div class="d-flex">
-      <p>Min score</p>
-      <input type="number" value="0" name="min_score" [(ngModel)]="min_score" />
+    <div class="d-flex input-score align-items-center ">
+      <p class="mb-0 filter-item">Min score:</p>
+      <div class="input-group">
+        <input class="form-control" type="number" value="0" name="min_score" [(ngModel)]="min_score"  />
+      </div>
     </div>
-    <div class="d-flex">
-      <p>Max score</p>
-      <input type="number" value="10" name="max_score" [(ngModel)]="max_score"  />
+    <div class="d-flex input-score align-items-center ">
+      <p class="mb-0 filter-item">Max score:</p>
+      <div class="input-group">
+        <input class="form-control" type="number" value="10" name="max_score" [(ngModel)]="max_score"  />
+      </div>
     </div>
-    <div class="d-flex">
-      <p>Rating</p>
+    <div class="d-flex align-items-center filter-item">
+      <p class="mb-0">Rating:</p>
       <div class="dropdown">
         <div class="position-relative">
-          <button class="btn btn-light" (click)="toggle($event.target.value)" value="rating">All</button>
+          <button class="btn-custom" (click)="toggle($event.target.value)" value="rating">All</button>
           <div class="dropdown-button shadow-lg" *ngIf="showRating">
             <ul>
               <li (click)="changeStatus($event.target, 'rating')" value="g">g</li>
@@ -66,11 +70,11 @@
         </div>
       </div>
     </div>
-    <div class="d-flex">
-      <p>Sort</p>
+    <div class="d-flex align-items-center filter-item">
+      <p class="mb-0">Sort</p>
       <div class="dropdown">
         <div class="position-relative">
-          <button class="btn btn-light"(click)="toggle($event.target.value)" value="sort">All</button>
+          <button class="btn-custom"(click)="toggle($event.target.value)" value="sort">All</button>
           <div class="dropdown-button shadow-lg" *ngIf="showSort">
             <ul>
               <li (click)="changeStatus($event.target, 'sort')" value="desc">desc</li>
@@ -81,9 +85,8 @@
       </div>
     </div>
   </div>
-  <button class="text-white" (click)="filterAnime()">Filter</button>
 </div>
-<div class="text-white">
+<div class="text-white ml-4 mt-4">
   <h1>Released</h1>
   <div>
     <form class="row row-cols-sm-auto">
@@ -91,7 +94,7 @@
         <div class="dp-hidden position-absolute">
           <div class="input-group">
             <input name="datepicker"
-                   class="form-control"
+                   class="form-control datepicker-input"
                    ngbDatepicker
                    #datepicker="ngbDatepicker"
                    [autoClose]="'outside'"
@@ -138,20 +141,24 @@
   </div>
 </div>
 
-<div class="text-white">
+<div class="text-white ml-4 mt-4">
   <h1>Genres</h1>
   <ul class="d-flex flex-wrap ">
-    <li *ngFor="let item of listGenres" class="mx-2 list-style-none {{(item.show ? 'active' : '')}}" (click)="changeFilter($event.target,item)" [value]="item.mal_id">{{item.name}}</li>
+    <li *ngFor="let item of listGenres" class="mx-2 list-style-none {{(item.show ? 'active' : '')}} filter-item my-2" (click)="changeFilter($event.target,item)" [value]="item.mal_id">{{item.name}}</li>
   </ul>
 </div>
-<div class="text-white">
+<div class="text-white ml-4 mt-4">
   <h1>Search</h1>
-  <input type="text" value="" name="keyword" [(ngModel)]="keyword" />
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search" value="" name="keyword" [(ngModel)]="keyword" />
+  </div>
 </div>
-<div class="">
+<button class="btn btn-filter ml-4 mt-4 text-white" (click)="filterAnime()">Filter</button>
+<div class="mx-1">
   <app-anime-list [animeList]="filter"></app-anime-list>
 </div>
-</div>
-<div class="">
+<div class="" *ngIf="filter">
   <ngb-pagination [collectionSize]="totalPages*10" [(page)]=" current_page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="onPaginationClick($event)"></ngb-pagination>
 </div>
+</div>
+

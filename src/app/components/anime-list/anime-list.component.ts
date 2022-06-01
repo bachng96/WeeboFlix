@@ -26,7 +26,9 @@ export class AnimeListComponent implements OnInit {
     public watchListService: WatchListService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.animeList);
+  }
   remove(item) {
     this.removeItem.emit(item);
   }

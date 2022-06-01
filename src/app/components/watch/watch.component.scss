@@ -38,6 +38,11 @@ iframe {
     background-color: black;
 }
 
+.ep-list {
+    max-height: 100%;
+    overflow: scroll;
+}
+
 .ep-item {
     display: inline-block;
     cursor: pointer;

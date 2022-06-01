@@ -2,33 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
-import { Anime } from '../model/app.model';
+import { Anime, Rating, Sort, Status, Type } from '../model/app.model';
 
-enum Type {
-  'tv',
-  'movie',
-  'ova',
-  'special',
-  'ona',
-  'music',
-}
-enum Status {
-  'airing',
-  'complete',
-  'upcoming',
-}
-enum Rating {
-  'g',
-  'pg',
-  'pg13',
-  'r17',
-  'r',
-  'rx',
-}
-enum Sort {
-  'desc',
-  'asc',
-}
 @Injectable({
   providedIn: 'root',
 })
