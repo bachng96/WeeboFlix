@@ -11,10 +11,10 @@ import { WatchListService } from 'src/app/core/services/watch-list.service';
 export class MostviewBoxComponent implements OnInit {
   topAnime;
   filter = 'score';
-  score = false;
+  score = true;
   scored_by = false;
   favorites = false;
-  flag: string;
+  flag: string = 'score';
   constructor(
     private animeService: AnimeService,
     public watchListService: WatchListService

@@ -15,7 +15,7 @@
       <div class="film_list-wrap d-flex flex-wrap">
         <div class="row col-12">
           <div
-            
+
             class="col-2 mt-2 px-1"
             *ngFor="let item of animeList; let i = index"
           >
@@ -38,31 +38,31 @@
                       <ul>
                         <li
                           (click)="changeStatus($event.target, item)"
-                          value="watching"
+                          value="watching" class="disabled-dropdown  {{(item.statusWatchList == 'watching' ) ? 'active' : ''}}"
                         >
                           Watching
                         </li>
                         <li
                           (click)="changeStatus($event.target, item)"
-                          value="onhold"
+                          value="onhold" class="{{(item.statusWatchList == 'onhold') ? 'active' : ''}}"
                         >
                           On-Hold
                         </li>
                         <li
                           (click)="changeStatus($event.target, item)"
-                          value="plantowatch"
+                          value="plantowatch" class="{{(item.statusWatchList == 'plantowatch') ? 'active' : ''}}"
                         >
                           Plan to watch
                         </li>
                         <li
                           (click)="changeStatus($event.target, item)"
-                          value="dropped"
+                          value="dropped" class="{{(item.statusWatchList == 'dropped') ? 'active' : ''}}"
                         >
                           Dropped
                         </li>
                         <li
                           (click)="changeStatus($event.target, item)"
-                          value="completed"
+                          value="completed" class="{{(item.statusWatchList == 'completed') ? 'active' : ''}}"
                         >
                           Completed
                         </li>

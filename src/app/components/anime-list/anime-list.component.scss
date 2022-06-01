@@ -234,3 +234,9 @@ a {
     }
   }
 }
+.active{
+  color: $color-yellow;
+}
+.disabled-dropdown{
+  pointer-events: none;
+}

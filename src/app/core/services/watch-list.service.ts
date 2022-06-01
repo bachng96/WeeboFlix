@@ -19,6 +19,10 @@ export class WatchListService {
     }
     localStorage.setItem('watchList', JSON.stringify(this.watchList));
   }
+  updateToWatchList(p) {
+    this.watchList = p;
+    localStorage.setItem('watchList', JSON.stringify(this.watchList));
+  }
   getWatchList() {
     return this.watchList;
   }
