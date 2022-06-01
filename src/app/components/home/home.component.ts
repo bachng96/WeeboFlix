@@ -5,24 +5,22 @@ import { AnimeService } from 'src/app/core/services/anime.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  animeList: Anime[]
+  animeList: Anime[];
 
-  constructor(private animeService: AnimeService) { }
+  constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
-    this.getAnimeList()
+    this.getAnimeList();
   }
 
   getAnimeList() {
-    setTimeout(
-      () => {
-        this.animeService.getAllAnime().subscribe((data: Root) => {
-          this.animeList = data.data.slice(0, 12)
-        })
-      }
-    ,1000)
+    setTimeout(() => {
+      this.animeService.getAllAnime().subscribe((data: Root) => {
+        this.animeList = data.data.slice(0, 12);
+      });
+    }, 2000);
   }
 }

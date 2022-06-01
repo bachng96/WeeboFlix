@@ -193,28 +193,7 @@ export interface User {
   avatar: string;
 }
 
-export enum Type {
-  'tv',
-  'movie',
-  'ova',
-  'special',
-  'ona',
-  'music',
-}
-export enum Status {
-  'airing',
-  'complete',
-  'upcoming',
-}
-export enum Rating {
-  'g',
-  'pg',
-  'pg13',
-  'r17',
-  'r',
-  'rx',
-}
-export enum Sort {
-  'desc',
-  'asc',
+// watch list
+export interface WatchList {
+  image: string;
 }
