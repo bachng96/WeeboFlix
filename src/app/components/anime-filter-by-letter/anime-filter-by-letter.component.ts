@@ -43,6 +43,7 @@ export class AnimeFilterByLetterComponent implements OnInit {
   public totalAnime: number;
   public listPage = [];
   public current_page: number = 1;
+  public home: string = '';
 
   constructor(
     private animeSerivce: AnimeService,
@@ -51,10 +52,20 @@ export class AnimeFilterByLetterComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((q) => {
-      this.filterKey = q.key;
-      this.animeSerivce
-        .getAnimeByFilterLetter(this.filterKey, this.current_page)
-        .subscribe((p: Params) => {
+      if (q.key) {
+        this.filterKey = q.key;
+        this.animeSerivce
+          .getAnimeByFilterLetter(this.filterKey, this.current_page)
+          .subscribe((p: Params) => {
+            this.filter = p.data;
+            this.totalAnime = p.pagination.items.total;
+            this.sumPage = p.pagination.last_visible_page;
+            for (let i = 1; i <= this.sumPage; i++) {
+              this.listPage.push(i);
+            }
+          });
+      } else {
+        this.animeSerivce.getAllAnime().subscribe((p: Params) => {
           this.filter = p.data;
           this.totalAnime = p.pagination.items.total;
           this.sumPage = p.pagination.last_visible_page;
@@ -62,6 +73,7 @@ export class AnimeFilterByLetterComponent implements OnInit {
             this.listPage.push(i);
           }
         });
+      }
     });
   }
   changePage(e) {

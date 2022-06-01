@@ -21,7 +21,7 @@
       </p>
     </div>
     <ul class="row">
-      <li class=""><button class="btn btn-secondary btn-letter"><p>All</p></button></li>
+      <li class=""><button class="btn btn-secondary btn-letter" routerLink="az-list"><p>All</p></button></li>
       <li *ngFor="let item of alphabet"><button class="btn btn-secondary btn-letter" routerLink="/az-list/{{item}}" routerLinkActive="router-link-active" ><p>{{item | uppercase}}</p></button></li>
     </ul>
   </div>
