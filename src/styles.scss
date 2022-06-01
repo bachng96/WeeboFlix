@@ -1,4 +1,3 @@
-
 @import "app/style/variable";
 @import "app/style/animation";
 
@@ -18,27 +17,12 @@ $btn-border-radius: 0.25rem;
   padding: 0;
 }
 //custom toast
-.toast-container {
-  padding: 10px;
+.carousel-control-next {
+  z-index: 10;
 }
-
-.toast-container .toast {
+.carousel-control-prev {
+  z-index: 10000000;
 }
-
-.toast-success {
-  background-color: $color-yellow;
-}
-
-.toast-success::after {
-  background-color: $color-yellow;
-}
-
-.toast-title {
-}
-
-.toast-message {
-}
-
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
@@ -49,9 +33,7 @@ $btn-border-radius: 0.25rem;
   background-color: transparent !important;
 }
 
-
-@import '../node_modules/swiper/swiper-bundle.min.css';
-@import '../node_modules/swiper/swiper.min.css';
-@import '../node_modules/swiper/components/pagination/pagination.min.css';
-@import '../node_modules/swiper/components/navigation/navigation.min.css';
-
+@import "../node_modules/swiper/swiper-bundle.min.css";
+@import "../node_modules/swiper/swiper.min.css";
+@import "../node_modules/swiper/components/pagination/pagination.min.css";
+@import "../node_modules/swiper/components/navigation/navigation.min.css";

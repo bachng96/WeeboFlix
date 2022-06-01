@@ -18,6 +18,7 @@
   outline: none;
   border: none;
   height: 80%;
+  width: 300px;
   &:focus {
     outline: none;
   }
@@ -49,6 +50,7 @@ input:focus {
   }
 }
 .btn {
+  cursor: pointer;
   &--rounded {
     background-color: $color-dark-2;
     color: $color-white;
@@ -120,7 +122,9 @@ input:focus {
 .log-out {
   text-align: right;
 }
-
+.bg-yellow {
+  background-color: $color-yellow;
+}
 .wishlist-icon {
   color: $color-yellow;
   font-size: 30px;
@@ -140,8 +144,48 @@ input:focus {
   border-radius: 10rem;
   font-size: 15px;
   padding: 0px 8px;
+  &:hover {
+    color: $color-yellow;
+  }
 }
-
-.random-btn:hover {
-  color: $color-yellow;
+.search-box {
+  position: relative;
+  &--results {
+    position: absolute;
+    top: 37px;
+    left: 0;
+    right: 0;
+  }
+  &--item {
+    border-bottom: 1px rgba($color-white, 0.8) dotted;
+    padding: 5px 5px 0px 5px;
+    color: white;
+    cursor: pointer;
+    background-color: $color-dark-1;
+    & img {
+      width: 55px;
+      height: 65px;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    & .item--infor {
+      & p {
+        font-size: 17px;
+        margin-bottom: 5px;
+        padding: 0;
+        width: 100%;
+        width: 270px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      & ul li {
+        margin-right: 25px;
+        font-weight: 300;
+        &:first-child {
+          list-style: none;
+        }
+      }
+    }
+  }
 }

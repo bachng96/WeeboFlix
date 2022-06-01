@@ -14,7 +14,9 @@ export class AnimeByTypeComponent implements OnInit {
   page = 1;
   type: string;
   listAnimeDisplayBig: Anime[];
+  searchByName: boolean = false;
   year: number = null;
+  searchKeyword: string = '';
   constructor(
     private animeService: AnimeService,
     private route: ActivatedRoute
@@ -22,12 +24,27 @@ export class AnimeByTypeComponent implements OnInit {
 
   ngOnInit(): void {
     this.type = this.route.snapshot.params['type'];
-    this.animeService.getAnimeByType(this.type).subscribe((res: any) => {
-      this.pagination = res.pagination;
+    if (this.type.includes('params-')) {
+      this.searchKeyword = this.type.slice(7, this.type.length);
 
-      this.listAnimeByType = res.data;
-      this.listAnimeDisplayBig = res.data.slice(0, 4);
-    });
+      this.animeService
+        .getAnimeByName(this.searchKeyword)
+        .subscribe((res: any) => {
+          console.log(res);
+
+          this.pagination = res.pagination;
+          this.listAnimeByType = res.data;
+          this.listAnimeDisplayBig = res.data.slice(0, 4);
+        });
+      this.searchByName = true;
+    } else {
+      this.animeService.getAnimeByType(this.type).subscribe((res: any) => {
+        this.searchByName = false;
+        this.pagination = res.pagination;
+        this.listAnimeByType = res.data;
+        this.listAnimeDisplayBig = res.data.slice(0, 4);
+      });
+    }
   }
   animeByYear(e) {
     this.year = e.data;
