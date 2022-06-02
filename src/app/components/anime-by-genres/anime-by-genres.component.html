@@ -10,20 +10,25 @@
           <div class="row p-0" *ngIf="listAnimeByType; else spinner">
             <div class="anime-by-type--title col-12">
               <h3 class="mt-4 text-white">
-                Anime {{ type }} <span *ngIf="year"> of {{ year }} </span>({{
+                Anime <span *ngIf="year"> of {{ year }} </span>({{
                   pagination.items.total
                 }})
               </h3>
             </div>
             <div class="anime-by-type--list w-100">
               <div class="">
-
-                <app-anime-list [animeList]="listAnimeDisplayBig" [bigger]="true"></app-anime-list>
-                <app-anime-list [animeList]="listAnimeByType" [bigger]="false"></app-anime-list>
+                <app-anime-list
+                  [animeList]="listAnimeDisplayBig"
+                  [bigger]="true"
+                ></app-anime-list>
+                <app-anime-list
+                  [animeList]="listAnimeByType"
+                  [bigger]="false"
+                ></app-anime-list>
               </div>
             </div>
             <ngb-pagination
-              [collectionSize]="pagination.last_visible_page*10"
+              [collectionSize]="pagination.last_visible_page * 10"
               [(page)]="page"
               [maxSize]="5"
               [rotate]="true"
