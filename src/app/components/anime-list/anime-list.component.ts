@@ -14,6 +14,7 @@ export class AnimeListComponent implements OnInit {
   @Input() animeList: Anime[];
   @Input() bigger: boolean = false;
   @Input() animeHeader: string;
+  @Input() viewMoreFlag: boolean = false;
   @Input() dropDown: boolean;
   @Input() buttonAdd: boolean;
   @Output() removeItem = new EventEmitter();
