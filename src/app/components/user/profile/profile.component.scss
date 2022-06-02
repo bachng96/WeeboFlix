@@ -24,6 +24,10 @@
 }
 .user-profile {
   position: relative;
+  background-image: url("https://zoro.to/images/zoro-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 60px;
   &--title {
     padding: 20px 0px;
     font-size: 33px;
