@@ -1,8 +1,10 @@
 <div class="user mt-5">
   <div class="user__header border-bottom border-warning">
-    <div class="user__header--bg"></div>
+    <div [ngStyle]="styles"></div>
     <div class="user__header--text">
-      <h2 class="user__header--name mb-3">Hieu Khac</h2>
+      <h2 class="user__header--name mb-3">
+        {{ userService.user.first_name }} {{ userService.user.last_name }}
+      </h2>
       <div>
         <a
           class="user__header--menu px-3"
