@@ -38,6 +38,13 @@
   <button class="login-form--button text-center py-2 mt-5" type="submit">
     Login
   </button>
+  <div class="d-flex justify-content-center">
+    <div class="btn btn-link text-center py-2 mt-2" (click)="demoLogin()">
+      Demo Account
+    </div>
+  </div>
+  <!-- <app-spinner type2="dots" class="mt-2" *ngIf="loading"></app-spinner> -->
+
   <p class="register text-center">
     Dont't have account ?
     <span class="register--link" (click)="havaAccount = false"
@@ -91,6 +98,7 @@
   <button class="login-form--button text-center py-2 mt-5" type="submit">
     Login
   </button>
+
   <p class="register text-center">
     Have Account ?
     <span class="register--link" (click)="havaAccount = true">Login now ?</span>
