@@ -20,7 +20,7 @@
             class="mt-2 px-1 {{bigger ? 'col-3' : 'col-2'}}"
             *ngFor="let item of animeList; let i = index"
           >
-            <div class="flw-item">
+            <div class="flw-item" (mouseover)="over(item.mal_id)" (mouseout)="out()">
               <div class="film-poster">
                 <div class="tick ltr">
                   <div class="tick-item tick-dub bg-danger text-white">DUB</div>
@@ -60,8 +60,8 @@
                 </div>
                 <img
                   class="film-poster-img lazyloaded"
-                  alt="{{item.title}}"
-                  src="{{item.images?.jpg.large_image_url || item.image_url}}"
+                  alt="{{ item.title }}"
+                  src="{{ item.images?.jpg.large_image_url || item.image_url }}"
                 />
                 <a
                   class="film-poster-ahref"
@@ -91,16 +91,42 @@
               </div>
               <div class="clearfix"></div>
             </div>
+            <div class="hide {{item.mal_id}}">
+              <div class="hide-item-container">
+                <div class="item-header my-2">{{item.title}}</div>
+                <div class="item-ep tick-item tick-eps my-2">EP {{ item.episodes }}</div>
+                <div class="item-content my-2 text">{{item.synopsis}}</div>
+                <div class="item details my-2">
+                  <div class="ani ani-title">
+                    <span class="ani-head">Japaness:</span>
+                    <span class="name">{{item.title_japanese}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Year Publish:</span>
+                    <span class="name">{{item.year}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Status:</span>
+                    <span class="name">{{item.status}}</span>
+                </div>
+                <div class="ani ani-title">
+                    <span class="ani-head">Genres:</span>
+                    <span class="item mr-1" *ngFor="let genre of item.genres"> {{genre.name}}</span>
+                </div>
+                </div>
+                <div class="item-btn"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- <div class="container-xs">
+  <!-- <div class="container-xs">
 
   <div class="main-container pl-3 col-9">
 
   </div>
 </div> -->
+</div>
