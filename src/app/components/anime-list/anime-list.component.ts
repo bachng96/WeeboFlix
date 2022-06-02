@@ -40,9 +40,7 @@ export class AnimeListComponent implements OnInit {
     item.show = !item.show;
   }
   over(id) {
-    let el = this.ElByClassName.nativeElement.querySelector(`.${id}`);
-    console.log(el)
-    el.style.display = 'block';
+    
   }
   out() {
   }
