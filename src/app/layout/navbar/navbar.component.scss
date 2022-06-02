@@ -225,6 +225,26 @@ input:focus {
 .active-color {
   border: 2px solid white;
 }
+.quantity-watchlist{
+  position: relative;
+  top: -10px;
+  padding: 8px;
+border-radius: 50%;
+  background-color: rgb(228, 30, 63);
+
+}
+.quantity-watchlist-number{
+  position: absolute;
+  font-size: 13px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+
+}
+.fa-heart{
+  font-size: 20px;
+}
 
 @media (max-width: 768px) {
   .navbar {

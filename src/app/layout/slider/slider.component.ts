@@ -23,7 +23,7 @@ export class SliderComponent implements OnInit {
     slidesPerView: 3,
     spaceBetween: 40,
     slidesPerGroup: 1,
-    loop: true,
+    loop: false,
     loopFillGroupWithBlank: false,
     keyboard: true,
     mousewheel: true,
@@ -37,7 +37,7 @@ export class SliderComponent implements OnInit {
         spaceBetween: 40,
       },
       1024: {
-        slidesPerView: 6,
+        slidesPerView: 8,
         spaceBetween: 50,
       },
     },
