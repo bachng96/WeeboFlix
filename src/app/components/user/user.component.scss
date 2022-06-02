@@ -1,29 +1,28 @@
-.user__header--name{
+.user__header--name {
   font-size: 30px;
   color: white;
   line-height: 1.4em;
   font-weight: 500;
 }
-.user__header--bg{
-  background: url("../../../assets/backgroud-user.jpg") no-repeat center;
+.user__header--bg {
+  background-repeat: no-repeat;
+  background-position: center;
   height: 20vh;
   filter: blur(8px);
 }
-.user__header--text{
+.user__header--text {
   position: absolute;
   top: 20vh;
   left: 50%;
   text-align: center;
   transform: translate(-50%, -50%);
-
 }
-.user__header--menu{
+.user__header--menu {
   font-size: 20px;
   text-decoration: none;
   color: #ddd;
-
 }
 
-.active{
+.active {
   color: #faa300;
 }

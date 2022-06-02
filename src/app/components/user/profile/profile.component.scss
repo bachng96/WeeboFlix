@@ -28,6 +28,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 60px;
+  padding-bottom: 60px;
   &--title {
     padding: 20px 0px;
     font-size: 33px;
@@ -37,7 +38,7 @@
   &--bg {
     position: absolute;
     width: 30%;
-    bottom: -45px;
+    bottom: 0px;
     left: 0;
   }
   &--img {
