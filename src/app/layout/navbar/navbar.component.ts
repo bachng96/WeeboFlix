@@ -14,6 +14,7 @@ import {
 } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { WatchListService } from 'src/app/core/services/watch-list.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -27,11 +28,13 @@ export class NavbarComponent implements OnInit {
   listGenre;
   toggleUser: boolean = false;
   toggle: boolean = false;
+
   constructor(
     private modalService: NgbModal,
     public userService: UserService,
     private router: Router,
-    private animeService: AnimeService
+    private animeService: AnimeService,
+    public watchListService: WatchListService
   ) {}
 
   ngOnInit(): void {

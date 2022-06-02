@@ -26,7 +26,7 @@ export class AnimeByGenresComponent implements OnInit {
       this.type = p.genres.toString();
       this.animeService.getAnimeByGenres(this.type).subscribe((res: any) => {
         this.pagination = res.pagination;
-        this.listAnimeByType = res.data;
+        this.listAnimeByType = res.data.slice(4, 24);
         this.listAnimeDisplayBig = res.data.slice(0, 4);
       });
     });
@@ -38,7 +38,7 @@ export class AnimeByGenresComponent implements OnInit {
       .getAnimeByYear(e.data, this.type)
       .subscribe((res: any) => {
         this.pagination = res.pagination;
-        this.listAnimeByType = res.data;
+        this.listAnimeByType = res.data.slice(4, 24);
         this.listAnimeDisplayBig = res.data.slice(0, 4);
       });
   }
@@ -47,7 +47,7 @@ export class AnimeByGenresComponent implements OnInit {
     this.animeService
       .getAnimeByType(this.type, this.page)
       .subscribe((res: any) => {
-        this.listAnimeByType = res.data;
+        this.listAnimeByType = res.data.slice(4, 24);
         this.listAnimeDisplayBig = res.data.slice(0, 4);
       });
   }

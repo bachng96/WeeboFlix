@@ -1,9 +1,11 @@
+@import "../../style/variable";
 li{
   list-style: none;
   margin: 0 20px;
 }
 img{
-  width: 4rem;
+  width: 45px;
+  height: 60px;
 }
 .box{
 
@@ -11,10 +13,10 @@ img{
   width: 100%;
 }
 h2{
-  color: #faa309;
+  color: $color-yellow;
 }
 .box-number{
-  border-bottom: 5px solid #faa309;
+  border-bottom: 5px solid $color-yellow;
   font-size: 25px;
 
 }
@@ -36,7 +38,23 @@ button{
 }
 
 .active{
-  color: red;
+  color: $color-yellow;
 
 
+}
+.btn-custom{
+ background-color: #2a2c31;
+ color: white;
+ border: none;
+}
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  margin: 3px 6px;
+}
+.box_description{
+  color: rgba(255, 255, 255, 0.3);
 }

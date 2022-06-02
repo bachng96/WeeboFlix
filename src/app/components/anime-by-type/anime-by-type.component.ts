@@ -33,7 +33,7 @@ export class AnimeByTypeComponent implements OnInit {
           console.log(res);
 
           this.pagination = res.pagination;
-          this.listAnimeByType = res.data;
+          this.listAnimeByType = res.data.slice(4, 24);
           this.listAnimeDisplayBig = res.data.slice(0, 4);
         });
       this.searchByName = true;
@@ -41,7 +41,7 @@ export class AnimeByTypeComponent implements OnInit {
       this.animeService.getAnimeByType(this.type).subscribe((res: any) => {
         this.searchByName = false;
         this.pagination = res.pagination;
-        this.listAnimeByType = res.data;
+        this.listAnimeByType = res.data.slice(4, 24);
         this.listAnimeDisplayBig = res.data.slice(0, 4);
       });
     }
@@ -53,7 +53,8 @@ export class AnimeByTypeComponent implements OnInit {
       .getAnimeByYear(e.data, this.type)
       .subscribe((res: any) => {
         this.pagination = res.pagination;
-        this.listAnimeByType = res.data;
+        this.listAnimeByType = res.data.slice(4, 24);
+        this.listAnimeDisplayBig = res.data.slice(0, 4);
       });
   }
   logPage() {
@@ -62,6 +63,7 @@ export class AnimeByTypeComponent implements OnInit {
       .getAnimeByType(this.type, this.page)
       .subscribe((res: any) => {
         this.listAnimeByType = res.data;
+        this.listAnimeByType = res.data.slice(4, 24);
         this.listAnimeDisplayBig = res.data.slice(0, 4);
       });
   }
