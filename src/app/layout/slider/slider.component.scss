@@ -129,3 +129,67 @@ h2{
   top: 75%;
   color: #faa309;
 }
+
+
+@media (max-width: 768px) {
+  .swiper-button-prev{
+    left: 1%;
+    right: auto;
+    top: 25%;
+    color: #faa309;
+  }
+  .swiper-button-next{
+    left: 1%;
+    right: auto;
+    top: 75%;
+    color: #faa309;
+  }
+
+  .slide__item--desc {
+    width: 40px;
+    text-align: center;
+    font-weight: 600;
+    background: linear-gradient(180deg,#4a4b51 0,rgba(74,75,81,0) 99%);
+    overflow: hidden;
+  }
+
+  .swiper-slide img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .swiper-wrapper{
+    margin-left:  0px;
+  }
+  .swiper-slide{
+    width: 100%;
+  }
+  .swiper-slide img{
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide h2{
+    font-size: 14px;
+  }
+
+}
+
+@media (min-width: 425px) {
+  .swiper-slide{
+    width: 100%;
+  }
+  .swiper-slide img{
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide h2{
+    font-size: 14px;
+  }
+
+}

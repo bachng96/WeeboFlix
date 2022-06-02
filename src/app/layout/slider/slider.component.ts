@@ -1,5 +1,5 @@
 import { AnimeService } from 'src/app/core/services/anime.service';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { SwiperComponent } from 'swiper/angular';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
 import { Params } from '@angular/router';
@@ -16,30 +16,34 @@ SwiperCore.use([Pagination, Navigation]);
   encapsulation: ViewEncapsulation.None,
 })
 export class SliderComponent implements OnInit {
-  public animes: Anime[];
+  @Input() animes: Anime[];
+
+  swiperConfig: any = {
+    direction: 'horizontal',
+    slidesPerView: 3,
+    spaceBetween: 40,
+    slidesPerGroup: 1,
+    loop: true,
+    loopFillGroupWithBlank: false,
+    keyboard: true,
+    mousewheel: true,
+    breakpoints: {
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 6,
+        spaceBetween: 50,
+      },
+    },
+  };
+
   constructor(private animeService: AnimeService) {}
 
-  ngOnInit(): void {
-    console.log(this.animes);
-
-    setTimeout(() => {
-      this.animeService.getAllAnime().subscribe((p: Params) => {
-        this.animes = p.data;
-        this.animes.sort(this.dynamicSort('popularity'));
-        this.animes = this.animes.slice(0, 10);
-      });
-    }, 2000);
-  }
-  dynamicSort(property) {
-    var sortOrder = 1;
-    if (property[0] === '-') {
-      sortOrder = -1;
-      property = property.substr(1);
-    }
-    return function (a, b) {
-      var result =
-        a[property] < b[property] ? -1 : a[property] > b[property] ? 1 : 0;
-      return result * sortOrder;
-    };
-  }
+  ngOnInit(): void {}
 }

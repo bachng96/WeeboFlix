@@ -27,14 +27,17 @@
                 ></app-anime-list>
               </div>
             </div>
-            <ngb-pagination
-              [collectionSize]="pagination.last_visible_page * 10"
-              [(page)]="page"
-              [maxSize]="5"
-              [rotate]="true"
-              [boundaryLinks]="true"
-              (pageChange)="logPage()"
-            ></ngb-pagination>
+
+            <div class="w-100 d-flex justify-content-center">
+              <ngb-pagination
+                [collectionSize]="pagination.last_visible_page*10"
+                [(page)]="page"
+                [maxSize]="5"
+                [rotate]="true"
+                [boundaryLinks]="true"
+                (pageChange)="logPage()"
+              ></ngb-pagination>
+            </div>
           </div>
 
           <ng-template #spinner>
