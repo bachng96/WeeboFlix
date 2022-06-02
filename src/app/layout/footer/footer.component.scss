@@ -1,3 +1,4 @@
+@import "../../style/variable";
 footer {
   background: #2a2c31 url(../../../assets/footer.png) no-repeat;
   background-size: cover;
@@ -17,6 +18,9 @@ button {
 .btn-letter{
   position: relative;
   padding: 15px;
+}
+.btn-letter:hover{
+  color: $color-yellow;
 }
 .btn-letter p{
   position: absolute;
