@@ -6,7 +6,7 @@
   <div class="px-5">
     <div class="anime-by-type">
       <div class="row p-0 m-0">
-        <div class="col-8 p-0">
+        <div class="col-9 p-0">
           <div class="row p-0" *ngIf="listAnimeByType; else spinner">
             <div class="anime-by-type--title col-12">
               <h3 class="mt-4 text-white">
@@ -26,6 +26,7 @@
                 <app-anime-list [animeList]="listAnimeByType" [bigger]="false"></app-anime-list>
               </div>
             </div>
+            <div class="w-100 d-flex justify-content-center">
             <ngb-pagination
               [collectionSize]="pagination.items.total"
               *ngIf="pagination.items.total > 5"
@@ -35,6 +36,7 @@
               [boundaryLinks]="true"
               (pageChange)="logPage()"
             ></ngb-pagination>
+          </div>
           </div>
 
           <ng-template #spinner>
@@ -46,7 +48,7 @@
           </ng-template>
         </div>
 
-        <div class="col-1"></div>
+
         <div class="col-3">
           <div>
             <h4 class="genres-title p-3">Best Anime of All Time</h4>

@@ -42,6 +42,9 @@ iframe {
     max-height: 85%;
     overflow: scroll;
 }
+.ep-list::-webkit-scrollbar {
+  display: none;
+}
 
 .ep-list::-webkit-scrollbar {
     display: none;
