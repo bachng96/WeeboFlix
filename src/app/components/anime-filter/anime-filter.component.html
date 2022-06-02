@@ -155,11 +155,11 @@
 </div>
 
 <button class="btn btn-filter ml-4 mt-4 text-white" (click)="filterAnime()">Filter</button>
-<div class="mx-1">
+<div class="w-100 ">
   <app-anime-list [animeList]="filter"></app-anime-list>
-</div>
-<div class="" *ngIf="filter">
-  <ngb-pagination [collectionSize]="totalPages*10" [(page)]=" current_page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="onPaginationClick($event)"></ngb-pagination>
+  <div class="w-100 d-flex justify-content-center" *ngIf="filter">
+    <ngb-pagination [collectionSize]="totalPages*10" [(page)]=" current_page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="onPaginationClick($event)"></ngb-pagination>
+  </div>
 </div>
 </div>
 

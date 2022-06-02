@@ -37,3 +37,10 @@ $btn-border-radius: 0.25rem;
 @import "../node_modules/swiper/swiper.min.css";
 @import "../node_modules/swiper/components/pagination/pagination.min.css";
 @import "../node_modules/swiper/components/navigation/navigation.min.css";
+.page-link{
+  border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+    font-weight: 450;
+}
