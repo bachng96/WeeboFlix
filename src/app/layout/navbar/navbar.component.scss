@@ -189,3 +189,39 @@ input:focus {
     }
   }
 }
+
+.dropwdown-palette {
+  color: black;
+  position: relative;
+  top: -4px;
+  transition: all 0.8s;
+  animation: moveInLeft 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+  &--color {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    &__yellow {
+      background-color: $color-yellow;
+    }
+    &__green {
+      background-color: #cae962;
+    }
+    &__sky {
+      background-color: skyblue;
+    }
+  }
+  &--btn {
+    margin-top: 10px;
+    text-align: center;
+    padding: 3px 0px;
+    color: white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: var(--color-primary);
+  }
+}
+.active-color {
+  border: 2px solid white;
+}
