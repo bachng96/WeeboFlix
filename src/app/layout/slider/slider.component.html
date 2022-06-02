@@ -1,12 +1,7 @@
 <h2>Trending</h2>
 <div *ngIf="animes; else spinner">
   <swiper
-    [slidesPerView]="8"
-    [spaceBetween]="52"
-    [slidesPerGroup]="1"
-    [loop]="false"
-    [loopFillGroupWithBlank]="true"
-    [navigation]="true"
+    [config]="swiperConfig"
     class="mySwiper"
   >
     <ng-template swiperSlide *ngFor="let item of animes;let i = index"><div routerLink="/details/{{item.mal_id}}"class="slide__item mx-0">
