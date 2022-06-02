@@ -12,7 +12,7 @@ export class AnimeByGenresComponent implements OnInit {
   listAnimeByType: Anime[];
   pagination;
   page = 1;
-  type: string;
+  type: string = '';
   listAnimeDisplayBig: Anime[];
   year: number = null;
   constructor(

@@ -1,4 +1,11 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AnimeService } from 'src/app/core/services/anime.service';
@@ -14,7 +21,7 @@ import {
 } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { WatchListService } from 'src/app/core/services/watch-list.service';
+import { ToastService } from 'src/app/core/services/toast.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -29,12 +36,13 @@ export class NavbarComponent implements OnInit {
   toggleUser: boolean = false;
   toggle: boolean = false;
 
+  show: boolean = false;
   constructor(
     private modalService: NgbModal,
     public userService: UserService,
     private router: Router,
     private animeService: AnimeService,
-    public watchListService: WatchListService
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -98,6 +106,7 @@ export class NavbarComponent implements OnInit {
     this.toggleUser = false;
     this.userService.logout();
     this.router.navigateByUrl('/');
+    this.showDanger('logout success');
   }
   seeDetail(id) {
     this.showDropdown = false;
@@ -106,5 +115,22 @@ export class NavbarComponent implements OnInit {
   gotoProfile() {
     this.toggleUser = false;
     this.router.navigateByUrl('/user/profile');
+  }
+  showDanger(dangerTpl) {
+    this.toastService.show(dangerTpl, {
+      classname: 'bg-success text-light',
+      delay: 3000,
+    });
+  }
+
+  /** changeTheme */
+  //output change themes
+  @Output('changeStatus') clickedHandler = new EventEmitter<{
+    status: boolean;
+  }>();
+  changeTheme(e) {
+    this.clickedHandler.emit({
+      status: e,
+    });
   }
 }

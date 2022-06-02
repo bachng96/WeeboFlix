@@ -35,7 +35,7 @@
                 <p>{{ anime.title }}</p>
                 <ul class="d-flex">
                   <li>{{ anime.aired.from | date: "dd/MM/yyyy" }}</li>
-                  <li>{{ anime.type }}</li>
+                  <li>{{ anime?.type }}</li>
                   <li>{{ anime.duration }}</li>
                 </ul>
               </div>
@@ -54,7 +54,32 @@
     </div>
 
     <div class="ml-auto d-flex">
-      <i class="fas fa-heart wishlist-icon" routerLink="/user/watch-list"></i>
+      <div class="dropwdown-palette" *ngIf="show">
+        <div class="dropwdown-palette--list-color d-flex px-2 pt-3">
+          <div
+            class="dropwdown-palette--color dropwdown-palette--color__yellow active-color"
+            (click)="changeTheme('yellow')"
+          ></div>
+          <div
+            class="dropwdown-palette--color dropwdown-palette--color__green"
+            (click)="changeTheme('green')"
+          ></div>
+          <div
+            class="dropwdown-palette--color dropwdown-palette--color__sky"
+            (click)="changeTheme('sky')"
+          ></div>
+        </div>
+      </div>
+      <i class="fas fa-palette wishlist-icon" (click)="show = !show"></i>
+      <button
+        class="btn btn-warning btn-login mr-2"
+        routerLink="/user/watch-list"
+      >
+        <span class="quantity-watchlist">
+          <i class="fas fa-heart mr-2"></i>
+          <span>Watch list 5</span>
+        </span>
+      </button>
 
       <div *ngIf="userService.user" style="position: relative">
         <img
@@ -77,7 +102,7 @@
         </div>
       </div>
       <button
-        class="btn btn-warning"
+        class="btn btn-warning btn-login"
         (click)="open()"
         *ngIf="!userService.user"
       >
