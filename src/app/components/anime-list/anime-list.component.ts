@@ -13,6 +13,7 @@ import { Anime, Root } from './../../core/model/app.model';
 export class AnimeListComponent implements OnInit {
   @Input() animeList: Anime[];
   @Input() bigger: boolean = false;
+  @Input() typeViewMore: string;
   @Input() animeHeader: string;
   @Input() viewMoreFlag: boolean = false;
   @Input() dropDown: boolean;

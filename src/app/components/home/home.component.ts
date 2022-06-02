@@ -9,16 +9,21 @@ import { AnimeService } from 'src/app/core/services/anime.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  animeList: Anime[];
+  animeLastest: Anime[];
+  animeUpComing: Anime[];
   animeListNew: Anime[];
   animeSlider: Anime[];
   constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
     this.animeService.getAllAnime().subscribe((data: Params) => {
-      console.log(data.data);
-      this.animeList = data.data.slice(0, 12);
-      this.animeListNew = data.data.slice(12, 24);
+      this.animeLastest = data.data.slice(0, 12);
+      this.animeListNew = data.data;
+      this.animeListNew.sort(this.dynamicSort('favorites'));
+      this.animeListNew = this.animeListNew.slice(0, 12);
+
+      this.animeUpComing = data.data.slice(12, 24);
+
       this.animeSlider = data.data;
       this.animeSlider.sort(this.dynamicSort('popularity'));
       this.animeSlider = this.animeSlider.slice(0, 10);

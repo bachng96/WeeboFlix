@@ -5,7 +5,7 @@
       <h2 class="ani-list-heading">{{ animeHeader }}</h2>
     </div>
     <div class="right text-white" *ngIf="viewMoreFlag">
-      <a
+      <a routerLink="/viewmore/{{typeViewMore}}"
         >View more
         <i class="fas fa-angle-right ml-2"></i>
       </a>

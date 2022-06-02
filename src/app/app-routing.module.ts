@@ -1,3 +1,4 @@
+import { ViewMoreListComponent } from './components/view-more-list/view-more-list.component';
 import { AnimeByGenresComponent } from './components/anime-by-genres/anime-by-genres.component';
 import { AnimeFilterComponent } from './components/anime-filter/anime-filter.component';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'type/:type', component: AnimeByTypeComponent },
   { path: 'genres/:genres', component: AnimeByGenresComponent },
   { path: 'watch/:id', component: WatchComponent },
+  { path: 'viewmore/:type', component: ViewMoreListComponent },
   { path: 'az-list', component: AnimeFilterByLetterComponent },
   { path: 'az-list/:key', component: AnimeFilterByLetterComponent },
   { path: 'filter', component: AnimeFilterComponent },
