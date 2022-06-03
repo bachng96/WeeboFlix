@@ -22,6 +22,7 @@ import {
 import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ToastService } from 'src/app/core/services/toast.service';
+import { WatchListService } from 'src/app/core/services/watch-list.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -42,7 +43,8 @@ export class NavbarComponent implements OnInit {
     public userService: UserService,
     private router: Router,
     private animeService: AnimeService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    public watchListService: WatchListService
   ) {}
 
   ngOnInit(): void {

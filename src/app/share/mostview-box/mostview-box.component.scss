@@ -39,13 +39,17 @@ button{
 
 .active{
   color: $color-yellow;
-
+  background-color: #51535b ;
 
 }
 .btn-custom{
  background-color: #2a2c31;
  color: white;
  border: none;
+ cursor: pointer;
+}
+.btn-custom:hover{
+  color: $color-yellow;
 }
 .dot {
   width: 4px;
@@ -57,4 +61,18 @@ button{
 }
 .box_description{
   color: rgba(255, 255, 255, 0.3);
+  font-size: 13px
+}
+.box-filter-item{
+  flex-grow: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.box-filter-item:hover span{
+  color: $color-yellow;
+}
+h4:hover{
+  color: $color-yellow;
+  cursor: pointer;
 }

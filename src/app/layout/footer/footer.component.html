@@ -1,10 +1,12 @@
-<footer class="bg-dark text-white py-5 px-5">
+<footer class="bg-dark text-white py-5 px-3">
   <div class="footer-descreption">
-    <div class="d-flex mx-3 border-bottom border-white">
-      <h2>Wibu.com</h2>
-      <div class="d-flex mb-3 pl-3 mx-2 border-left border-white">
-        <div>
-          <p>Join now</p>
+    <div class="d-flex border-bottom border-white align-items-center">
+        <img class="footer-img mb-3 footer_list-letter" src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.15752-9/280504463_1083947615663806_5769315744174470109_n.png?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_ohc=8YCU9niYddQAX8XeTXd&_nc_ht=scontent.fhan2-1.fna&oh=03_AVL-etMHj6Sbp-GxcOGaJOwOi2Qfzx5t6Tv4bbtt4Bee9Q&oe=62BC18AB" alt="">
+        <!-- <h2>Weeboflix</h2> -->
+
+      <div class="d-flex mb-3 pl-3 mx-2 border-left border-white align-items-center">
+        <div class="">
+          <p class="about-text">Join now</p>
           <h6>WIBU GROUP</h6>
         </div>
         <div class="ml-3">
@@ -13,28 +15,28 @@
       </div>
     </div>
   </div>
-  <div>
-    <div class="d-flex mt-3">
-      <h2 class="pr-3">A-Z LIST</h2>
-      <p class="border-left border-white pl-3">
+  <div class="footer_list-letter">
+    <div class="d-flex mt-3 align-items-center">
+      <h2 class="pr-3 footer-filter-title">A-Z LIST</h2>
+      <p class="border-left border-white pl-3 about-text">
         Searching anime order by alphabet name A to Z
       </p>
     </div>
-    <ul class="row">
-      <li class=""><button class="btn btn-secondary btn-letter" routerLink="az-list"><p>All</p></button></li>
+    <ul class="row ">
+      <li class="ml-3"><button class="btn btn-secondary btn-letter" routerLink="az-list"><p>All</p></button></li>
       <li *ngFor="let item of alphabet"><button class="btn btn-secondary btn-letter" routerLink="/az-list/{{item}}" routerLinkActive="router-link-active" ><p>{{item | uppercase}}</p></button></li>
     </ul>
   </div>
-  <div class="d-flex">
+  <div class="d-flex contact-text">
     <p>Term of service</p>
-    <p>DMCA</p>
-    <p>Contact</p>
+    <p class="ml-5">DMCA</p>
+    <p class="ml-5">Contact</p>
   </div>
   <div>
-    <p>
+    <p class="about-text">
       Wibu does not store any files on our server,we only linked to the media
       which is hosted on 3rd party services
     </p>
-    <p class="mb-0">Copyright © {{ year }} Wibu.com. All Rights Reserved</p>
+    <p class="mb-0 about-text">Copyright © {{ year }} Wibu.com. All Rights Reserved</p>
   </div>
 </footer>

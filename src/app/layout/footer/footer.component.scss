@@ -1,3 +1,4 @@
+@import "../../style/variable";
 footer {
   background: #2a2c31 url(../../../assets/footer.png) no-repeat;
   background-size: cover;
@@ -16,12 +17,42 @@ button {
 }
 .btn-letter{
   position: relative;
-  padding: 20px;
+  padding: 15px;
+}
+.btn-letter:hover{
+  color: $color-yellow;
 }
 .btn-letter p{
   position: absolute;
   top:50%;
   left:50%;
   transform: translate(-50%, -50%);
-  font-size: 25px;
+  font-size: 14px;
+}
+.footer-img{
+  width: 120px;
+  height: 70px;
+}
+.about-text{
+  line-height: 1.4em;
+  opacity: .5;
+  font-size: 12px;
+}
+.contact-text{
+
+  font-size: 12px;
+}
+.footer-filter-title{
+  transform: translate(0,-15%);
+}
+@media only screen and (max-width: 400px) {
+  .footer_list-letter{
+    display: none;
+  }
+  footer{
+    background-size: auto;
+  }
+  // .footer-descreption img{
+  //   display: none;
+  // }
 }
