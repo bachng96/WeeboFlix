@@ -32,6 +32,7 @@
 }
 
 .item {
+    color: #212529;
     font-size: 12px;
     font-family: arial;
     font-weight: 600;
@@ -69,6 +70,10 @@
         border: none;
         cursor: pointer;
     }
+}
+
+.btn-custom {
+    background-color: var(--color-primary);
 }
 
 .anime-descreption {

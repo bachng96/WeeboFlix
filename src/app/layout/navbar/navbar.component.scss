@@ -254,9 +254,17 @@ border-radius: 50%;
 
 }
 .fa-heart{
-  font-size: 20px;
+  color: var(--color-primary);
 }
 
+.fa-search {
+  color: black;
+}
+
+a, li, span {
+  text-decoration: none;
+  outline: none;
+}
 // reponsive navbar
 @media (max-width: 768px) {
   .navbar {
@@ -270,5 +278,3 @@ border-radius: 50%;
   }
 }
 
-.clicked {
-}

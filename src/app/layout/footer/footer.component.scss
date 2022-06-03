@@ -20,7 +20,7 @@ button {
   padding: 15px;
 }
 .btn-letter:hover{
-  color: $color-yellow;
+  color: var(--color-primary);
 }
 .btn-letter p{
   position: absolute;
