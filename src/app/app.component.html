@@ -3,7 +3,7 @@
     aria-live="polite"
     aria-atomic="true"
   ></app-toasts-container>
-  <app-navbar></app-navbar>
+  <app-navbar (changeStatus)="changeStatus($event)"></app-navbar>
   <div class="flex-grow-1">
     <router-outlet></router-outlet>
   </div>

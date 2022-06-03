@@ -1,5 +1,5 @@
 <ngb-carousel *ngIf="images">
-  <ng-template ngbSlide *ngFor="let item of animeData;let i = index">
+  <ng-template ngbSlide *ngFor="let item of animeData; let i = index">
     <div class="picsum-img-wrapper">
       <img
         [src]="images[i].url"
@@ -7,32 +7,39 @@
         class="d-block w-100 full-width effect-img"
       />
     </div>
+
     <div class="carousel-effetc"></div>
     <div class="carousel-caption">
-      <h5 class="carousel--rate">#{{i + 1}} Spotlight</h5>
-      <h2 class="carousel--title">{{item.title}}</h2>
-      <div class="carousel--detail-infor d-flex">
-        <div class="detail-infor--item mr-4">
-          <i class="fas fa-play mr-2"></i><span>{{item.type}} Series</span>
+      <div class="carousel-content">
+        <h5 class="carousel--rate">#{{ i + 1 }} Spotlight</h5>
+        <h2 class="carousel--title">{{ item.title }}</h2>
+        <div class="carousel--detail-infor d-flex">
+          <div class="detail-infor--item mr-4">
+            <i class="fas fa-play mr-2"></i><span>{{ item.type }} Series</span>
+          </div>
+          <div class="detail-infor--item mr-4">
+            <i class="fas fa-clock mr-2"></i> <span>{{ item.duration }}</span>
+          </div>
+          <div class="detail-infor--item mr-4">
+            <i class="fas fa-calendar mr-2"></i>
+            <span>{{ item.aired.from | date: "yyyy-MM-dd" }}</span>
+          </div>
+          <div class="d-inline-block">
+            <span class="badge badge-pill badge-warning mr-2">HD</span>
+            <span class="badge badge-pill badge-primary">Sub</span>
+          </div>
         </div>
-        <div class="detail-infor--item mr-4">
-          <i class="fas fa-clock mr-2"></i> <span>{{item.duration}}</span>
-        </div>
-        <div class="detail-infor--item mr-4">
-          <i class="fas fa-calendar mr-2"></i> <span>{{item.aired.from | date: 'yyyy-MM-dd'}}</span>
-        </div>
-        <div class="d-inline-block">
-          <span class="badge badge-pill badge-warning mr-2">HD</span>
-          <span class="badge badge-pill badge-primary">Sub</span>
-        </div>
+
+        <p class="carosel--content mt-3 text">
+          {{ item.synopsis }}
+        </p>
       </div>
 
-      <p class="carosel--content mt-3 text">{{item.synopsis}}</p>
       <div class="d-flex mt-5">
-        <div class="btn btn-warning mr-4" routerLink="/watch/{{item.mal_id}}">
+        <div class="btn btn--yellow mr-4" routerLink="/watch/{{ item.mal_id }}">
           <i class="fas fa-play mr-2"></i> <span> Watch now</span>
         </div>
-        <div class="btn btn-secondary" routerLink="/details/{{item.mal_id}}">
+        <div class="btn btn-secondary" routerLink="/details/{{ item.mal_id }}">
           <span>Detail</span> <i class="fas fa-chevron-right ml-2"></i>
         </div>
       </div>

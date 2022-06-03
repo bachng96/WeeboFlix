@@ -7,8 +7,7 @@ import { Anime } from 'src/app/core/model/app.model';
   styleUrls: ['./carosel.component.scss'],
 })
 export class CaroselComponent implements OnInit {
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   animeData = [
     {
       mal_id: 50265,
@@ -635,7 +634,7 @@ export class CaroselComponent implements OnInit {
   constructor(config: NgbCarouselConfig) {
     config.showNavigationArrows = true;
     config.showNavigationIndicators = false;
-    config.interval = 3000;
+    config.interval = 100000;
     config.wrap = true;
     config.keyboard = true;
     config.pauseOnFocus = true;
