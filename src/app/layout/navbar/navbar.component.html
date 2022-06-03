@@ -71,14 +71,11 @@
         </div>
       </div>
       <i class="fas fa-palette wishlist-icon" (click)="show = !show"></i>
-      <button
-        class="btn btn-login mr-2 d-none d-lg-flex"
-        routerLink="/user/watch-list"
-      >
-        <span class="">
-          <span class="">Watch list</span><i class="fas fa-heart ml-2"></i><span class="quantity-watchlist "><span class="quantity-watchlist-number">{{watchListService.getWatchList().length}}</span></span>
+      
+        <span class="d-flex align-items-center mr-2" routerLink="/user/watch-list">
+          <i class="fas fa-heart fa-2x"></i><span class="quantity-watchlist "><span class="quantity-watchlist-number">{{watchListService.getWatchList().length}}</span></span>
         </span>
-      </button>
+      
 
       <div *ngIf="userService.user" style="position: relative">
         <img
