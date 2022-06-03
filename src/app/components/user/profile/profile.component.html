@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-center user-profile">
   <img src="https://zoro.to/images/discussion.png  " class="user-profile--bg" />
-  <div class="w-50">
-    <div class="row">
-      <div class="col-9 p-0">
+  <div class="box-user">
+    <div class="row" style="position: relative">
+      <div class="col-lg-9 col-md-12 p-0">
         <form class="login-form">
           <div class="form-group">
             <label for="email">Email address:</label>
@@ -43,7 +43,7 @@
         </form>
       </div>
       <div
-        class="col-3 user-profile--img p-0 d-flex justify-content-center pt-3"
+        class="col-lg-3 user-profile--img p-0 d-flex justify-content-center pt-3"
       >
         <div class="d-relative">
           <img [src]="userService.user.avatar" />
