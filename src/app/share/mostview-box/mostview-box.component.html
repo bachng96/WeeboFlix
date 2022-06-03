@@ -2,25 +2,25 @@
 <div class="">
     <h2 class="py-3 pl-3">Top Score</h2>
   <div>
-    <ul class="box-filter d-flex pl-0 py-3 justify-content-around">
-      <li (click)="changeFilter($event.target)" class="{{(score ? 'active' : '')}}" value="score">Top Score</li>
-      <li (click)="changeFilter($event.target)" class="{{(scored_by ? 'active' : '')}}" value="scored_by">Top View</li>
-      <li (click)="changeFilter($event.target)" class="{{(favorites ? 'active' : '')}}" value="favorites">Top Favorite</li>
+    <ul class="box-filter d-flex pl-0 py-0 ">
+      <li class="mx-0 p-3 box-filter-item" (click)="changeFilter($event.target)" class="{{(score ? 'active' : '')}}" value="score"><span>Top Score</span></li>
+      <li class="mx-0 p-3 box-filter-item" (click)="changeFilter($event.target)" class="{{(scored_by ? 'active' : '')}}" value="scored_by"><span>Top View</span></li>
+      <li class="mx-0 p-3 box-filter-item" (click)="changeFilter($event.target)" class="{{(favorites ? 'active' : '')}}" value="favorites"><span>Top Favorite</span></li>
     </ul>
   </div>
 </div>
 <div>
   <ul class="pl-0 box-content">
-    <li *ngFor="let item of topAnime; let i = index" class=" d-flex py-3 justify-content-between align-items-center">
+    <li *ngFor="let item of topAnime; let i = index" class=" d-flex py-3 justify-content-between align-items-center box-content-items">
       <div class="d-flex ">
       <div class="d-flex align-items-center pr-3"><p class="box-number">{{i+1}}</p></div>
       <div class="box-image pr-3"><img [src]="item.images.jpg.large_image_url" alt=""></div>
       <div class="">
-        <h4>{{item.title}}</h4>
-        <div class="d-flex box_description">
-        <p><i class="fas fa-star"></i> {{item.score}}</p><span class="dot"></span>
-        <p><i class="fas fa-eye"></i> {{item.scored_by}}</p><span class="dot"></span>
-        <p><i class="fas fa-heart"></i> {{item.favorites}}</p>
+        <h4 class="" routerLink="/details/{{ item.mal_id }}">{{item.title}}</h4>
+        <div class="d-flex box_description align-items-center">
+        <p class="mb-0"><i class="fas fa-star"></i> {{item.score}}</p><span class="dot"></span>
+        <p class="mb-0"><i class="fas fa-eye"></i> {{item.scored_by}}</p><span class="dot"></span>
+        <p class="mb-0"><i class="fas fa-heart"></i> {{item.favorites}}</p>
       </div>
       </div>
       </div>

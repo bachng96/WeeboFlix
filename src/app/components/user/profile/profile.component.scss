@@ -1,4 +1,7 @@
 @import "../../../style/variable";
+.box-user {
+  width: 50%;
+}
 .login-form {
   padding: 20px 50px;
   background-color: $color-dark-1;
@@ -28,6 +31,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 60px;
+  padding-bottom: 60px;
   &--title {
     padding: 20px 0px;
     font-size: 33px;
@@ -37,7 +41,7 @@
   &--bg {
     position: absolute;
     width: 30%;
-    bottom: -45px;
+    bottom: 0px;
     left: 0;
   }
   &--img {
@@ -62,4 +66,34 @@
 .d-relative {
   position: relative;
   display: inline-block;
+}
+@media screen and (max-width: 980px) {
+  .box-user {
+    width: 60%;
+  }
+  .user-profile--bg {
+    display: none;
+  }
+  .user-profile--img {
+    position: absolute;
+    top: -70px;
+    background-color: transparent;
+  }
+  .login-form {
+    padding-top: 60px;
+    & p {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .box-user {
+    width: 70%;
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .box-user {
+    width: 90%;
+  }
 }

@@ -7,8 +7,7 @@ import { Anime } from 'src/app/core/model/app.model';
   styleUrls: ['./carosel.component.scss'],
 })
 export class CaroselComponent implements OnInit {
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   animeData = [
     {
       mal_id: 50265,
@@ -623,11 +622,11 @@ export class CaroselComponent implements OnInit {
       name: 'Komi-san wa, Comyushou desu. 2nd Season',
     },
     {
-      url: 'https://img.zorores.com/_r/1366x768/100/7f/bf/7fbf5929f0bff5d221897922cfc783a0/7fbf5929f0bff5d221897922cfc783a0.jpg',
+      url: 'https://images4.alphacoders.com/259/thumb-1920-259296.jpg',
       name: 'Bleach',
     },
     {
-      url: 'https://img.zorores.com/_r/1366x768/100/42/f7/42f7096d1e2918273f27a9925fbbc0a3/42f7096d1e2918273f27a9925fbbc0a3.jpg',
+      url: 'https://wallpaper.dog/large/10773325.jpg',
       name: 'Naruto_Shippuden',
     },
   ];
@@ -635,7 +634,7 @@ export class CaroselComponent implements OnInit {
   constructor(config: NgbCarouselConfig) {
     config.showNavigationArrows = true;
     config.showNavigationIndicators = false;
-    config.interval = 3000;
+    config.interval = 100000;
     config.wrap = true;
     config.keyboard = true;
     config.pauseOnFocus = true;

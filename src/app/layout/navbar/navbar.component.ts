@@ -22,6 +22,7 @@ import {
 import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ToastService } from 'src/app/core/services/toast.service';
+import { WatchListService } from 'src/app/core/services/watch-list.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -42,14 +43,11 @@ export class NavbarComponent implements OnInit {
     public userService: UserService,
     private router: Router,
     private animeService: AnimeService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    public watchListService: WatchListService
   ) {}
 
   ngOnInit(): void {
-    const parsedUrl = new URL(window.location.href);
-    const baseUrl = parsedUrl.origin;
-
-    // search
     this.search.valueChanges
       .pipe(
         tap((v: string) => {
@@ -85,12 +83,17 @@ export class NavbarComponent implements OnInit {
     this.router.navigateByUrl('/type/params-' + this.searchKeyword);
     this.showDropdown = false;
   }
+
   @HostListener('window:scroll', ['$event']) onScroll(event) {
     let element = document.querySelector('.navbar') as HTMLElement;
-    if (window.pageYOffset > element.clientHeight) {
+    if (window.location.href !== 'http://localhost:4200/home') {
       element.classList.add('navbar-inverse');
     } else {
-      element.classList.remove('navbar-inverse');
+      if (window.pageYOffset > element.clientHeight) {
+        element.classList.add('navbar-inverse');
+      } else {
+        element.classList.remove('navbar-inverse');
+      }
     }
   }
 

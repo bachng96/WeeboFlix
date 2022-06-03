@@ -1,7 +1,7 @@
 <div>
-  <nav class="navbar navbar-expand-sm d-flex fixed-top ">
+  <nav class="navbar navbar-expand-sm d-flex fixed-top">
     <span (click)="toggle = !toggle">
-      <i class="fas fa-bars text-white mr-5 button-toggle ml-3"></i>
+      <i class="fas fa-bars text-white button-toggle ml-3"></i>
     </span>
     <a routerLink="home">
       <img
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <div class="random-btn" (click)="getRandomAnime()">
+    <div class="random-btn d-none d-lg-flex" (click)="getRandomAnime()">
       <div class="random-icon"><i class="fas fa-random"></i></div>
       <div class="name"><span>Random</span></div>
     </div>
@@ -57,7 +57,7 @@
       <div class="dropwdown-palette" *ngIf="show">
         <div class="dropwdown-palette--list-color d-flex px-2 pt-3">
           <div
-            class="dropwdown-palette--color dropwdown-palette--color__yellow active-color"
+            class="dropwdown-palette--color dropwdown-palette--color__yellow active-color clicked"
             (click)="changeTheme('yellow')"
           ></div>
           <div
@@ -72,12 +72,11 @@
       </div>
       <i class="fas fa-palette wishlist-icon" (click)="show = !show"></i>
       <button
-        class="btn btn-warning btn-login mr-2"
+        class="btn btn-login mr-2 d-none d-lg-flex"
         routerLink="/user/watch-list"
       >
-        <span class="quantity-watchlist">
-          <i class="fas fa-heart mr-2"></i>
-          <span>Watch list 5</span>
+        <span class="">
+          <span class="">Watch list</span><i class="fas fa-heart ml-2"></i><span class="quantity-watchlist "><span class="quantity-watchlist-number">{{watchListService.getWatchList().length}}</span></span>
         </span>
       </button>
 
@@ -89,13 +88,22 @@
         />
 
         <div class="dropdown-user shadow-lg" *ngIf="toggleUser">
-          <p class="dropdown-user--email">anvu1308@gmail.com</p>
+          <h5 class="dropdown-user--fullname">
+            {{ userService.user.first_name }} {{ userService.user.last_name }}
+          </h5>
+          <p class="dropdown-user--email text-white">
+            {{ userService.user.email }}
+          </p>
 
           <ul>
-            <li routerLink="/user/profile" (click)="gotoProfile()">
+            <li
+              routerLink="/user/profile"
+              (click)="gotoProfile()"
+              class="text-white"
+            >
               <i class="fas fa-user mr-2"></i><span>Profile</span>
             </li>
-            <li (click)="logout()">
+            <li (click)="logout()" class="text-white">
               <i class="fas fa-sign-out-alt mr-2"></i><span>Logout </span>
             </li>
           </ul>
