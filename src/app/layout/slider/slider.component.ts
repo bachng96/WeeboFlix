@@ -21,23 +21,23 @@ export class SliderComponent implements OnInit {
   swiperConfig: any = {
     direction: 'horizontal',
     slidesPerView: 3,
-    spaceBetween: 40,
+    spaceBetween: 42,
     slidesPerGroup: 1,
-    loop: true,
+    loop: false,
     loopFillGroupWithBlank: false,
     keyboard: true,
     mousewheel: true,
     breakpoints: {
       640: {
         slidesPerView: 3,
-        spaceBetween: 40,
+        spaceBetween: 42,
       },
       768: {
         slidesPerView: 4,
-        spaceBetween: 40,
+        spaceBetween: 42,
       },
       1024: {
-        slidesPerView: 6,
+        slidesPerView: 8,
         spaceBetween: 50,
       },
     },

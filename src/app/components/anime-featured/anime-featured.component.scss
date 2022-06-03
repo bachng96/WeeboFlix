@@ -7,11 +7,15 @@
     cursor: pointer;
   }
 
+
   &--title {
     padding: 10px;
     color: $color-yellow;
     font-size: 19px;
     font-weight: bold;
+  }
+  &--item:nth-child(6):hover {
+    color: $color-yellow;
   }
 }
 .box-item {

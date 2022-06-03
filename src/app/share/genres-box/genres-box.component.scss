@@ -42,4 +42,9 @@ li {
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
+
+}
+li:hover{
+  background-color: #51535b ;
+  transition: 0.8s;
 }

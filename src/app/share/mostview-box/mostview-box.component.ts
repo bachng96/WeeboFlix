@@ -24,7 +24,7 @@ export class MostviewBoxComponent implements OnInit {
     this.animeService.getTopAnime().subscribe((p: Params) => {
       this.topAnime = p.data;
       this.topAnime.sort(this.dynamicSort(`${this.filter}`));
-      this.topAnime = this.topAnime.slice(0, 10);
+      this.topAnime = this.topAnime.slice(0, 9);
     });
   }
   changeFilter(e) {

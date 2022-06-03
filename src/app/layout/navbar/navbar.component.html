@@ -75,9 +75,8 @@
         class="btn btn-warning btn-login mr-2"
         routerLink="/user/watch-list"
       >
-        <span class="quantity-watchlist">
-          <i class="fas fa-heart mr-2"></i>
-          <span>Watch list 5</span>
+        <span class="">
+          <span class="">Watch list</span><i class="fas fa-heart ml-2"></i><span class="quantity-watchlist "><span class="quantity-watchlist-number">{{watchListService.getWatchList().length}}</span></span>
         </span>
       </button>
 
