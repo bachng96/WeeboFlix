@@ -5,7 +5,7 @@
     width: 145px;
     color: $color-white;
     font-size: 16px;
-    border-left: 2px solid $color-yellow;
+    border-left: 2px solid var(--color-primary);
     padding-left: 20px;
     box-sizing: border-box;
   }
@@ -15,5 +15,5 @@
   height: 100vh;
 }
 .genres-title {
-  color: $color-yellow;
+  color: var(--color-primary);
 }

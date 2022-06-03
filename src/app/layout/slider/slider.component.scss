@@ -49,7 +49,7 @@
     font-size: 24px;
     line-height: 1em;
     text-align: center;
-    color: #faa300;
+    color: var(--color-primary);
     z-index: 9;
     left: 0;
     right: 0;
@@ -109,7 +109,7 @@
   object-fit: cover;
 }
 h2{
-  color: #faa309;
+  color: var(--color-primary);
 }
 .mySwiper{
   margin-right:10px;
@@ -121,13 +121,13 @@ h2{
   left: 1%;
   right: auto;
   top: 25%;
-  color: #faa309;
+  color: var(--color-primary);
 }
 .swiper-button-prev{
   left: 1%;
   right: auto;
   top: 75%;
-  color: #faa309;
+  color: var(--color-primary);
 }
 
 
@@ -136,13 +136,13 @@ h2{
     left: 1%;
     right: auto;
     top: 25%;
-    color: #faa309;
+    color: var(--color-primary);
   }
   .swiper-button-next{
     left: 1%;
     right: auto;
     top: 75%;
-    color: #faa309;
+    color: var(--color-primary);
   }
 
   .slide__item--desc {

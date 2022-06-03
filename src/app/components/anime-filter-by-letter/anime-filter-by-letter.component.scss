@@ -9,9 +9,10 @@ li {
 }
 
 h3{
-  color: $color-yellow;
+  color: var(--color-primary);
 }
 .btn:not(:disabled):not(.disabled):focus{
-  background-color:$color-yellow ;
-  border-color: $color-yellow;
+  background-color:var(--color-primary) ;
+  border-color: var(--color-primary);
+
 }

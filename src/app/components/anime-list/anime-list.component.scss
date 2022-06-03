@@ -265,7 +265,7 @@ a {
       width: 100%;
       cursor: pointer;
       &:hover {
-        color: $color-yellow;
+        color: var(--color-primary);
       }
     }
   }
@@ -280,7 +280,7 @@ a {
  -webkit-box-orient: vertical;
 }
 .active{
-  color: $color-yellow;
+  color: var(--color-primary);
 }
 .dropdown-toggle::after {
   display: none;
