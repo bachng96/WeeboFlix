@@ -70,44 +70,69 @@
           ></div>
         </div>
       </div>
-      <i class="fas fa-palette wishlist-icon" (click)="show = !show"></i>
+      <i
+        class="fas fa-palette wishlist-icon d-none d-lg-flex"
+        (click)="show = !show"
+      ></i>
       <button
         class="btn btn-login mr-2 d-none d-lg-flex"
         routerLink="/user/watch-list"
       >
-        <span class="">
-          <span class="">Watch list</span><i class="fas fa-heart ml-2"></i><span class="quantity-watchlist "><span class="quantity-watchlist-number">{{watchListService.getWatchList().length}}</span></span>
+        <span>
+          <span class="">Watch list</span><i class="fas fa-heart ml-2"></i
+          ><span class="quantity-watchlist"
+            ><span class="quantity-watchlist-number">{{
+              watchListService.getWatchList().length
+            }}</span></span
+          >
         </span>
       </button>
 
-      <div *ngIf="userService.user" style="position: relative">
-        <img
-          [src]="userService.user != null ? userService.user.avatar : ''"
-          class="rounded-circle avatar-user shadow-lg"
-          (click)="toggleUser = !toggleUser"
-        />
+      <div *ngIf="userService.user">
+        <!-- dropwdown -->
+        <div ngbDropdown class="d-inline-block" placement="bottom-start">
+          <button
+            type="button"
+            class="btn"
+            style="padding: 0; color: white"
+            id="dropdownBasic1"
+            ngbDropdownToggle
+          >
+            <img
+              [src]="userService.user != null ? userService.user.avatar : ''"
+              class="rounded-circle avatar-user shadow-lg"
+            />
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <div class="dropdown-user shadow-lg">
+              <h5 class="dropdown-user--fullname">
+                {{ userService.user.first_name }}
+                {{ userService.user.last_name }}
+              </h5>
+              <p class="dropdown-user--email text-white">
+                {{ userService.user.email }}
+              </p>
 
-        <div class="dropdown-user shadow-lg" *ngIf="toggleUser">
-          <h5 class="dropdown-user--fullname">
-            {{ userService.user.first_name }} {{ userService.user.last_name }}
-          </h5>
-          <p class="dropdown-user--email text-white">
-            {{ userService.user.email }}
-          </p>
-
-          <ul>
-            <li
-              routerLink="/user/profile"
-              (click)="gotoProfile()"
-              class="text-white"
-            >
-              <i class="fas fa-user mr-2"></i><span>Profile</span>
-            </li>
-            <li (click)="logout()" class="text-white">
-              <i class="fas fa-sign-out-alt mr-2"></i><span>Logout </span>
-            </li>
-          </ul>
+              <ul>
+                <li
+                  routerLink="/user/profile"
+                  (click)="gotoProfile()"
+                  class="text-white"
+                >
+                  <i class="fas fa-user mr-2"></i><span>Profile</span>
+                </li>
+                <li (click)="logout()" class="text-white">
+                  <i class="fas fa-sign-out-alt mr-2"></i><span>Logout </span>
+                </li>
+              </ul>
+            </div>
+            <!-- <button ngbDropdownItem>Action - 1</button>
+        <button ngbDropdownItem>Another Action</button>
+        <button ngbDropdownItem>Something else is here</button> -->
+          </div>
         </div>
+
+        <!-- end dropdown -->
       </div>
       <button
         class="btn btn-warning btn-login"
