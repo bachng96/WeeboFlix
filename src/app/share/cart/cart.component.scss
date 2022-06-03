@@ -104,7 +104,7 @@ a {
       width: 100%;
       cursor: pointer;
       &:hover {
-        color: $color-yellow;
+        color: var(--color-primary);
       }
     }
   }

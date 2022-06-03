@@ -22,6 +22,10 @@ import {
 })
 export class AnimeFilterComponent implements OnInit {
   letter: string = '';
+  ratingValue: string = 'All';
+  typeValue: string = 'All';
+  statusValue: string = 'All';
+  sortValue: string = 'All';
   current_page: number = 1;
   min_score: number = 0;
   max_score: number = 10;
@@ -122,13 +126,33 @@ export class AnimeFilterComponent implements OnInit {
   }
   changeStatus(e, b) {
     if (b == 'type') {
-      this.type = e.getAttribute('value');
+      this.typeValue = e;
+      if (e == 'all') {
+        this.type = undefined;
+      } else {
+        this.type = e;
+      }
     } else if (b == 'status') {
-      this.status = e.getAttribute('value');
+      this.statusValue = e;
+      if (e == 'all') {
+        this.status = undefined;
+      } else {
+        this.status = e;
+      }
     } else if (b == 'rating') {
-      this.rating = e.getAttribute('value');
+      this.ratingValue = e;
+      if (e == 'all') {
+        this.rating = undefined;
+      } else {
+        this.rating = e;
+      }
     } else if (b == 'sort') {
-      this.sort = e.getAttribute('value');
+      this.sortValue = e;
+      if (e == 'all') {
+        this.sort = undefined;
+      } else {
+        this.sort = e;
+      }
     }
   }
   filterAnime() {

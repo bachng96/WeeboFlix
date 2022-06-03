@@ -40,6 +40,10 @@ export class SliderComponent implements OnInit {
         slidesPerView: 8,
         spaceBetween: 50,
       },
+      1441: {
+        slidesPerView: 8,
+        spaceBetween: 50,
+      }
     },
   };
 

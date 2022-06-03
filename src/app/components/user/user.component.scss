@@ -25,5 +25,11 @@
 }
 
 .active {
-  color: #faa300;
+  color: var(--color-primary);
+}
+
+a {
+  text-decoration: none !important;
+  outline: 0;
+  background-color: transparent;
 }

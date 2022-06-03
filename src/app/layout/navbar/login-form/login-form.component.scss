@@ -10,7 +10,7 @@
   border-radius: 13px;
   position: relative;
   &--button {
-    background-color: $color-yellow;
+    background-color: var(--color-primary);
     border-radius: 5px;
     width: 100%;
     &__demo {
@@ -20,7 +20,7 @@
 .register {
   margin-top: 46px;
   &--link {
-    color: $color-yellow;
+    color: var(--color-primary);
     cursor: pointer;
   }
 }

@@ -60,3 +60,6 @@
 .cursor-pointer {
   cursor: pointer;
 }
+.feature-box--item:hover h5{
+  color:  var(--color-primary);
+}

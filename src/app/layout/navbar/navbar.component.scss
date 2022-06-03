@@ -247,10 +247,19 @@ input:focus {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.fa-heart {
-  font-size: 20px;
+
+.fa-heart{
+  color: var(--color-primary);
 }
 
+.fa-search {
+  color: black;
+}
+
+a, li, span {
+  text-decoration: none;
+  outline: none;
+}
 // reponsive navbar
 @media (max-width: 768px) {
   .navbar {
@@ -264,5 +273,3 @@ input:focus {
   }
 }
 
-.clicked {
-}
