@@ -88,7 +88,10 @@
         />
 
         <div class="dropdown-user shadow-lg" *ngIf="toggleUser">
-          <p class="dropdown-user--email">anvu1308@gmail.com</p>
+          <h5 class="dropdown-user--fullname">
+            {{ userService.user.first_name }} {{ userService.user.last_name }}
+          </h5>
+          <p class="dropdown-user--email">{{ userService.user.email }}</p>
 
           <ul>
             <li routerLink="/user/profile" (click)="gotoProfile()">
