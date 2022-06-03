@@ -103,9 +103,6 @@ input:focus {
   background-color: $color-dark-1;
   color: var(--color);
   border-radius: 10px;
-  position: absolute;
-  top: 31px;
-  right: 33px;
   &--email {
     font-size: 13px;
   }
@@ -234,25 +231,23 @@ input:focus {
 .active-color {
   border: 2px solid white;
 }
-.quantity-watchlist{
+.quantity-watchlist {
   position: relative;
   display: inline-block;
   top: -10px;
   padding: 7px;
-border-radius: 50%;
+  border-radius: 50%;
   background-color: rgb(228, 30, 63);
-
 }
-.quantity-watchlist-number{
+.quantity-watchlist-number {
   position: absolute;
   font-size: 11px;
   color: white;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-
-
+  transform: translate(-50%, -50%);
 }
+
 .fa-heart{
   color: var(--color-primary);
 }

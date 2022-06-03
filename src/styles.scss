@@ -19,6 +19,15 @@
 .carousel-control-prev {
   z-index: 10000000;
 }
+
+//custom dropdown ng bs
+.dropdown-menu.show {
+  display: block;
+  left: -250px;
+  background-color: transparent;
+  border: none;
+}
+
 @import "../node_modules/swiper/swiper-bundle.min.css";
 @import "../node_modules/swiper/swiper.min.css";
 @import "../node_modules/swiper/components/pagination/pagination.min.css";
@@ -39,7 +48,7 @@
   --box-shadow: #fff;
 }
 
-.page-link{
+.page-link {
   border-radius: 5px;
   margin-left: 5px;
   margin-right: 5px;
