@@ -2,20 +2,24 @@
 .feature-box {
   background-color: $color-dark-2;
   color: white;
-  &--item:nth-child(odd) {
-    background-color: $color-dark-1;
+  &--item {
     cursor: pointer;
+    &:nth-child(odd) {
+      background-color: $color-dark-1;
+    }
+    &:hover h5 {
+      color: var(--color-primary);
+    }
   }
-
 
   &--title {
     padding: 10px;
-    color: $color-yellow;
+    color: var(--color-primary);
     font-size: 19px;
     font-weight: bold;
   }
   &--item:nth-child(6):hover {
-    color: $color-yellow;
+    color: var(--color-primary);
   }
 }
 .box-item {
@@ -27,10 +31,16 @@
     object-fit: cover;
   }
   &--infor {
-    &__desc ul li {
-      margin-right: 17px;
-      font-size: 11px;
-      color: rgba($color-white, 0.8);
+    &__desc {
+      & ul {
+        text-transform: capitalize;
+        list-style: none;
+        & li {
+          margin-right: 17px;
+          font-size: 11px;
+          color: rgba($color-white, 0.8);
+        }
+      }
     }
     &__name {
       font-size: 18px;
@@ -43,7 +53,7 @@
     cursor: pointer;
     margin-right: 10px;
     &:hover {
-      color: $color-yellow;
+      color: var(--color-primary);
     }
   }
 }
