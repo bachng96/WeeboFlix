@@ -11,6 +11,7 @@ import { WatchListService } from 'src/app/core/services/watch-list.service';
 export class WatchListComponent implements OnInit {
   public watchList;
   public filter;
+  public watchListType: String = 'all';
   constructor(private watchListService: WatchListService) {}
 
   ngOnInit(): void {
@@ -35,10 +36,12 @@ export class WatchListComponent implements OnInit {
   }
   showStatusView(e) {
     this.watchList = this.watchListService.getWatchList();
+    this.watchListType = e;
     this.filter = this.watchList;
     this.filter = this.filter.filter((item) => item.statusWatchList == e);
   }
   showAll() {
+    this.watchListType = 'all';
     this.filter = this.watchList;
   }
 }
