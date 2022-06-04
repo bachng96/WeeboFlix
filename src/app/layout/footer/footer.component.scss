@@ -44,7 +44,10 @@ button {
 }
 .footer-filter-title{
   transform: translate(0,-15%);
+  color: var(--color-primary);
 }
+
+
 @media only screen and (max-width: 400px) {
   .footer_list-letter{
     display: none;

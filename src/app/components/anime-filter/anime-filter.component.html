@@ -15,36 +15,34 @@
   <div class="d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center filter-item">
       <p class="mb-0">Type:</p>
-      <div class="dropdown">
-        <div class="position-relative">
-          <button class="btn-custom" (click)="toggle($event.target.value)" value="type">All</button>
-          <div class="dropdown-button shadow-lg" *ngIf="showType">
-            <ul>
-              <li (click)="changeStatus($event.target,'type')" value="tv">TV</li>
-              <li (click)="changeStatus($event.target,'type')" value="movie">Movie</li>
-              <li (click)="changeStatus($event.target,'type')" value="ova">Ova</li>
-              <li (click)="changeStatus($event.target,'type')" value="special">Special</li>
-              <li (click)="changeStatus($event.target,'type')" value="ona">Ona</li>
-              <li (click)="changeStatus($event.target,'type')" value="music">Music</li>
-            </ul>
-          </div>
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-custom" id="dropdownBasic1" ngbDropdownToggle>{{typeValue | titlecase }}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'type')" value="all">All</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'type')" value="tv">Tv</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'type')" value="movie">Movie</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'type')" value="ova">Ova</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'type')" value="special">Special</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'type')" value="ona">Ona</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'type')" value="music">Music</button>
+
         </div>
       </div>
     </div>
     <div class="d-flex align-items-center filter-item">
       <p class="mb-0">Status:</p>
-      <div class="dropdown">
-        <div class="position-relative">
-          <button class="btn-custom" (click)="toggle($event.target.value)" value="status">All</button>
-          <div class="dropdown-button shadow-lg" *ngIf="showStatus">
-            <ul>
-              <li (click)="changeStatus($event.target,'status')" value="airing">Airing</li>
-              <li (click)="changeStatus($event.target,'status')" value="complete">Complete</li>
-              <li (click)="changeStatus($event.target,'status')" value="upcoming">Up Coming</li>
-            </ul>
-          </div>
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-custom" id="dropdownBasic1" ngbDropdownToggle>{{statusValue | titlecase }}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'status')" value="all">All</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'status')" value="airing">Airing</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'status')" value="complete">Complete</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'status')" value="upcoming">Up Coming</button>
+
+
         </div>
       </div>
+
     </div>
     <div class="d-flex input-score align-items-center ">
       <p class="mb-0 filter-item">Min score:</p>
@@ -60,36 +58,30 @@
     </div>
     <div class="d-flex align-items-center filter-item">
       <p class="mb-0">Rating:</p>
-      <div class="dropdown">
-        <div class="position-relative">
-          <button class="btn-custom" (click)="toggle($event.target.value)" value="rating">All</button>
-          <div class="dropdown-button shadow-lg" *ngIf="showRating">
-            <ul>
-              <li (click)="changeStatus($event.target, 'rating')" value="g">g</li>
-              <li (click)="changeStatus($event.target, 'rating')" value="pg">pg</li>
-              <li (click)="changeStatus($event.target, 'rating')" value="pg13">pg13</li>
-              <li (click)="changeStatus($event.target, 'rating')" value="r17">r17</li>
-              <li (click)="changeStatus($event.target, 'rating')" value="r">r</li>
-              <li (click)="changeStatus($event.target, 'rating')" value="rx">rx</li>
-            </ul>
-          </div>
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-custom" id="dropdownBasic1" ngbDropdownToggle>{{ratingValue | titlecase }}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'rating')" value="all">All</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'rating')" value="g">g</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'rating')" value="pg">pg</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'rating')" value="pg13">pg13</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'rating')" value="r17">r17</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'rating')" value="r">r</button>
+          <button ngbDropdownItem (click)="changeStatus($event.target.value, 'rating')" value="rx">rx</button>
         </div>
       </div>
     </div>
     <div class="d-flex align-items-center filter-item">
       <p class="mb-0">Sort</p>
-      <div class="dropdown">
-        <div class="position-relative">
-          <button class="btn-custom"(click)="toggle($event.target.value)" value="sort">All</button>
-          <div class="dropdown-button shadow-lg" *ngIf="showSort">
-            <ul>
-              <li (click)="changeStatus($event.target, 'sort')" value="desc">desc</li>
-              <li (click)="changeStatus($event.target, 'sort')" value="asc">asc</li>
-            </ul>
-          </div>
-        </div>
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-custom" id="dropdownBasic1" ngbDropdownToggle>{{sortValue | titlecase }}</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem (click)="changeStatus($event.target.value, 'sort')" value="all">All</button>
+        <button ngbDropdownItem (click)="changeStatus($event.target.value, 'sort')" value="desc">desc</button>
+        <button ngbDropdownItem (click)="changeStatus($event.target.value, 'sort')" value="asc">asc</button>
       </div>
     </div>
+  </div>
   </div>
 </div>
 <div class="text-white ml-4 mt-4">

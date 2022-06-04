@@ -1,21 +1,43 @@
-<div class="social-media d-flex">
+<div class="social-media d-flex" *ngIf="type === 'full'">
   <div class="social-media--item social-media--item__blue">
     <i class="fab fa-facebook-f text-white mr-2"></i>
-    <span *ngIf="type === 'full'">Facebook</span>
+    <span>Facebook</span>
   </div>
 
   <div class="social-media--item social-media--item__blue-light">
     <i class="fab fa-twitter"></i>
-    <span *ngIf="type === 'full'">Twiter</span>
+    <span>Twiter</span>
   </div>
 
   <div class="social-media--item social-media--item__orange">
     <i class="fab fa-reddit-alien"></i>
-    <span *ngIf="type === 'full'">Reddit</span>
+    <span>Reddit</span>
   </div>
 
   <div class="social-media--item social-media--item__blue-light-2">
     <i class="fab fa-telegram-plane"></i>
-    <span *ngIf="type === 'full'">Telegram</span>
+    <span>Telegram</span>
+  </div>
+</div>
+
+<div class="social-media d-flex" *ngIf="type !== 'full'">
+  <span class="fa-stack">
+    <i class="fas fa-square fa-stack-2x blue"></i>
+    <i class="fab fa-facebook-f fa-stack-1x"></i>
+  </span>
+
+  <span class="fa-stack">
+    <i class="fas fa-square fa-stack-2x blue-light"></i>
+    <i class="fab fa-twitter fa-stack-1x"> </i>
+  </span>
+
+  <div class="fa-stack">
+    <i class="fas fa-square fa-stack-2x orange"></i>
+    <i class="fab fa-reddit-alien fa-stack-1x"> </i>
+  </div>
+
+  <div class="fa-stack">
+    <i class="fas fa-square fa-stack-2x blue-light-2"></i>
+    <i class="fab fa-telegram-plane fa-stack-1x"> </i>
   </div>
 </div>

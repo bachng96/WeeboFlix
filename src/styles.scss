@@ -19,6 +19,18 @@
 .carousel-control-prev {
   z-index: 10000000;
 }
+
+//custom dropdown ng bs
+.dropdown-menu.show {
+  display: block;
+  left: -250px;
+  // background-color: transparent;
+  border-radius: 5%;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: none;
+}
+
 @import "../node_modules/swiper/swiper-bundle.min.css";
 @import "../node_modules/swiper/swiper.min.css";
 @import "../node_modules/swiper/components/pagination/pagination.min.css";
@@ -38,8 +50,11 @@
   --box-color: #fff;
   --box-shadow: #fff;
 }
-
-.page-link{
+.page-item.active .page-link{
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+.page-link {
   border-radius: 5px;
   margin-left: 5px;
   margin-right: 5px;

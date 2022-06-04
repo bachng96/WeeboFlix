@@ -10,6 +10,22 @@
     & span {
       margin-left: 7px;
     }
+    & i {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      padding: 0;
+      & .point {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: red;
+        z-index: -1;
+      }
+    }
     &__blue {
       background-color: #3b5998;
     }
@@ -26,4 +42,16 @@
       transform: translateY(-5px);
     }
   }
+}
+.blue {
+  color: #3b5998;
+}
+.blue-light {
+  color: rgb(29, 161, 242);
+}
+.orange {
+  color: rgb(255, 87, 0);
+}
+.blue-light-2 {
+  color: rgb(0, 136, 204);
 }
