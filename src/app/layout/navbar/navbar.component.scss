@@ -260,6 +260,9 @@ a, li, span {
   text-decoration: none;
   outline: none;
 }
+.watchlist-icon{
+  cursor: pointer;
+}
 // reponsive navbar
 @media (max-width: 768px) {
   .navbar {
