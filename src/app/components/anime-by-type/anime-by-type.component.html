@@ -1,4 +1,4 @@
-<div class="share p-3">
+<div class="share p-3" *ngIf="listAnimeByType; else spinner">
   <div class="d-flex p-0">
     <span class="share--title">Share anime for your friends</span>
     <app-social-media></app-social-media>
@@ -7,7 +7,7 @@
     <div class="anime-by-type">
       <div class="row p-0 m-0">
         <div class="col-9 p-0">
-          <div class="row p-0" *ngIf="listAnimeByType; else spinner">
+          <div class="row p-0" >
             <div class="anime-by-type--title col-12">
               <h3 class="mt-4 text-white">
                 <span *ngIf="searchByName"
@@ -39,13 +39,7 @@
           </div>
           </div>
 
-          <ng-template #spinner>
-            <div
-              class="d-flex justify-content-center align-items-center spinner"
-            >
-              <app-spinner></app-spinner>
-            </div>
-          </ng-template>
+
         </div>
 
 
@@ -68,3 +62,10 @@
     </div>
   </div>
 </div>
+<ng-template #spinner>
+  <div
+    class="d-flex justify-content-center align-items-center spinner"
+  >
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>

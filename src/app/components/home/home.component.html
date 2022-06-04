@@ -1,3 +1,4 @@
+<div *ngIf="animeLastest; else spinner">
 <app-carosel></app-carosel>
 <app-slider [animes]="animeSlider"></app-slider>
 <app-anime-featured></app-anime-featured>
@@ -26,3 +27,9 @@
         </div>
       </div>
 </div>
+</div>
+<ng-template #spinner>
+  <div class="d-flex justify-content-center">
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>
