@@ -1,11 +1,12 @@
+<div *ngIf="animeLastest; else spinner">
 <app-carosel></app-carosel>
 <app-slider [animes]="animeSlider"></app-slider>
 <app-anime-featured></app-anime-featured>
 <div class="container-xs row mx-0 mb-4">
     <div class="main-container col-lg-9 col-sm-12">
         <app-anime-list [animeList]="animeLastest" [animeHeader]="'Latest'" [buttonAdd]="true" [viewMoreFlag]="true" [typeViewMore]="'lastest'"></app-anime-list>
-        <app-anime-list [animeList]="animeListNew" [animeHeader]="'New On Weeboflix'" [buttonAdd]="true" [viewMoreFlag]="true" [typeViewMore]="'new'"></app-anime-list>
-        <app-anime-list [animeList]="animeUpComing" [animeHeader]="'Top UpComming'" [buttonAdd]="true" [viewMoreFlag]="true" [typeViewMore]="'upcoming'"></app-anime-list>
+        <app-anime-list [animeList]="animeListNew" [animeHeader]="'New On'" [buttonAdd]="true" [viewMoreFlag]="true" [typeViewMore]="'new'"></app-anime-list>
+        <app-anime-list [animeList]="animeUpComing" [animeHeader]="'UpComming'" [buttonAdd]="true" [viewMoreFlag]="true" [typeViewMore]="'upcoming'"></app-anime-list>
     </div>
     <div class="side-bar col-lg-3 col-sm-12">
         <div class="block_area">
@@ -26,3 +27,9 @@
         </div>
       </div>
 </div>
+</div>
+<ng-template #spinner>
+  <div class="d-flex justify-content-center">
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>

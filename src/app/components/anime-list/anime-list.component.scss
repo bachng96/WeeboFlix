@@ -92,6 +92,7 @@
   right: 10px;
 }
 
+
 .tick.ltr .tick-item {
   margin-right: 2px;
 }
@@ -170,6 +171,7 @@
   right: 0;
   bottom: 0;
   z-index: 3;
+
   display: inline-block;
 }
 
@@ -284,7 +286,8 @@ a {
  -webkit-box-orient: vertical;
 }
 .active{
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: white
 }
 .dropdown-toggle::after {
   display: none;

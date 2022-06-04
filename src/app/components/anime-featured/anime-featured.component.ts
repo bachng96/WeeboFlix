@@ -35,7 +35,7 @@ export class AnimeFeaturedComponent implements OnInit {
     e.stopPropagation();
     this.userService.checkLogin(() => {
       this.watchlist.addToWatchList(item);
-      this.showDanger('add to wishlist success !');
+      this.showDanger(`Add ${item.title} to wishlist success !`);
     });
   }
   showDanger(dangerTpl) {

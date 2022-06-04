@@ -1,6 +1,8 @@
 import { AnimeService } from 'src/app/core/services/anime.service';
 import { Component, OnInit } from '@angular/core';
 import { Params } from '@angular/router';
+import { ToastService } from 'src/app/core/services/toast.service';
+import { UserService } from 'src/app/core/services/user.service';
 import { WatchListService } from 'src/app/core/services/watch-list.service';
 
 @Component({
@@ -17,7 +19,9 @@ export class MostviewBoxComponent implements OnInit {
   flag: string = 'score';
   constructor(
     private animeService: AnimeService,
-    public watchListService: WatchListService
+    public watchListService: WatchListService,
+    public toastService: ToastService,
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
@@ -65,5 +69,18 @@ export class MostviewBoxComponent implements OnInit {
         a[property] > b[property] ? -1 : a[property] < b[property] ? 1 : 0;
       return result * sortOrder;
     };
+  }
+  addWhislit(e, item) {
+    e.stopPropagation();
+    this.userService.checkLogin(() => {
+      this.watchListService.addToWatchList(item);
+      this.showDanger(`Add ${item.title} to wishlist success !`);
+    });
+  }
+  showDanger(dangerTpl) {
+    this.toastService.show(dangerTpl, {
+      classname: 'bg-success text-light',
+      delay: 3000,
+    });
   }
 }

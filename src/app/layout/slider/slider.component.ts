@@ -25,25 +25,26 @@ export class SliderComponent implements OnInit {
     slidesPerGroup: 1,
     loop: false,
     loopFillGroupWithBlank: false,
+    pagination: { clickable: true },
     keyboard: true,
     mousewheel: true,
     breakpoints: {
       640: {
         slidesPerView: 3,
-        spaceBetween: 42,
+        spaceBetween: 20,
       },
       768: {
         slidesPerView: 4,
-        spaceBetween: 42,
+        spaceBetween: 20,
       },
       1024: {
         slidesPerView: 8,
-        spaceBetween: 50,
+        spaceBetween: 20,
       },
       1441: {
         slidesPerView: 8,
-        spaceBetween: 50,
-      }
+        spaceBetween: 20,
+      },
     },
   };
 

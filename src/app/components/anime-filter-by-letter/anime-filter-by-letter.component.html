@@ -1,18 +1,47 @@
-<div class="d-flex flex-column ">
-<div class="main-container ">
-  <div class="d-flex px-4">
-    <a class="" routerLink="/home" class="text-decoration-none text-white">Home</a>
+<div class="d-flex flex-column" *ngIf='filter;else spinner'>
+  <div class="main-container">
+    <div class="d-flex px-4">
+      <a class="" routerLink="/home" class="text-decoration-none text-white"
+        >Home</a
+      >
+    </div>
+    <h3 class="px-4">Sort By Letters ({{ totalAnime }} Anime)</h3>
+    <ul class="row">
+      <li class="">
+        <button
+          class="btn btn-custom mt-2 {{ active == 'all' ? 'active' : '' }}"
+          routerLink="/az-list"
+        >
+          All
+        </button>
+      </li>
+      <li *ngFor="let item of alphabet">
+        <button
+          class="btn  btn-custom mt-2 {{ active == item ? 'active' : '' }}"
+          value="{{ item }}"
+          routerLink="/az-list/{{ item }}"
+        >
+          {{ item | uppercase }}
+        </button>
+      </li>
+    </ul>
+    <div>
+      <app-anime-list [animeList]="filter"></app-anime-list>
+    </div>
   </div>
-  <h3 class="px-4">Sort By Letters ({{totalAnime}} Anime)</h3>
-  <ul class="row ">
-    <li class=""><button class="btn btn-secondary mt-2" routerLink="/az-list">All</button></li>
-    <li *ngFor="let item of alphabet"><button class="btn btn-secondary btn-custom mt-2" value="{{item}}" routerLink="/az-list/{{item}}" >{{item | uppercase}}</button></li>
-  </ul>
-  <div>
-    <app-anime-list [animeList]="filter" ></app-anime-list>
+  <div class="w-100 mb-4 d-flex justify-content-center col-12">
+    <ngb-pagination
+      [collectionSize]="sumPage * 10"
+      [(page)]="current_page"
+      [maxSize]="3"
+      [boundaryLinks]="true"
+      (pageChange)="onPaginationClick($event)"
+    ></ngb-pagination>
   </div>
 </div>
-<div class="w-100 mb-4 d-flex justify-content-center">
-  <ngb-pagination [collectionSize]="sumPage*10" [(page)]=" current_page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="onPaginationClick($event)"></ngb-pagination>
-</div>
-</div>
+<ng-template #spinner>
+  <div class="d-flex justify-content-center">
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>
+
