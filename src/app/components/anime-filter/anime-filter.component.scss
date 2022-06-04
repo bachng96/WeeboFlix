@@ -1,31 +1,5 @@
 @import "../../style/variable";
 
-.dropdown-button {
-  width: 150px;
-  padding: 10px 30px 1px 30px;
-  background-color: $color-dark-1;
-  color: white;
-  border-radius: 10px;
-  position: absolute;
-  top: 31px;
-  right: 33px;
-  z-index: 4;
-  ul {
-    list-style: none;
-    width: 100%;
-    li {
-      padding: 5px;
-      margin-top: 10px;
-      font-size: 12px;
-      width: 100%;
-      cursor: pointer;
-      &:hover {
-        color: var(--color-primary);
-      }
-    }
-  }
-}
-
 .user__header--name{
   font-size: 30px;
   color: white;
@@ -55,11 +29,9 @@
 li{
   list-style: none;
 }
-.active{
-  color: var(--color-primary);
-}
+
 .container{
-  background-color: $color-dark-1;
+  background-color: $color-dark-2;
   border-radius: 15px;
 }
 .btn-custom{
@@ -81,6 +53,10 @@ li{
   border-radius: 5px;
   padding: 7px;
 }
+.active{
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
 .datepicker-input{
 }
 h1{
@@ -95,4 +71,11 @@ h1{
 }
 .btn-custom{
   border: none;
+}
+.filter-genresbox{
+  color: #ddd;
+  font-size: 12px;
+}
+ p{
+  font-size: 12px
 }

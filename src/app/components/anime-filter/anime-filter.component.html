@@ -120,7 +120,7 @@
                  name="dpFromDate"
                  [value]="formatter.format(fromDate)"
                  (input)="fromDate = validateInput(fromDate, dpFromDate.value)">
-          <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>
+          <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"><i class="fas fa-calendar-alt"></i></button>
         </div>
       </div>
       <div class="col-5">
@@ -130,7 +130,7 @@
                  name="dpToDate"
                  [value]="formatter.format(toDate)"
                  (input)="toDate = validateInput(toDate, dpToDate.value)">
-          <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>
+          <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"><i class="fas fa-calendar-alt"></i></button>
         </div>
       </div>
     </form>
@@ -141,16 +141,17 @@
 
 <div class="text-white ml-4 mt-4">
   <h1>Genres</h1>
-  <ul class="d-flex flex-wrap ">
+  <ul class="d-flex flex-wrap filter-genresbox">
     <li *ngFor="let item of listGenres" class="mx-2 list-style-none {{(item.show ? 'active' : '')}} filter-item my-2" (click)="changeFilter($event.target,item)" [value]="item.mal_id">{{item.name}}</li>
   </ul>
 </div>
-
-<button class="btn btn-filter ml-4 mt-4 text-white" (click)="filterAnime()">Filter</button>
+<div class="d-flex justify-content-center align-items-center">
+<button class="btn btn-filter ml-4 mt-4 text-white btn-lg" (click)="filterAnime()">Filter</button>
+</div>
 <div class="w-100 ">
   <app-anime-list [animeList]="filter"></app-anime-list>
   <div class="w-100 d-flex justify-content-center" *ngIf="filter">
-    <ngb-pagination [collectionSize]="totalPages*10" [(page)]=" current_page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="onPaginationClick($event)"></ngb-pagination>
+    <ngb-pagination [collectionSize]="totalPages*10" [(page)]=" current_page" [maxSize]="3" [boundaryLinks]="true" (pageChange)="onPaginationClick($event)"></ngb-pagination>
   </div>
 </div>
 </div>

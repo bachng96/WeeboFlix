@@ -1,5 +1,5 @@
 <h2 class="pl-3">Trending</h2>
-<div *ngIf="animes; else spinner">
+<div class="d-flex justify-content-center" *ngIf="animes; else spinner">
   <swiper
     [config]="swiperConfig"
     class="mySwiper"
