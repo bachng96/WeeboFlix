@@ -114,8 +114,9 @@
                   <i class="fas fa-user mr-2"></i><span>Profile</span>
                 </li>
                 <li
-                  routerLink="/watch/{{watchListService.getToContinuesWatch().mal_id}}"
+                  routerLink="/watch/{{watchListService.getToContinuesWatch()?.mal_id}}"
                   class="text-white"
+                  *ngIf="watchListService.getToContinuesWatch()"
                 >
                 <i class="fas fa-forward  mr-2"></i><span>Continue Watching</span>
                 </li>
