@@ -1,13 +1,13 @@
-<div class="share p-3">
+<div class="share py-3">
   <div class="d-flex p-0">
     <span class="share--title">Share anime for your friends</span>
     <app-social-media></app-social-media>
   </div>
-  <div class="px-5">
+  <div class="">
     <div class="anime-by-type">
-      <div class="row p-0 m-0">
-        <div class="col-9 p-0">
-          <div class="row p-0" *ngIf="animes; else spinner">
+      <div class="d-flex flex-wrap">
+        <div class="col-12 col-lg-9 ">
+          <div class="row mx-2" *ngIf="animes; else spinner">
             <div class="anime-by-type--title col-12">
               <h3 class="mt-4 text-white">
                 ({{
@@ -16,11 +16,9 @@
               </h3>
             </div>
             <div class="anime-by-type--list w-100">
-              <div class="">
-
                 <app-anime-list [animeList]="listAnimeDisplayBig" [bigger]="true"></app-anime-list>
                 <app-anime-list [animeList]="listAnimeDisplayMedium" [bigger]="false"></app-anime-list>
-              </div>
+
             </div>
             <ngb-pagination
               [collectionSize]="pagination?.last_visible_page*10"
@@ -41,13 +39,19 @@
           </ng-template>
         </div>
 
-        <div class="col-3">
+        <div class="col-12 col-lg-3">
           <div>
-            <h4 class="genres-title p-3">Genres</h4>
-            <app-genres-box></app-genres-box>
-          </div>
+            <h2 class="genres-title ">Genres</h2>
+            <div class="col-12 px-0">
 
-          <app-mostview-box></app-mostview-box>
+              <app-genres-box></app-genres-box>
+            </div>
+          </div>
+          <div class="col-12 px-0">
+
+
+            <app-mostview-box></app-mostview-box>
+          </div>
         </div>
       </div>
     </div>

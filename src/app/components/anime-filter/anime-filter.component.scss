@@ -20,10 +20,19 @@
   }
 }
 
+.input-quantity{
+  padding: 16px 7px;
 
+  border: 1px solid #575a64;
+  border-radius: 5px;
+}
 
 li{
   list-style: none;
+}
+.input-score input{
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .container{
@@ -37,7 +46,7 @@ li{
   margin-left: 5px;
 }
 .input-score input{
-  width: 5rem;
+  width: 3rem;
   color: var(--color-primary);
 }
 .input-score p{

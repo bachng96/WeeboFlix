@@ -1,21 +1,73 @@
-<div class="main-container  pl-4 col-11" *ngIf="filter; else spinner">
+<div class="main-container pl-4 col-11" *ngIf="filter; else spinner">
   <h1 class="watch-list"><i class="fas fa-heart"></i> Watch List</h1>
-  <div>
-    <button class="btn btn-custom px-3 mb-3 {{(watchListType == 'all') ? 'active' : ''}}" (click)="showAll()">All</button>
-  <button class="btn btn-custom px-3 ml-2 mb-3 {{(watchListType == 'watching') ? 'active' : ''}}" value="watching" (click)="showStatusView($event.target.value)" >Watching</button>
-  <button class="btn btn-custom px-3 ml-2 mb-3 {{(watchListType == 'onhold') ? 'active' : ''}}" value="onhold" (click)="showStatusView($event.target.value)">On-Hold</button>
-  <button class="btn btn-custom px-3 ml-2 mb-3 {{(watchListType == 'plantowatch') ? 'active' : ''}}" value="plantowatch" (click)="showStatusView($event.target.value)">Plan to watch</button>
-  <button class="btn btn-custom px-3 ml-2 mb-3 {{(watchListType == 'dropped') ? 'active' : ''}}" value="dropped" (click)="showStatusView($event.target.value)">Dropped</button>
-  <button class="btn btn-custom px-3 ml-2 mb-3 {{(watchListType == 'completed') ? 'active' : ''}}" value="completed" (click)="showStatusView($event.target.value)">Completed</button>
+  <div class="d-flex justify-content-left flex-wrap
+  ">
+    <button
+      class="btn btn-custom px-3 mb-3 mr-2 {{
+        watchListType == 'all' ? 'active' : ''
+      }}"
+      (click)="showAll()"
+    >
+      All
+    </button>
+    <button
+      class="btn btn-custom px-3 mr-2 mb-3 {{
+        watchListType == 'watching' ? 'active' : ''
+      }}"
+      value="watching"
+      (click)="showStatusView($event.target.value)"
+    >
+      Watching
+    </button>
+    <button
+      class="btn btn-custom px-3 mr-2 mb-3 {{
+        watchListType == 'onhold' ? 'active' : ''
+      }}"
+      value="onhold"
+      (click)="showStatusView($event.target.value)"
+    >
+      On-Hold
+    </button>
+    <button
+      class="btn btn-custom px-3 mr-2 mb-3 {{
+        watchListType == 'plantowatch' ? 'active' : ''
+      }}"
+      value="plantowatch"
+      (click)="showStatusView($event.target.value)"
+    >
+      Plan to watch
+    </button>
+    <button
+      class="btn btn-custom px-3 mr-2 mb-3 {{
+        watchListType == 'dropped' ? 'active' : ''
+      }}"
+      value="dropped"
+      (click)="showStatusView($event.target.value)"
+    >
+      Dropped
+    </button>
+    <button
+      class="btn btn-custom px-3 mr-2 mb-3 {{
+        watchListType == 'completed' ? 'active' : ''
+      }}"
+      value="completed"
+      (click)="showStatusView($event.target.value)"
+    >
+      Completed
+    </button>
   </div>
   <div>
-    <app-anime-list [animeList]="filter" [animeHeader]="" [dropDown]="true" (removeItem)="removeItem($event)" (changeWLStatus)="changeStatus($event)"></app-anime-list>
+    <app-anime-list
+      [animeList]="filter"
+      [animeHeader]=""
+      [dropDown]="true"
+      (removeItem)="removeItem($event)"
+      (changeWLStatus)="changeStatus($event)"
+    ></app-anime-list>
   </div>
 </div>
 <ng-template #spinner>
-  <div
-    class="d-flex justify-content-center align-items-center spinner"
-  >
+  <div class="d-flex justify-content-center align-items-center spinner">
     <app-spinner></app-spinner>
   </div>
 </ng-template>

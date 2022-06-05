@@ -53,6 +53,28 @@
     z-index: 9;
     left: 0;
     right: 0;
+
+}
+
+.slide__item--add{
+  display: none;
+  position: absolute;
+    bottom: 0;
+    font-size: 24px;
+    text-align: center;
+    z-index: 9;
+    left: 0;
+    right: 0;
+}
+.slide__item:hover .slide__item--number{
+  display: none;
+}
+.slide__item:hover .slide__item--add{
+  display: inline;
+}
+.slide__item--add:hover{
+  color: var(--color-primary);
+  cursor: pointer;
 }
 .swiper-button-prev{
   color: white;
@@ -185,6 +207,9 @@ h2{
     font-size: 14px;
   }
 
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+  bottom: 90%;
 }
 
 @media (min-width: 425px) {
