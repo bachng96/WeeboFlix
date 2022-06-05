@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Anime } from '../model/app.model';
 import { ToastService } from './toast.service';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,10 @@ import { ToastService } from './toast.service';
 export class WatchListService {
   private watchList = [];
   private continuesWatch: Anime;
-  constructor(public toastService: ToastService) {
+  constructor(
+    public toastService: ToastService,
+    private userService: UserService
+  ) {
     let savedWatchList = localStorage.getItem('watchList');
     if (savedWatchList) {
       this.watchList = JSON.parse(savedWatchList);
