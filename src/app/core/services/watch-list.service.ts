@@ -30,18 +30,28 @@ export class WatchListService {
     return this.continuesWatch;
   }
   addToWatchList(p) {
-    let index = this.watchList.findIndex((c) => c.mal_id == p.mal_id);
-    if (index == -1) {
-      this.watchList.push(p);
-      this.showDanger(`Add ${p.title} to wishlist success !`);
+    if (this.userService.isLogin() == false) {
+      this.showDanger(`You must be logged in first`);
     } else {
-      this.showDanger(`${p.title} is already in Watch List !`);
+      let index = this.watchList.findIndex((c) => c.mal_id == p.mal_id);
+      if (index == -1) {
+        this.watchList.push(p);
+        this.showSuccess(`Add ${p.title} to wishlist success !`);
+      } else {
+        this.showDanger(`${p.title} is already in Watch List !`);
+      }
+      localStorage.setItem('watchList', JSON.stringify(this.watchList));
     }
-    localStorage.setItem('watchList', JSON.stringify(this.watchList));
+  }
+  showSuccess(dangerTpl) {
+    this.toastService.show(dangerTpl, {
+      classname: 'bg-success text-light',
+      delay: 3000,
+    });
   }
   showDanger(dangerTpl) {
     this.toastService.show(dangerTpl, {
-      classname: 'bg-success text-light',
+      classname: 'bg-danger text-light',
       delay: 3000,
     });
   }

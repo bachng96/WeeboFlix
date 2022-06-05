@@ -62,17 +62,7 @@ export class SliderComponent implements OnInit {
   addWhislit(e, item) {
     e.stopPropagation();
     this.userService.checkLogin(() => {
-      if (this.userService.isLogin() == false) {
-        this.showDanger(`You must be logged in first`);
-      } else {
-        this.watchListService.addToWatchList(item);
-      }
-    });
-  }
-  showDanger(dangerTpl) {
-    this.toastService.show(dangerTpl, {
-      classname: 'bg-danger text-light',
-      delay: 3000,
+      this.watchListService.addToWatchList(item);
     });
   }
 }
