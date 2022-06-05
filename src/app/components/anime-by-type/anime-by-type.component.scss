@@ -17,3 +17,10 @@
 .genres-title {
   color: var(--color-primary);
 }
+.pagination {
+  display: flex;
+  padding-left: 0;
+  flex-wrap: wrap;
+  list-style: none;
+  border-radius: 0.25rem;
+}
