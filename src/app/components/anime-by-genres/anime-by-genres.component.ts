@@ -11,7 +11,7 @@ import { AnimeService } from 'src/app/core/services/anime.service';
 export class AnimeByGenresComponent implements OnInit {
   listAnimeByType: Anime[];
   pagination;
-  page = 1;
+  page: number = 1;
   type: string = '';
   listAnimeDisplayBig: Anime[];
   year: number = null;

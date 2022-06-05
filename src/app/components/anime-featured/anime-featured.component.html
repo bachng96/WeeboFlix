@@ -19,7 +19,8 @@
               <div class="box-item--infor__desc">
                 <ul class="d-flex">
                   <li>type: {{ item.type }}</li>
-                  <li>EP: {{ item.start_date }}</li>
+                  <li *ngIf="item.start_date">EP: {{ item.start_date }}</li>
+                  <li *ngIf="!item.start_date">EP: Wait for update</li>
                 </ul>
               </div>
             </div>

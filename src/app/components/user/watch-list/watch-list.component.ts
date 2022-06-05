@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnimeService } from 'src/app/core/services/anime.service';
 import { WatchListService } from 'src/app/core/services/watch-list.service';
 import { ToastService } from 'src/app/core/services/toast.service';
+import { WatchListItem } from 'src/app/core/model/app.model';
 
 @Component({
   selector: 'app-watch-list',
@@ -10,8 +11,8 @@ import { ToastService } from 'src/app/core/services/toast.service';
   styleUrls: ['./watch-list.component.scss'],
 })
 export class WatchListComponent implements OnInit {
-  public watchList;
-  public filter;
+  public watchList: WatchListItem[];
+  public filter: WatchListItem[];
   public watchListType: String = 'all';
   constructor(
     private watchListService: WatchListService,
