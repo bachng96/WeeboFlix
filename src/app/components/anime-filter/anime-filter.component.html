@@ -1,4 +1,5 @@
-<div class="user__header border-bottom border-warning">
+<div *ngIf="filter; else spinner">
+<div class="user__header border-bottom border-warning" >
   <div class="user__header--bg"></div>
   <div class="user__header--text"></div>
 </div>
@@ -352,7 +353,7 @@
       Filter
     </button>
   </div>
-  <div class="w-100" *ngIf="filter; else spinner">
+  <div class="w-100" >
     <app-anime-list [animeList]="filter"></app-anime-list>
     <div class="w-100 d-flex justify-content-center" *ngIf="filter">
       <ngb-pagination
@@ -365,7 +366,7 @@
     </div>
   </div>
 </div>
-
+</div>
 <ng-template #spinner>
   <div class="d-flex justify-content-center">
     <app-spinner></app-spinner>

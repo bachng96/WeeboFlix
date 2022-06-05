@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Anime } from '../model/app.model';
+import { ToastService } from './toast.service';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,7 @@ import { Anime } from '../model/app.model';
 export class WatchListService {
   private watchList = [];
   private continuesWatch: Anime;
-  constructor() {
+  constructor(public toastService: ToastService) {
     let savedWatchList = localStorage.getItem('watchList');
     if (savedWatchList) {
       this.watchList = JSON.parse(savedWatchList);
@@ -28,8 +29,17 @@ export class WatchListService {
     let index = this.watchList.findIndex((c) => c.mal_id == p.mal_id);
     if (index == -1) {
       this.watchList.push(p);
+      this.showDanger(`Add ${p.title} to wishlist success !`);
+    } else {
+      this.showDanger(`${p.title} is already in Watch List !`);
     }
     localStorage.setItem('watchList', JSON.stringify(this.watchList));
+  }
+  showDanger(dangerTpl) {
+    this.toastService.show(dangerTpl, {
+      classname: 'bg-success text-light',
+      delay: 3000,
+    });
   }
   updateToWatchList(p) {
     this.watchList = p;
@@ -43,6 +53,7 @@ export class WatchListService {
     let index = this.watchList.findIndex((c) => c.mal_id == p.mal_id);
     if (index >= 0) {
       this.watchList.splice(index, 1);
+      this.showDanger(`Remove anime ${p.title} Success`);
     }
     localStorage.setItem('watchList', JSON.stringify(this.watchList));
   }

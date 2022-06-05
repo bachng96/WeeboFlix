@@ -74,13 +74,6 @@ export class MostviewBoxComponent implements OnInit {
     e.stopPropagation();
     this.userService.checkLogin(() => {
       this.watchListService.addToWatchList(item);
-      this.showDanger(`Add ${item.title} to wishlist success !`);
-    });
-  }
-  showDanger(dangerTpl) {
-    this.toastService.show(dangerTpl, {
-      classname: 'bg-success text-light',
-      delay: 3000,
     });
   }
 }
