@@ -1,23 +1,24 @@
-
 <div class="share py-3" *ngIf="listAnimeByType; else spinner">
-  <div class="pc p-0">
+  <div class="pc px-3">
     <span class="share--title">Share anime for your friends</span>
     <app-social-media></app-social-media>
   </div>
-  <div class="mobile p-0">
+  <div class="mobile px-3">
     <span class="share--title">Share anime for your friends</span>
     <app-social-media type="icon"></app-social-media>
   </div>
   <div class="">
     <div class="anime-by-type">
       <div class="row p-0 m-0">
-        <div class="col-sm-12 col-lg-9 d-flex justify-content-center" style="width: 100%">
+        <div
+          class="col-sm-12 col-lg-9 d-flex justify-content-center"
+          style="width: 100%"
+        >
           <div
             class="row p-0"
             style="width: 100%"
             *ngIf="listAnimeByType; else spinner"
           >
-
             <div class="anime-by-type--title col-12">
               <h3 class="mt-4 text-white">
                 <span *ngIf="searchByName"
@@ -29,7 +30,7 @@
                 }})
               </h3>
             </div>
-            <div class="anime-by-type--list w-100 " style="margin-top: 4px">
+            <div class="anime-by-type--list w-100" style="margin-top: 4px">
               <div class="">
                 <app-anime-list
                   [animeList]="listAnimeDisplayBig"
@@ -41,7 +42,7 @@
                 ></app-anime-list>
               </div>
             </div>
-            <div class="w-100 d-flex justify-content-center ">
+            <div class="w-100 d-flex justify-content-center">
               <ngb-pagination
                 [collectionSize]="pagination.items.total"
                 *ngIf="pagination.items.total > 5"
@@ -72,9 +73,7 @@
   </div>
 </div>
 <ng-template #spinner>
-  <div
-    class="d-flex justify-content-center align-items-center spinner"
-  >
+  <div class="d-flex justify-content-center align-items-center spinner">
     <app-spinner></app-spinner>
   </div>
 </ng-template>
