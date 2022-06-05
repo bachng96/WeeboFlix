@@ -1,13 +1,19 @@
+
 <div class="share p-3" *ngIf="listAnimeByType; else spinner">
   <div class="d-flex p-0">
     <span class="share--title">Share anime for your friends</span>
     <app-social-media></app-social-media>
   </div>
-  <div class="px-5">
+  <div class="px-3">
     <div class="anime-by-type">
       <div class="row p-0 m-0">
-        <div class="col-lg-9 col-sm-12">
-          <div class="row p-0" >
+        <div class="col-lg-9 p-0 col-sm-12 col-md-12" style="width: 100%">
+          <div
+            class="row p-0"
+            style="width: 100%"
+            *ngIf="listAnimeByType; else spinner"
+          >
+
             <div class="anime-by-type--title col-12">
               <h3 class="mt-4 text-white">
                 <span *ngIf="searchByName"
@@ -19,43 +25,42 @@
                 }})
               </h3>
             </div>
-            <div class="anime-by-type--list w-100">
+            <div class="anime-by-type--list w-100" style="margin-top: 4px">
               <div class="">
-
-                <app-anime-list [animeList]="listAnimeDisplayBig" [bigger]="true"></app-anime-list>
-                <app-anime-list [animeList]="listAnimeByType" [bigger]="false"></app-anime-list>
+                <app-anime-list
+                  [animeList]="listAnimeDisplayBig"
+                  [bigger]="true"
+                ></app-anime-list>
+                <app-anime-list
+                  [animeList]="listAnimeByType"
+                  [bigger]="false"
+                ></app-anime-list>
               </div>
             </div>
             <div class="w-100 d-flex justify-content-center">
-            <ngb-pagination
-              [collectionSize]="pagination.items.total"
-              *ngIf="pagination.items.total > 5"
-              [(page)]="page"
-              [maxSize]="3"
-              [rotate]="true"
-              [boundaryLinks]="true"
-              (pageChange)="logPage()"
-            ></ngb-pagination>
+              <ngb-pagination
+                [collectionSize]="pagination.items.total"
+                *ngIf="pagination.items.total > 5"
+                [(page)]="page"
+                [maxSize]="5"
+                [rotate]="true"
+                [boundaryLinks]="true"
+                (pageChange)="logPage()"
+              ></ngb-pagination>
+            </div>
           </div>
-          </div>
-
-
         </div>
 
-
-        <div class="col-lg-3 col-sm-12">
+        <!-- <div class="col-lg-1"></div> -->
+        <div class="col-lg-3 col-sm-12 col-md-12">
           <div>
-            <h4 class="genres-title p-3">Best Anime of All Time</h4>
+            <h4 class="genres-title py-4">Best Anime of All Time</h4>
             <app-time-box (onClick)="animeByYear($event)"></app-time-box>
           </div>
 
           <div>
-            <h4 class="genres-title p-3">Genres</h4>
+            <h4 class="genres-title py-4">Genres</h4>
             <app-genres-box></app-genres-box>
-          </div>
-          <div>
-            <h4 class="genres-title p-3">Top Box</h4>
-            <app-mostview-box></app-mostview-box>
           </div>
         </div>
       </div>

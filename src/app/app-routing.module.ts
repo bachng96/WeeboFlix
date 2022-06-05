@@ -12,6 +12,7 @@ import { UserComponent } from './components/user/user.component';
 import { WatchListComponent } from './components/user/watch-list/watch-list.component';
 import { AnimeByTypeComponent } from './components/anime-by-type/anime-by-type.component';
 import { WatchComponent } from './components/watch/watch.component';
+import { SettingComponent } from './components/user/setting/setting.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -29,6 +30,7 @@ const routes: Routes = [
     component: UserComponent,
     children: [
       { path: '', redirectTo: 'profile', pathMatch: 'full' },
+      { path: 'setting', component: SettingComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'watch-list', component: WatchListComponent },
     ],
