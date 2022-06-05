@@ -54,6 +54,43 @@ export interface Anime {
   themes: Theme[];
   demographics: Demographic[];
 }
+export interface WatchListItem {
+  mal_id: number;
+  url: string;
+  images: Images;
+  trailer: Trailer;
+  title: string;
+  title_english?: string;
+  title_japanese: string;
+  title_synonyms: string[];
+  type: string;
+  source: string;
+  episodes?: number;
+  statusWatchList: string;
+  status: string;
+  airing: boolean;
+  aired: Aired;
+  duration: string;
+  rating: string;
+  score: number;
+  scored_by: number;
+  rank: number;
+  popularity: number;
+  members: number;
+  favorites: number;
+  synopsis: string;
+  background?: string;
+  season?: string;
+  year?: number;
+  broadcast: Broadcast;
+  producers: Producer[];
+  licensors: Licensor[];
+  studios: Studio[];
+  genres: Genre[];
+  explicit_genres: any[];
+  themes: Theme[];
+  demographics: Demographic[];
+}
 
 export interface Images {
   jpg: Jpg;
@@ -191,6 +228,12 @@ export interface User {
   first_name: string;
   last_name: string;
   avatar: string;
+}
+export interface Genres {
+  mal_id: number;
+  name: String;
+  url?: string;
+  count: number;
 }
 
 export enum Type {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Params } from '@angular/router';
+import { Anime } from 'src/app/core/model/app.model';
 import { AnimeService } from 'src/app/core/services/anime.service';
 import { ToastService } from 'src/app/core/services/toast.service';
 import { UserService } from 'src/app/core/services/user.service';
@@ -11,6 +13,7 @@ import { dynamicFilterByType } from '../../share/functionReuseble';
 })
 export class AnimeFeaturedComponent implements OnInit {
   listAnimeMovie: [];
+  anime: Anime;
   MovieType;
   TVType;
   specialType;
@@ -33,8 +36,11 @@ export class AnimeFeaturedComponent implements OnInit {
   }
   addWhislit(e, item) {
     e.stopPropagation();
-    this.userService.checkLogin(() => {
-      this.watchlist.addToWatchList(item);
+    this.animeService.getAnimeById(item?.mal_id).subscribe((p: Params) => {
+      this.anime = p.data;
+      this.userService.checkLogin(() => {
+        this.watchlist.addToWatchList(this.anime);
+      });
     });
   }
 

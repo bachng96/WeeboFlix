@@ -74,6 +74,7 @@ export class MostviewBoxComponent implements OnInit {
     e.stopPropagation();
     this.userService.checkLogin(() => {
       this.watchListService.addToWatchList(item);
+      console.log(item);
     });
   }
 }
