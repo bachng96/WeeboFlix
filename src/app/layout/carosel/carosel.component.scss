@@ -160,11 +160,22 @@
     display: none;
   }
   .carousel-caption {
-    width: 40%;
+    width: 100%;
+    margin-left: 0;
     text-align: left;
     position: absolute;
     left: 50%;
-    top: 50%;
     transform: translate(-50%, -50%);
+  }
+  .carousel {
+    &--rate {
+      text-align: center;
+    }
+    &--title {
+      text-align: center;
+    }
+  }
+  .group-btn {
+    justify-content: center;
   }
 }

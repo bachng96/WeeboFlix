@@ -1,0 +1,76 @@
+@import "../../../style/variable";
+.setting {
+  background-color: $color-dark;
+  width: 50%;
+  margin-bottom: 60px;
+  position: relative;
+}
+.dropwdown-palette {
+  color: black;
+  position: relative;
+  top: -4px;
+  transition: all 0.8s;
+  animation: moveInLeft 0.5s ease-out 0.75s;
+  &--color {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    &__yellow {
+      background-color: #faa300;
+    }
+    &__green {
+      background-color: #14c38e;
+    }
+    &__sky {
+      background-color: #0088cc;
+    }
+  }
+  &--btn {
+    margin-top: 10px;
+    text-align: center;
+    padding: 3px 0px;
+    color: white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: var(--color-primary);
+  }
+}
+
+.setting-type--name {
+  color: white;
+  font-size: 17px;
+  width: 100px;
+}
+.setting-box {
+  padding: 40px 20px;
+}
+
+// swtich button
+.save-btn {
+  padding: 10px 0px;
+  width: 100%;
+  margin: 20px 0px;
+  text-align: center;
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.img-bg {
+  width: 200px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+@media screen and (max-width: 768px) {
+  .setting {
+    width: 70%;
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .setting {
+    width: 90%;
+  }
+}

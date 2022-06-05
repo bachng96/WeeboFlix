@@ -38,6 +38,7 @@ import { WatchComponent } from './components/watch/watch.component';
 import { ButtonComponent } from './share/button/button.component';
 import { AnimeByGenresComponent } from './components/anime-by-genres/anime-by-genres.component';
 import { ViewMoreListComponent } from './components/view-more-list/view-more-list.component';
+import { SettingComponent } from './components/user/setting/setting.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { ViewMoreListComponent } from './components/view-more-list/view-more-lis
     ButtonComponent,
     AnimeByGenresComponent,
     ViewMoreListComponent,
+    SettingComponent,
   ],
   imports: [
     BrowserModule,
