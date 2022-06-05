@@ -3,6 +3,7 @@
 .navbar {
   transition: 0.5;
   background-color: transparent;
+  padding: 0px;
   &-brand {
     width: 100px;
   }
@@ -18,9 +19,12 @@
   outline: none;
   border: none;
   height: 80%;
-  width: 100%;
+  width: 280px;
   &:focus {
     outline: none;
+  }
+  &__small {
+    background-color: white;
   }
 }
 input:focus {
@@ -48,14 +52,14 @@ input:focus {
     border-bottom: 1px solid rgba($color-black, 0.8);
   }
   &--item:hover {
-    color: var(--color);
+    color: var(--color-primary);
   }
 }
 .btn {
   cursor: pointer;
   &--rounded {
     background-color: $color-dark-2;
-    color: var(--color);
+    color: white;
     border-radius: 10rem;
     font-size: 15px;
   }
@@ -79,17 +83,18 @@ input:focus {
   height: 100%;
   background-color: #2a2c3142;
   transition: all 0.9;
-  color: var(--color);
+  color: white;
   &--content {
     height: 100%;
-    // transform: translateX(-330px);
     max-width: 330px;
     background-color: #2a2c31;
     overflow-y: auto;
     overflow-x: hidden;
   }
 }
-
+.list-menu {
+  color: white;
+}
 .avatar-user {
   width: 40px;
   height: 40px;
@@ -136,8 +141,6 @@ input:focus {
   color: var(--color-primary);
   font-size: 30px;
   margin-right: 20px;
-  position: relative;
-  top: 5px;
   cursor: pointer;
 }
 
@@ -189,10 +192,14 @@ input:focus {
       & ul li {
         margin-right: 25px;
         font-weight: 300;
+        font-size: 11px;
         &:first-child {
           list-style: none;
         }
       }
+    }
+    &:hover p {
+      color: var(--color-primary);
     }
   }
 }
@@ -248,7 +255,7 @@ input:focus {
   transform: translate(-50%, -50%);
 }
 
-.fa-heart{
+.fa-heart {
   color: var(--color-primary);
 }
 
@@ -256,17 +263,26 @@ input:focus {
   color: black;
 }
 
-a, li, span {
+a,
+li,
+span {
   text-decoration: none;
   outline: none;
 }
-.watchlist-icon{
+.watchlist-icon {
   cursor: pointer;
 }
 // reponsive navbar
+
+.icon-navbar--filter,
+.navbar-search {
+  display: none;
+}
 @media (max-width: 768px) {
   .navbar {
     background-color: rgba($color-black, 0.74);
+    position: relative;
+
     &-brand {
       width: 80px;
     }
@@ -274,4 +290,45 @@ a, li, span {
   .button-toggle {
     margin-right: 5px;
   }
+  .search-box {
+    display: flex;
+    position: absolute;
+    top: 53px;
+    left: 0;
+    right: 0;
+    padding: 5px 10px;
+    background-color: rgba($color-black, 0.74);
+  }
+  .navbar-search {
+    display: inline;
+  }
+  .icon-navbar {
+    color: white;
+    &--filter {
+      width: 50px;
+      display: inline;
+    }
+    &--search {
+      width: 50px;
+    }
+  }
+  .input-search {
+    width: calc(100% - 50px);
+    &__small {
+      background-color: white;
+      width: calc(100% - 50px);
+    }
+  }
+  .watchlist-icon {
+    font-size: 17px;
+    margin-right: 10px;
+  }
+  button#dropdownBasic1 {
+    margin-right: 10px;
+  }
 }
+
+.text-black {
+  color: black;
+}
+

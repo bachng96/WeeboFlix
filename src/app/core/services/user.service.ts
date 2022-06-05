@@ -50,7 +50,8 @@ export class UserService {
   checkLogin(next) {
     if (this.isLogin() === false) {
       this.toggleNavbar.emit('open login form');
+    } else {
+      next();
     }
-    next();
   }
 }

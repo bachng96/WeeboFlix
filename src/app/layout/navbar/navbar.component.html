@@ -11,17 +11,27 @@
       />
     </a>
 
-    <div class="bg-white align-items-center search-box d-none d-lg-flex">
-      <input
-        type="text"
-        class="input-search p-2"
-        id="usr"
-        [formControl]="search"
-      />
-      <i class="fas fa-search"></i>
-      <span class="btn btn-secondary btn-filter mx-2" routerLink="/filter"
-        >filter</span
-      >
+    <div class="align-items-center search-box">
+      <span class="icon-navbar--filter fa-stack">
+        <i class="fas fa-square fa-stack-2x text-white"></i>
+        <i class="fas fa-filter fa-stack-1x text-black"></i>
+      </span>
+
+      <div class="input-search__small">
+        <input
+          type="text"
+          class="input-search p-2"
+          id="usr"
+          [formControl]="search"
+        />
+        <i class="fas fa-search search icon-navbar--search"></i>
+        <span
+          class="btn btn-secondary btn-filter mx-2 d-none d-md-inline"
+          routerLink="/filter"
+          >filter</span
+        >
+      </div>
+
       <div class="search-box--results" *ngIf="showDropdown">
         <div class="search-box--list">
           <div
@@ -53,7 +63,10 @@
       <div class="name"><span>Random</span></div>
     </div>
 
-    <div class="ml-auto d-flex">
+    <div class="ml-auto d-flex align-items-center">
+      <!-- search -->
+      <i class="fas fa-search watchlist-icon text-white navbar-search"></i>
+      <!-- change theme -->
       <div class="dropwdown-palette" *ngIf="show">
         <div class="dropwdown-palette--list-color d-flex px-2 pt-3">
           <div
@@ -70,16 +83,25 @@
           ></div>
         </div>
       </div>
+
       <i
         class="fas fa-palette wishlist-icon d-none d-lg-flex"
         (click)="show = !show"
       ></i>
-      <i class="fas fa-palette wishlist-icon d-none d-lg-flex" (click)="show = !show"></i>
-        <span class="d-flex align-items-center mr-2 watchlist-icon" routerLink="/user/watch-list">
-          <i class="fas fa-heart fa-2x"></i><span class="quantity-watchlist "><span class="quantity-watchlist-number">{{watchListService.getWatchList().length}}</span></span>
-        </span>
 
-
+      <!-- watch lish -->
+      <span
+        class="align-items-center mr-2 watchlist-icon d-none d-md-flex"
+        routerLink="/user/watch-list"
+      >
+        <i class="fas fa-heart fa-2x"></i
+        ><span class="quantity-watchlist"
+          ><span class="quantity-watchlist-number">{{
+            watchListService.getWatchList().length
+          }}</span></span
+        >
+      </span>
+      <!-- user -->
       <div *ngIf="userService.user">
         <!-- dropwdown -->
         <div ngbDropdown class="d-inline-block" placement="bottom-start">
@@ -118,8 +140,14 @@
                   class="text-white"
                   *ngIf="watchListService.getToContinuesWatch()"
                 >
-                <i class="fas fa-forward  mr-2"></i><span>Continue Watching</span>
+                  <i class="fas fa-forward mr-2"></i
+                  ><span>Continue Watching</span>
                 </li>
+                <li routerLink="/user/setting" class="text-white">
+                  <i class="fas fa-cog mr-2"></i>
+                  <span>Setting</span>
+                </li>
+
                 <li (click)="logout()" class="text-white">
                   <i class="fas fa-sign-out-alt mr-2"></i><span>Logout </span>
                 </li>
@@ -134,20 +162,24 @@
         <!-- end dropdown -->
       </div>
       <button
-        class="btn btn-warning btn-login"
+        class="btn btn-warning btn-login mr-2"
         (click)="open()"
         *ngIf="!userService.user"
       >
         Login
       </button>
+      <!-- end  login option  -->
     </div>
   </nav>
 
   <!-- menu toggle -->
   <div class="modal-custom" *ngIf="toggle" (click)="close($event)">
-    <div class="modal-custom--content shadow-lg">
-      <div class="btn btn--rounded mt-3 mb-4 ml-3" (click)="toggle = false">
-        <i class="fas fa-chevron-left mr-2"></i> Close menu
+    <div class="modal-custom--content shadow-lg text-white">
+      <div
+        class="btn btn--rounded mt-3 mb-4 ml-3 text-white"
+        (click)="toggle = false"
+      >
+        <i class="fas fa-chevron-left mr-2 text-white"></i> Close menu
       </div>
       <div class="modal-custom-content" *ngIf="toggle">
         <ul class="list-menu" (click)="$event.stopPropagation()">
