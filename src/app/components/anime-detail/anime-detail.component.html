@@ -1,4 +1,4 @@
-<div class="aniDetail-container mt-5" *ngIf="animeDetail">
+<div class="aniDetail-container mt-5" *ngIf="animeDetail; else spinner">
     <div class="anime-cover" [ngStyle]="{ 'background-image': 'url('+animeDetail.images.jpg.large_image_url+')'}"></div>
     <div class="anime-content-container mt-5">
         <div class="anime-content pt-5 px-5 row m-0">
@@ -74,3 +74,8 @@
         </div>
     </div>
 </div>
+<ng-template #spinner>
+  <div class="d-flex justify-content-center">
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>

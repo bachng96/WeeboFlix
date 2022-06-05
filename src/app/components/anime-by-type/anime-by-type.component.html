@@ -1,4 +1,4 @@
-<div class="share p-3">
+<div class="share p-3" *ngIf="listAnimeByType; else spinner">
   <div class="d-flex p-0">
     <span class="share--title">Share anime for your friends</span>
     <app-social-media></app-social-media>
@@ -6,8 +6,8 @@
   <div class="px-5">
     <div class="anime-by-type">
       <div class="row p-0 m-0">
-        <div class="col-9 p-0">
-          <div class="row p-0" *ngIf="listAnimeByType; else spinner">
+        <div class="col-lg-9 col-sm-12">
+          <div class="row p-0" >
             <div class="anime-by-type--title col-12">
               <h3 class="mt-4 text-white">
                 <span *ngIf="searchByName"
@@ -31,7 +31,7 @@
               [collectionSize]="pagination.items.total"
               *ngIf="pagination.items.total > 5"
               [(page)]="page"
-              [maxSize]="5"
+              [maxSize]="3"
               [rotate]="true"
               [boundaryLinks]="true"
               (pageChange)="logPage()"
@@ -39,17 +39,11 @@
           </div>
           </div>
 
-          <ng-template #spinner>
-            <div
-              class="d-flex justify-content-center align-items-center spinner"
-            >
-              <app-spinner></app-spinner>
-            </div>
-          </ng-template>
+
         </div>
 
 
-        <div class="col-3">
+        <div class="col-lg-3 col-sm-12">
           <div>
             <h4 class="genres-title p-3">Best Anime of All Time</h4>
             <app-time-box (onClick)="animeByYear($event)"></app-time-box>
@@ -68,3 +62,10 @@
     </div>
   </div>
 </div>
+<ng-template #spinner>
+  <div
+    class="d-flex justify-content-center align-items-center spinner"
+  >
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>

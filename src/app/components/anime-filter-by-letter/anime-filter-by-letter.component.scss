@@ -11,7 +11,13 @@ li {
 h3{
   color: var(--color-primary);
 }
-.btn:not(:disabled):not(.disabled):focus{
+
+.btn-custom{
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+}
+.active{
   background-color:var(--color-primary) ;
   border-color: var(--color-primary);
 }
