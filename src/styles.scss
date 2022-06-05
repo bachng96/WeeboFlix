@@ -30,7 +30,16 @@
   padding-bottom: 0;
   border: none;
 }
-
+//pagination
+.pagination {
+  flex-wrap: wrap;
+}
+li.page-item {
+  margin-top: 15px;
+}
+.page-link {
+  color: $color-dark;
+}
 @import "../node_modules/swiper/swiper-bundle.min.css";
 @import "../node_modules/swiper/swiper.min.css";
 @import "../node_modules/swiper/components/pagination/pagination.min.css";
@@ -50,7 +59,7 @@
   --box-color: #fff;
   --box-shadow: #fff;
 }
-.page-item.active .page-link{
+.page-item.active .page-link {
   background-color: var(--color-primary) !important;
   border-color: var(--color-primary) !important;
 }
