@@ -27,7 +27,6 @@ export class WatchListComponent implements OnInit {
       }
     });
     this.filter = this.watchList;
-    console.log(this.watchList);
   }
   removeItem(e) {
     this.watchListService.removeWatchListItem(e);
