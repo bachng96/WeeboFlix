@@ -92,6 +92,7 @@
   right: 10px;
 }
 
+
 .tick.ltr .tick-item {
   margin-right: 2px;
 }
@@ -113,8 +114,8 @@
 }
 
 .tick-item.tick-eps {
-  background: #fec862 !important;
-  color: #111 !important;
+  background: #fec862;
+  color: #111;
 }
 
 .hide {
@@ -132,25 +133,14 @@
   font-weight: 600;
 }
 
-// .hide::after {
-//   clear: both;
-// }
+.watch-btn, .add-btn {
+  background-color: var(--color-primary);
+  font-size: 16px;
+}
 
-// @keyframes effect {
-//   0% {
-//     visibility: visible;
-//   }
-// }
-
-// .flw-item:hover + .hide {
-//   display: block;
-//   position: absolute;
-//   z-index: 2;
-//   top: 60px;
-//   left: 45%;
-//   background-color: #2a2c31;
-//   animation: effect 2s infinite 1s;
-// }
+.left-content {
+  width: 35%;
+}
 
 .film-poster .film-poster-img {
   position: absolute;
@@ -169,8 +159,36 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 3;
   display: inline-block;
+}
+
+.item {
+  color: #212529;
+  font-size: 12px;
+  font-family: arial;
+  font-weight: 600;
+  display: inline-block;
+  line-height: 1.2em;
+  padding: 2px 4px;
+  border-radius: 5px;
+  background: #fff;
+  margin-bottom: 5px;
+}
+
+.film-poster-ahref-2 {
+  position: absolute;
+  display: none;
+  width: 320px;
+  background-color: #4e515e;
+  border-radius: 6px;
+  padding: 5px 0;
+  top: 59%;
+  left: 42%;
+}
+
+.film-poster-ahref:hover .film-poster-ahref-2{
+  display: block;
+  z-index: 5;
 }
 
 .flw-item .film-poster .film-poster-ahref i {
@@ -284,8 +302,21 @@ a {
  -webkit-box-orient: vertical;
 }
 .active{
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: white
 }
 .dropdown-toggle::after {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .film-poster-ahref-2 {
+    display: none;
+  }
+}
+
+@media (max-width: 576) {
+  .film-poster-ahref-2 {
+    display: none;
+  }
 }

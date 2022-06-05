@@ -1,13 +1,13 @@
-<div class="aniDetail-container mt-5" *ngIf="animeDetail">
+<div class="aniDetail-container mt-5" *ngIf="animeDetail; else spinner">
     <div class="anime-cover" [ngStyle]="{ 'background-image': 'url('+animeDetail.images.jpg.large_image_url+')'}"></div>
     <div class="anime-content-container mt-5">
         <div class="anime-content pt-5 px-5 row m-0">
-            <div class="anime-poster col-2">
+            <div class="anime-poster col-lg-2 col-md-4 col-sm-12">
                 <div class="film-poster">
                     <img [src]="animeDetail.images.jpg.large_image_url" alt="" class="film-poster-img img-fluid">
                 </div>
             </div>
-            <div class="anime-detail pl-5 col-7">
+            <div class="anime-detail pl-5 col-lg-7 col-md-8 col-sm-12">
                 <div class="anime-title text-white">
                     <h3>{{animeDetail.title}}</h3>
                 </div>
@@ -37,7 +37,7 @@
 
             </div>
 
-            <div class="anime-info-warp col-3 py-2 d-flex flex-column justify-content-center">
+            <div class="anime-info-warp col-lg-3 col-md-12 col-sm-12 py-2 d-flex flex-column justify-content-center">
                 <div class="ani ani-title">
                     <span class="ani-head">Japaness:</span>
                     <span class="name">{{animeDetail.title_japanese}}</span>
@@ -74,3 +74,8 @@
         </div>
     </div>
 </div>
+<ng-template #spinner>
+  <div class="d-flex justify-content-center">
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>

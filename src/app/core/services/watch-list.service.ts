@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Anime } from '../model/app.model';
+import { ToastService } from './toast.service';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +9,10 @@ import { Anime } from '../model/app.model';
 export class WatchListService {
   private watchList = [];
   private continuesWatch: Anime;
-  constructor() {
+  constructor(
+    public toastService: ToastService,
+    private userService: UserService
+  ) {
     let savedWatchList = localStorage.getItem('watchList');
     if (savedWatchList) {
       this.watchList = JSON.parse(savedWatchList);
@@ -25,11 +30,30 @@ export class WatchListService {
     return this.continuesWatch;
   }
   addToWatchList(p) {
-    let index = this.watchList.findIndex((c) => c.mal_id == p.mal_id);
-    if (index == -1) {
-      this.watchList.push(p);
+    if (this.userService.isLogin() == false) {
+      this.showDanger(`You must be logged in first`);
+    } else {
+      let index = this.watchList.findIndex((c) => c.mal_id == p.mal_id);
+      if (index == -1) {
+        this.watchList.push(p);
+        this.showSuccess(`Add ${p.title} to wishlist success !`);
+      } else {
+        this.showDanger(`${p.title} is already in Watch List !`);
+      }
+      localStorage.setItem('watchList', JSON.stringify(this.watchList));
     }
-    localStorage.setItem('watchList', JSON.stringify(this.watchList));
+  }
+  showSuccess(dangerTpl) {
+    this.toastService.show(dangerTpl, {
+      classname: 'bg-success text-light',
+      delay: 3000,
+    });
+  }
+  showDanger(dangerTpl) {
+    this.toastService.show(dangerTpl, {
+      classname: 'bg-danger text-light',
+      delay: 3000,
+    });
   }
   updateToWatchList(p) {
     this.watchList = p;
@@ -43,6 +67,7 @@ export class WatchListService {
     let index = this.watchList.findIndex((c) => c.mal_id == p.mal_id);
     if (index >= 0) {
       this.watchList.splice(index, 1);
+      this.showDanger(`Remove anime ${p.title} Success`);
     }
     localStorage.setItem('watchList', JSON.stringify(this.watchList));
   }

@@ -67,6 +67,13 @@ li.page-item {
   border-radius: 5px;
   margin-left: 5px;
   margin-right: 5px;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 450;
+  opacity: 0.8;
+
+}
+
+.page-item.active .page-link{
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
 }

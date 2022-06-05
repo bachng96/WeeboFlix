@@ -1,5 +1,6 @@
-<div class="share p-3">
-  <div class="p-0 d-none d-lg-flex">
+
+<div class="share p-3" *ngIf="listAnimeByType; else spinner">
+  <div class="d-flex p-0">
     <span class="share--title">Share anime for your friends</span>
     <app-social-media></app-social-media>
   </div>
@@ -12,6 +13,7 @@
             style="width: 100%"
             *ngIf="listAnimeByType; else spinner"
           >
+
             <div class="anime-by-type--title col-12">
               <h3 class="mt-4 text-white">
                 <span *ngIf="searchByName"
@@ -47,15 +49,8 @@
               ></ngb-pagination>
             </div>
           </div>
-
-          <ng-template #spinner>
-            <div
-              class="d-flex justify-content-center align-items-center spinner"
-            >
-              <app-spinner></app-spinner>
-            </div>
-          </ng-template>
         </div>
+
         <!-- <div class="col-lg-1"></div> -->
         <div class="col-lg-3 col-sm-12 col-md-12">
           <div>
@@ -72,3 +67,10 @@
     </div>
   </div>
 </div>
+<ng-template #spinner>
+  <div
+    class="d-flex justify-content-center align-items-center spinner"
+  >
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>

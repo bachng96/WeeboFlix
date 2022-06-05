@@ -1,5 +1,5 @@
 <h2 class="pl-3">Trending</h2>
-<div *ngIf="animes; else spinner">
+<div class="d-flex justify-content-center" *ngIf="animes; else spinner">
   <swiper
     [config]="swiperConfig"
     class="mySwiper"
@@ -9,6 +9,7 @@
         <div class="slide__item--desc">
           <p class="slide__item--title">{{item.title}}</p>
           <span class="slide__item--number">{{i+1}}</span>
+          <span  class="slide__item--add" (click)="addWhislit($event, item);$event.stopPropagation();$event.preventDefault()"><i class="fas fa-plus"></i></span>
         </div>
         <div class="slide__item--image"><img [src]="item.images.jpg.large_image_url" alt=""></div>
         <div class="clearfix"></div>

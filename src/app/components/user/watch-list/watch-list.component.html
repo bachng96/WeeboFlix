@@ -1,8 +1,9 @@
-<div class="main-container pl-4 col-11">
-  <h1 class="watch-list my-3"><i class="fas fa-heart"></i> Watch List</h1>
-  <div>
+<div class="main-container pl-4 col-11" *ngIf="filter; else spinner">
+  <h1 class="watch-list"><i class="fas fa-heart"></i> Watch List</h1>
+  <div class="d-flex justify-content-left flex-wrap
+  ">
     <button
-      class="btn btn-custom px-3 mb-3 {{
+      class="btn btn-custom px-3 mb-3 mr-2 {{
         watchListType == 'all' ? 'active' : ''
       }}"
       (click)="showAll()"
@@ -65,3 +66,8 @@
     ></app-anime-list>
   </div>
 </div>
+<ng-template #spinner>
+  <div class="d-flex justify-content-center align-items-center spinner">
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>

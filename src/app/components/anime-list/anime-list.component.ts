@@ -41,10 +41,12 @@ export class AnimeListComponent implements OnInit {
     e.stopPropagation();
     item.show = !item.show;
   }
-  over(id) {
-    
+  over(t, item) {
+    t.close()
+    t.open({item})
   }
-  out() {
+  out(t) {
+    t.close()
   }
   addToWatchList(item) {
     item.show = false;
