@@ -22,8 +22,7 @@ export class AppComponent {
     let color = this.userService.theme;
     console.log(color);
 
-    if(color){
-
+    if (color) {
       if (color === 'green') {
         this.theme = 'green-theme';
       }
@@ -33,9 +32,8 @@ export class AppComponent {
       if (color === 'yellow') {
         this.theme = 'yellow-theme';
       }
-    }else{
+    } else {
       this.theme = 'yellow-theme';
-
     }
     console.log(this.theme);
     this.initialTheme();
@@ -53,5 +51,19 @@ export class AppComponent {
         ? (this.theme = 'yellow-theme')
         : (this.theme = 'sky-theme')
     );
+  }
+  onActivate(event) {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
+  goToTop(e) {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 }
