@@ -11,6 +11,7 @@ import { ToastService } from 'src/app/core/services/toast.service';
 export class LoginFormComponent implements OnInit {
   havaAccount: boolean = true;
   loading: boolean = false;
+  errorMessage: string = '';
   signForm = new FormGroup({
     email: new FormControl('', [
       Validators.required,
@@ -42,16 +43,26 @@ export class LoginFormComponent implements OnInit {
     password: '23424',
   };
   onLogin() {
-    this.userService.login(this.signForm.value).subscribe((res) => {
-      if (res) {
-        this.loading = true;
-        setTimeout(() => {
+    this.loading = true;
+    this.errorMessage = '';
+    this.userService.login(this.signForm.value).subscribe(
+      (res) => {
+        if (res) {
           this.loading = false;
-          this.activeModal.close('Close click');
-          this.showDanger('Login success !');
-        }, 2000);
+          this.errorMessage = '';
+          this.loading = true;
+          setTimeout(() => {
+            this.loading = false;
+            this.activeModal.close('Close click');
+            this.showDanger('Login success !');
+          }, 2000);
+        }
+      },
+      (err) => {
+        this.loading = false;
+        this.errorMessage = err.error.error;
       }
-    });
+    );
   }
   showDanger(dangerTpl) {
     this.toastService.show(dangerTpl, {

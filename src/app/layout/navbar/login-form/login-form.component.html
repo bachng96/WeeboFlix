@@ -35,9 +35,12 @@
     </label>
     <span>Forget Password ?</span>
   </div>
+  <p class="message-error" *ngIf="errorMessage !== ''">{{ errorMessage }}</p>
+  <div *ngIf="loading === true"><app-spinner type="dot"></app-spinner></div>
   <button class="login-form--button text-center py-2 mt-5" type="submit">
     Login
   </button>
+
   <div class="d-flex justify-content-center">
     <div class="btn btn-link text-center py-2 mt-2" (click)="demoLogin()">
       Demo Account

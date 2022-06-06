@@ -38,3 +38,11 @@
   position: relative;
   top: 1px;
 }
+p.message-error {
+  text-align: center;
+  background-color: #fb2f2fcf;
+  padding: 10px 0px;
+  border-radius: 5px;
+  margin: 0;
+  text-transform: capitalize;
+}
