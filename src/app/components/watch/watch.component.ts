@@ -30,7 +30,6 @@ export class WatchComponent implements OnInit {
     this.animeService.getAnimeById(id).subscribe((data) => {
       this.animeDetail = data['data'];
       this.watchListService.addToContinuesWatch(this.animeDetail);
-      console.log(this.animeDetail);
 
       this.embed_url = this.sanitizer.bypassSecurityTrustResourceUrl(
         this.animeDetail.trailer.embed_url

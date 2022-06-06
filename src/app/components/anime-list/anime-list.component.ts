@@ -1,7 +1,16 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { timer } from 'rxjs';
 import { debounce, debounceTime, map } from 'rxjs/operators';
 import { AnimeService } from 'src/app/core/services/anime.service';
+import { ToastService } from 'src/app/core/services/toast.service';
+import { UserService } from 'src/app/core/services/user.service';
 import { WatchListService } from 'src/app/core/services/watch-list.service';
 import { Anime, Root } from './../../core/model/app.model';
 
@@ -26,11 +35,12 @@ export class AnimeListComponent implements OnInit {
   constructor(
     private animeService: AnimeService,
     public watchListService: WatchListService,
-    private ElByClassName: ElementRef
+    private ElByClassName: ElementRef,
+    public toastService: ToastService,
+    private userService: UserService
   ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   remove(item) {
     this.removeItem.emit(item);
   }
@@ -42,14 +52,17 @@ export class AnimeListComponent implements OnInit {
     item.show = !item.show;
   }
   over(t, item) {
-    t.close()
-    t.open({item})
+    t.close();
+    t.open({ item });
   }
   out(t) {
-    t.close()
+    t.close();
   }
-  addToWatchList(item) {
-    item.show = false;
-    this.watchListService.addToWatchList(item);
+  addWhislit(e, item) {
+    e.stopPropagation();
+    this.userService.checkLogin(() => {
+      this.watchListService.addToWatchList(item);
+      console.log(item);
+    });
   }
 }

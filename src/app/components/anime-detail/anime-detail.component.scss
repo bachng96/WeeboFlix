@@ -23,7 +23,6 @@
 
 .anime-poster {
     transform: none;
-    left: 15px;
     height: 100%;
 }
 
@@ -74,6 +73,7 @@
 
 .btn-custom {
     background-color: var(--color-primary);
+    margin-right: 20px;
 }
 
 .anime-descreption {
@@ -115,3 +115,45 @@
     color: #212529;
 }
 
+@media (max-width: 768px) {
+    .anime-title, .anime-stats {
+        display: flex;
+        justify-content: center;
+    }
+
+    .anime-info-warp {
+        margin-top: 20px;
+    }
+
+    .btn-custom {
+        margin-right: 20px;
+    }
+
+}
+
+@media (max-width: 426px) {
+    .anime-title, .anime-stats {
+        display: flex;
+        text-align: center;
+    }
+
+    .anime-stats {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .anime-detail {
+        width: 100%;
+        padding: 0;
+    }
+
+    .anime-button {
+        flex-direction: column;
+    }
+
+    .btn-custom {
+        flex-grow: 1;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

@@ -1,12 +1,20 @@
-<div class="share p-3" *ngIf="listAnimeByType; else spinner">
-  <div class="d-flex p-0">
+
+<div class="share py-3" *ngIf="listAnimeByType; else spinner">
+  <div class="pc px-3">
     <span class="share--title">Share anime for your friends</span>
     <app-social-media></app-social-media>
   </div>
-  <div class="px-3">
+  <div class="mobile px-3">
+    <span class="share--title">Share anime for your friends</span>
+    <app-social-media type="icon"></app-social-media>
+  </div>
+  <div class="">
     <div class="anime-by-type">
       <div class="row p-0 m-0">
-        <div class="col-lg-9 p-0 col-sm-12 col-md-12" style="width: 100%">
+        <div
+          class="col-sm-12 col-lg-9 d-flex justify-content-center"
+          style="width: 100%"
+        >
           <div
             class="row p-0"
             style="width: 100%"
@@ -40,7 +48,7 @@
                 [collectionSize]="pagination.items.total"
                 *ngIf="pagination.items.total > 5"
                 [(page)]="page"
-                [maxSize]="5"
+                [maxSize]="2"
                 [rotate]="true"
                 [boundaryLinks]="true"
                 (pageChange)="logPage()"
@@ -50,13 +58,13 @@
         </div>
 
         <!-- <div class="col-lg-1"></div> -->
-        <div class="col-lg-3 col-sm-12 col-md-12">
-          <div>
+        <div class="col-sm-12 col-lg-3">
+          <div class="col-12 px-0">
             <h4 class="genres-title py-4">Best Anime of All Time</h4>
             <app-time-box (onClick)="animeByYear($event)"></app-time-box>
           </div>
 
-          <div>
+          <div class="col-12 px-0">
             <h4 class="genres-title py-4">Genres</h4>
             <app-genres-box></app-genres-box>
           </div>
