@@ -1,16 +1,17 @@
 <div *ngIf="animeDetail; else spinner">
-  <div class="container-fluid mt-5 watch" *ngIf="animeDetail">
-    <div class="anime-cover-warp">
-      <div
-        class="anime-cover"
-        [ngStyle]="{
-          'background-image':
-            'url(' + animeDetail.images.jpg.large_image_url + ')'
-        }"
-      ></div>
-    </div>
-    <div class="main-container pt-5 d-flex">
-      <div class="ep-container col-xl-3 col-md-4 col-sm-12">
+<div class="container-fluid mt-5 watch" *ngIf="animeDetail">
+  <div class="anime-cover-warp">
+    <div
+      class="anime-cover"
+      [ngStyle]="{
+        'background-image':
+          'url(' + animeDetail.images.jpg.large_image_url + ')'
+      }"
+    ></div>
+  </div>
+  <div class="main-container pt-5 d-flex flex-wrap">
+    <div class="ep-container-all pb-3 col-lg-3 col-md-4 col-sm-12">
+      <div class="ep-container pb-3">
         <p class="text-white ml-3 mt-2">List of episodes:</p>
         <div class="ep-list mx-3">
           <a class="ep-item py-2" *ngFor="let ep of epList" href="">
@@ -18,7 +19,14 @@
           </a>
         </div>
       </div>
-      <div class="vid-container col-xl-6 col-md-8 col-sm-12 px-0">
+    </div>
+    <div class="vid-container col-lg-6 col-md-8 col-sm-12 px-0">
+      <iframe
+        *ngIf="animeDetail.trailer.embed_url"
+        [src]="embed_url"
+        frameborder="0"
+      ></iframe>
+      <div *ngIf="!animeDetail.trailer.embed_url">
         <iframe
           *ngIf="animeDetail.trailer.embed_url"
           [src]="embed_url"
@@ -32,6 +40,14 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
+      </div>
+    </div>
+    <div class="detail-container col-lg-3 col-md-12 col-sm-12">
+      <div
+        class="anime-info-warp py-2 d-flex flex-column justify-content-center"
+      >
+        <div class="ani ani-pic text-center">
+          <img src="{{ animeDetail.images.jpg.large_image_url }}" alt="" />
         </div>
       </div>
       <div class="detail-container col-xl-3 col-md-12 col-sm-12">
@@ -80,14 +96,17 @@
     </div>
   </div>
 
-  <div class="container-fluid row mx-0">
-    <div class="side-container col-9">
-      <div class="reviews-container">
-        <div class="reviews-warp">
-          <div class="reviews-head">
-            <h2 class="text-white">Reviews:</h2>
-          </div>
-          <div class="reviews-body text-white py-4 px-4">
+
+<div class="container-fluid d-flex flex-wrap">
+  <div class="side-container col-lg-9 col-md-12 col-sm-12">
+    <div class="reviews-container">
+      <div class="reviews-warp">
+        <div class="reviews-head">
+          <h2 class="text-white">Reviews:</h2>
+        </div>
+        <div class="reviews-body text-white py-4 px-4">
+          <div class="reviews-body-item" *ngFor="let review of reviewsShowList">
+
             <div
               class="reviews-body-item"
               *ngFor="let review of reviewsShowList"
@@ -136,9 +155,9 @@
         </div>
       </div>
     </div>
-    <div class="sidebar-container col-3">
-      <app-mostview-box></app-mostview-box>
-    </div>
+  </div>
+  <div class="sidebar-container col-lg-3 col-md-12 col-sm-12">
+    <app-mostview-box></app-mostview-box>
   </div>
 </div>
 <ng-template #spinner>

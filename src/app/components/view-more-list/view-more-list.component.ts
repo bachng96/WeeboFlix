@@ -14,6 +14,7 @@ export class ViewMoreListComponent implements OnInit {
   listAnimeDisplayBig: Anime[];
   listAnimeDisplayMedium: Anime[];
   pagination;
+  animeHeader: string;
   page = 1;
   constructor(
     private route: ActivatedRoute,
@@ -22,12 +23,12 @@ export class ViewMoreListComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((p) => {
-      this.pagination = p.pagination;
-      console.log(this.pagination);
+      this.animeHeader = p.type;
 
       if (p.type == 'new') {
         this.animeService.getAllAnime().subscribe((data: Params) => {
           this.animes = data.data;
+          this.pagination = data.pagination;
           this.animes.sort(this.dynamicSort('favorites'));
           this.listAnimeDisplayBig = this.animes.slice(0, 4);
           this.listAnimeDisplayMedium = this.animes.slice(4, 25);
@@ -35,12 +36,14 @@ export class ViewMoreListComponent implements OnInit {
       } else if (p.type == 'lastest') {
         this.animeService.getAllAnime().subscribe((data: Params) => {
           this.animes = data.data;
+          this.pagination = data.pagination;
           this.listAnimeDisplayBig = this.animes.slice(0, 4);
           this.listAnimeDisplayMedium = this.animes.slice(4, 25);
         });
       } else if (p.type == 'upcoming') {
         this.animeService.getAllAnime().subscribe((data: Params) => {
           this.animes = data.data;
+          this.pagination = data.pagination;
           this.animes.sort(this.dynamicSort('score'));
           this.listAnimeDisplayBig = this.animes.slice(0, 4);
           this.listAnimeDisplayMedium = this.animes.slice(4, 25);

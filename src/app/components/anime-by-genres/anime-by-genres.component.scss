@@ -17,3 +17,17 @@
 .genres-title {
   color: var(--color-primary);
 }
+.mobile{
+  display: none ;
+}
+.pc{
+  display: flex;
+}
+@media only screen and (max-width: 400px) {
+  .mobile{
+    display: flex;
+  }
+  .pc{
+    display: none ;
+  }
+}
