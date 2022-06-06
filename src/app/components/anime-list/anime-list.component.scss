@@ -133,8 +133,12 @@
   font-weight: 600;
 }
 
-.watch-btn, .add-btn {
+.watch-btn {
   background-color: var(--color-primary);
+  font-size: 16px;
+}
+ .add-btn {
+  background-color: white;
   font-size: 16px;
 }
 
@@ -198,11 +202,19 @@
   color: #fff;
 }
 
-.film-poster-ahref i {
+.film-poster-ahref .icon-play {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.icon-score{
+  font-size: 13px !important;
+  color: var(--color-primary);
+}
+.icon-add{
+  font-size: 15px !important;
+  color: black;
 }
 
 .flw-item .film-poster .film-poster-ahref:hover {
