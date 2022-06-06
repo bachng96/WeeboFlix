@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit {
   listGenre;
   toggleUser: boolean = false;
   toggle: boolean = false;
-
+  toggleSearch: boolean = true;
   show: boolean = false;
   constructor(
     private modalService: NgbModal,
@@ -96,7 +96,16 @@ export class NavbarComponent implements OnInit {
       }
     }
   }
-
+  @HostListener('window:resize', ['$event']) onResize(event) {
+    let box = document.querySelector('.navbar') as HTMLElement;
+    let width = box.offsetWidth;
+    if (width > 750) {
+      this.toggleSearch = true;
+    }
+    if (width < 750) {
+      this.toggleSearch = false;
+    }
+  }
   close(event) {
     event.stopPropagation();
     this.toggle = false;

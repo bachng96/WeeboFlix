@@ -1,5 +1,9 @@
 @import "../../style/variable";
-
+.btn-filter {
+  position: relative;
+  top: -2px;
+  text-transform: capitalize;
+}
 .navbar {
   transition: 0.5;
   background-color: transparent;
@@ -278,7 +282,10 @@ span {
 .navbar-search {
   display: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 770px) {
+  .btn-filter {
+    display: none;
+  }
   .navbar {
     background-color: rgba($color-black, 0.74);
     position: relative;
@@ -331,4 +338,3 @@ span {
 .text-black {
   color: black;
 }
-

@@ -11,7 +11,7 @@
       />
     </a>
 
-    <div class="align-items-center search-box">
+    <div class="align-items-center search-box" *ngIf="toggleSearch">
       <span class="icon-navbar--filter fa-stack" routerLink="/filter">
         <i class="fas fa-square fa-stack-2x text-white"></i>
         <i class="fas fa-filter fa-stack-1x text-black"></i>
@@ -25,9 +25,7 @@
           [formControl]="search"
         />
         <i class="fas fa-search search icon-navbar--search"></i>
-        <span
-          class="btn btn-secondary btn-filter mx-2 d-none d-md-inline"
-          routerLink="/filter"
+        <span class="btn btn-secondary btn-filter mx-2" routerLink="/filter"
           >filter</span
         >
       </div>
@@ -65,7 +63,10 @@
 
     <div class="ml-auto d-flex align-items-center">
       <!-- search -->
-      <i class="fas fa-search watchlist-icon text-white navbar-search"></i>
+      <i
+        class="fas fa-search watchlist-icon text-white navbar-search"
+        (click)="toggleSearch = !toggleSearch"
+      ></i>
       <!-- change theme -->
       <div class="dropwdown-palette" *ngIf="show">
         <div class="dropwdown-palette--list-color d-flex px-2 pt-3">
