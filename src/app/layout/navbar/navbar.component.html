@@ -12,7 +12,7 @@
     </a>
 
     <div class="align-items-center search-box">
-      <span class="icon-navbar--filter fa-stack">
+      <span class="icon-navbar--filter fa-stack" routerLink="/filter">
         <i class="fas fa-square fa-stack-2x text-white"></i>
         <i class="fas fa-filter fa-stack-1x text-black"></i>
       </span>
@@ -141,8 +141,7 @@
                   (click)="gotoProfile($event); myDrop.close()"
                   class="text-white"
                 >
-                  <i class="fas fa-user mr-2"></i
-                  ><span>Profile {{ userService.theme }}</span>
+                  <i class="fas fa-user mr-2"></i><span>Profile</span>
                 </li>
                 <li
                   routerLink="/watch/{{
