@@ -3,11 +3,11 @@
     <div class="anime-content-container mt-5">
         <div class="anime-content pt-5 px-5 row m-0">
             <div class="anime-poster col-lg-2 col-md-4 col-sm-12">
-                <div class="film-poster">
+                <div class="film-poster d-flex justify-content-center">
                     <img [src]="animeDetail.images.jpg.large_image_url" alt="" class="film-poster-img img-fluid">
                 </div>
             </div>
-            <div class="anime-detail pl-5 col-lg-7 col-md-8 col-sm-12">
+            <div class="anime-detail col-lg-7 col-md-8 col-sm-12">
                 <div class="anime-title text-white">
                     <h3>{{animeDetail.title}}</h3>
                 </div>
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="anime-button d-flex my-4">
-                    <div class="btn btn-custom mr-4" routerLink="/watch/{{animeDetail.mal_id}}">
+                    <div class="btn btn-custom" routerLink="/watch/{{animeDetail.mal_id}}">
                       <i class="fas fa-play mr-2"></i> <span> Watch now</span>
                     </div>
                     <div class="btn btn-light" (click)="addWhislit($event, animeDetail)">
