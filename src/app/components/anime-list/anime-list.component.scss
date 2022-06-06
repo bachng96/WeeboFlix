@@ -156,6 +156,14 @@
   right: 0;
   bottom: 0;
 }
+.film-poster .film-effetc{
+  width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg,#2a2c31 0,rgba(42,44,49,0) 76%)
+}
 
 .flw-item .film-poster .film-poster-ahref {
   position: absolute;

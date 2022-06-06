@@ -10,13 +10,20 @@
   <div class="">
     <div class="anime-by-genres">
       <div class="row p-0 m-0">
+
         <div
           class="col-sm-12 col-lg-9 d-flex justify-content-center"
           style="width: 100%"
         >
+
           <div class="row p-0" style="width: 100%">
             <div class="anime-by-genres--title col-12">
-              <h3 class="mt-4 text-white">
+              <div class="d-flex mt-4">
+                <a class="" routerLink="/home" class="text-decoration-none text-white"
+                  >Home</a
+                >
+              </div>
+              <h3 class="mt-2 text-white">
                 {{ type }} Anime <span *ngIf="year"> of {{ year }} </span>({{
                   pagination.items.total
                 }})
