@@ -24,6 +24,14 @@
   list-style: none;
   border-radius: 0.25rem;
 }
+p.message-error {
+  text-align: center;
+  background-color: #fb2f2fcf;
+  padding: 10px 0px;
+  border-radius: 5px;
+  margin: 0;
+}
+
 .mobile{
   display: none ;
 }

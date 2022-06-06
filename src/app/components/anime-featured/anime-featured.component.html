@@ -19,8 +19,12 @@
               <div class="box-item--infor__desc">
                 <ul class="d-flex">
                   <li>type: {{ item.type }}</li>
-                  <li *ngIf="item.start_date">EP: {{ item.start_date }}</li>
-                  <li *ngIf="!item.start_date">EP: Wait for update</li>
+                  <li>
+                    EP:
+                    {{ item.start_date !== null ? item.start_date : "2022" }}
+                  </li>
+<!--                   <li *ngIf="item.start_date">EP: {{ item.start_date }}</li>
+                  <li *ngIf="!item.start_date">EP: Wait for update</li> -->
                 </ul>
               </div>
             </div>
@@ -55,7 +59,10 @@
               <div class="box-item--infor__desc">
                 <ul class="d-flex">
                   <li>type: {{ item.type }}</li>
-                  <li>EP: {{ item.start_date }}</li>
+                  <li>
+                    EP:
+                    {{ item.start_date !== null ? item.start_date : "2022" }}
+                  </li>
                 </ul>
               </div>
             </div>
@@ -90,7 +97,10 @@
               <div class="box-item--infor__desc">
                 <ul class="d-flex">
                   <li>type: {{ item.type }}</li>
-                  <li>EP: {{ item.start_date }}</li>
+                  <li>
+                    EP:
+                    {{ item.start_date !== null ? item.start_date : "2022" }}
+                  </li>
                 </ul>
               </div>
             </div>
@@ -125,7 +135,10 @@
               <div class="box-item--infor__desc">
                 <ul class="d-flex">
                   <li>type: {{ item.type }}</li>
-                  <li>EP: {{ item.start_date }}</li>
+                  <li>
+                    EP:
+                    {{ item.start_date !== null ? item.start_date : "2022" }}
+                  </li>
                 </ul>
               </div>
             </div>

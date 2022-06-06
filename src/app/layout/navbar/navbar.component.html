@@ -11,8 +11,8 @@
       />
     </a>
 
-    <div class="align-items-center search-box">
-      <span class="icon-navbar--filter fa-stack">
+    <div class="align-items-center search-box" *ngIf="toggleSearch">
+      <span class="icon-navbar--filter fa-stack" routerLink="/filter">
         <i class="fas fa-square fa-stack-2x text-white"></i>
         <i class="fas fa-filter fa-stack-1x text-black"></i>
       </span>
@@ -25,9 +25,7 @@
           [formControl]="search"
         />
         <i class="fas fa-search search icon-navbar--search"></i>
-        <span
-          class="btn btn-secondary btn-filter mx-2 d-none d-md-inline"
-          routerLink="/filter"
+        <span class="btn btn-secondary btn-filter mx-2" routerLink="/filter"
           >filter</span
         >
       </div>
@@ -65,20 +63,26 @@
 
     <div class="ml-auto d-flex align-items-center">
       <!-- search -->
-      <i class="fas fa-search watchlist-icon text-white navbar-search"></i>
+      <i
+        class="fas fa-search watchlist-icon text-white navbar-search"
+        (click)="toggleSearch = !toggleSearch"
+      ></i>
       <!-- change theme -->
       <div class="dropwdown-palette" *ngIf="show">
         <div class="dropwdown-palette--list-color d-flex px-2 pt-3">
           <div
-            class="dropwdown-palette--color dropwdown-palette--color__yellow active-color clicked"
+            class="dropwdown-palette--color dropwdown-palette--color__yellow clicked"
+            [ngClass]="userService.theme === 'yellow' ? 'active-color' : ''"
             (click)="changeTheme('yellow')"
           ></div>
           <div
             class="dropwdown-palette--color dropwdown-palette--color__green"
+            [ngClass]="userService.theme === 'green' ? 'active-color' : ''"
             (click)="changeTheme('green')"
           ></div>
           <div
             class="dropwdown-palette--color dropwdown-palette--color__sky"
+            [ngClass]="userService.theme === 'sky' ? 'active-color' : ''"
             (click)="changeTheme('sky')"
           ></div>
         </div>
@@ -104,7 +108,12 @@
       <!-- user -->
       <div *ngIf="userService.user">
         <!-- dropwdown -->
-        <div ngbDropdown class="d-inline-block" placement="bottom-start">
+        <div
+          ngbDropdown
+          class="d-inline-block"
+          placement="bottom-start"
+          #myDrop="ngbDropdown"
+        >
           <button
             type="button"
             class="btn"
@@ -130,25 +139,36 @@
               <ul>
                 <li
                   routerLink="/user/profile"
-                  (click)="gotoProfile()"
+                  (click)="gotoProfile($event); myDrop.close()"
                   class="text-white"
                 >
                   <i class="fas fa-user mr-2"></i><span>Profile</span>
                 </li>
                 <li
-                  routerLink="/watch/{{watchListService.getToContinuesWatch()?.mal_id}}"
+                  routerLink="/watch/{{
+                    watchListService.getToContinuesWatch()?.mal_id
+                  }}"
                   class="text-white"
+                  (click)="$event.stopPropagation(); myDrop.close()"
                   *ngIf="watchListService.getToContinuesWatch()"
                 >
                   <i class="fas fa-forward mr-2"></i
                   ><span>Continue Watching</span>
                 </li>
-                <li routerLink="/user/setting" class="text-white">
+                <li
+                  routerLink="/user/setting"
+                  class="text-white"
+                  (click)="$event.stopPropagation(); myDrop.close()"
+                >
                   <i class="fas fa-cog mr-2"></i>
                   <span>Setting</span>
                 </li>
 
-                <li (click)="logout()" class="text-white">
+                <li
+                  (click)="logout()"
+                  class="text-white"
+                  (click)="$event.stopPropagation(); myDrop.close()"
+                >
                   <i class="fas fa-sign-out-alt mr-2"></i><span>Logout </span>
                 </li>
               </ul>

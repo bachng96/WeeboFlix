@@ -7,6 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SpinnerComponent implements OnInit {
   constructor() {}
-
+  @Input() type: string = 'square';
   ngOnInit(): void {}
 }

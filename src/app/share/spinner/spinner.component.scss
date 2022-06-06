@@ -18,35 +18,6 @@
 //   }
 // }
 
-// @keyframes configure-clockwise {
-//   0% {
-//     transform: rotate(0);
-//   }
-//   25% {
-//     transform: rotate(90deg);
-//   }
-//   50% {
-//     transform: rotate(180deg);
-//   }
-//   75% {
-//     transform: rotate(270deg);
-//   }
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
-
-// @keyframes pulse {
-//   from {
-//     opacity: 1;
-//     transform: scale(1);
-//   }
-//   to {
-//     opacity: 0.25;
-//     transform: scale(0.75);
-//   }
-// }
-
 // /* GRID STYLING */
 
 // * {
@@ -134,30 +105,6 @@
 // /* X-ROTATING BOXES */
 
 // /* PULSE BUBBLES */
-
-// .pulse-container {
-//   width: 120px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-// }
-
-// .pulse-bubble {
-//   width: 20px;
-//   height: 20px;
-//   border-radius: 50%;
-//   background-color: #3ff9dc;
-// }
-
-// .pulse-bubble-1 {
-//   animation: pulse 0.4s ease 0s infinite alternate;
-// }
-// .pulse-bubble-2 {
-//   animation: pulse 0.4s ease 0.2s infinite alternate;
-// }
-// .pulse-bubble-3 {
-//   animation: pulse 0.4s ease 0.4s infinite alternate;
-// }
 
 // /* SOLAR SYSTEM */
 
@@ -269,6 +216,7 @@
 //   animation: spin 0.5s linear 0s infinite;
 // }
 
+// square
 @keyframes configure-xclockwise {
   0% {
     transform: rotate(45deg);
@@ -286,9 +234,25 @@
     transform: rotate(-315deg);
   }
 }
-
+@keyframes configure-clockwise {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .spinner-box {
-  width: 300px;
+  width: 100%;
   height: 300px;
   display: flex;
   justify-content: center;
@@ -324,4 +288,38 @@
   width: 100%;
   height: 100%;
   background-color: #1d2630;
+}
+
+//dot dot dot
+.pulse-container {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pulse-bubble {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #3ff9dc;
+}
+
+.pulse-bubble-1 {
+  animation: pulse 0.4s ease 0s infinite alternate;
+}
+.pulse-bubble-2 {
+  animation: pulse 0.4s ease 0.2s infinite alternate;
+}
+.pulse-bubble-3 {
+  animation: pulse 0.4s ease 0.4s infinite alternate;
+}
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.25;
+    transform: scale(0.75);
+  }
 }
