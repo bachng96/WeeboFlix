@@ -115,7 +115,8 @@ export class NavbarComponent implements OnInit {
     this.showDropdown = false;
     this.router.navigateByUrl('/details/' + id);
   }
-  gotoProfile() {
+  gotoProfile(e) {
+    e.stopPropagation();
     this.toggleUser = false;
     this.router.navigateByUrl('/user/profile');
   }

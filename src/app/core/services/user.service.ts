@@ -10,9 +10,11 @@ export class UserService {
   private baseURL = 'https://reqres.in/';
   private tokenSave = 'token';
   public user = null;
+  public theme = null;
   toggleNavbar = new EventEmitter();
   constructor(private http: HttpClient) {
     let token = localStorage.getItem(this.tokenSave);
+    this.theme = localStorage.getItem('theme');
     if (token) {
       let decode = jwtDecode(token);
       this.user = decode;
