@@ -22,14 +22,20 @@ export class AppComponent {
     let color = this.userService.theme;
     console.log(color);
 
-    if (color === 'green') {
-      this.theme = 'green-theme';
-    }
-    if (color === 'sky') {
-      this.theme = 'sky-theme';
-    }
-    if (color === 'yellow') {
+    if(color){
+
+      if (color === 'green') {
+        this.theme = 'green-theme';
+      }
+      if (color === 'sky') {
+        this.theme = 'sky-theme';
+      }
+      if (color === 'yellow') {
+        this.theme = 'yellow-theme';
+      }
+    }else{
       this.theme = 'yellow-theme';
+
     }
     console.log(this.theme);
     this.initialTheme();
