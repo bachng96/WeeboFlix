@@ -81,6 +81,8 @@
   color: #fec862;
   font-size: 20px;
   cursor: pointer;
+  display: none;
+  z-index: 5;
 }
 
 .tick.ltr {
@@ -340,10 +342,16 @@ a {
   .film-poster-ahref-2 {
     display: none;
   }
+  .fd-button {
+    display: block;
+  }
 }
 
 @media (max-width: 576) {
   .film-poster-ahref-2 {
     display: none;
+  }
+  .fd-button {
+    display: block;
   }
 }
