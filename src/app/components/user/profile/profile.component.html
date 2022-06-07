@@ -9,6 +9,7 @@
             <input
               type="email"
               class="form-control"
+              [value]="userService.user.email"
               placeholder="Enter email"
               id="email"
             />
@@ -21,6 +22,7 @@
             <label for="pwd">User Name:</label>
             <input
               type="password"
+              [value]="userService.user.last_name + userService.user.first_name"
               class="form-control"
               placeholder="Enter password"
               id="pwd"

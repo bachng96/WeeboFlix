@@ -20,11 +20,6 @@ export class AppComponent {
   ) {}
   ngOnInit() {
     let color = this.userService.theme;
-<<<<<<< HEAD
-=======
-    console.log(color);
-
->>>>>>> 5c3039b803315d0c8748e0253574a1992c621ca4
     if (color) {
       if (color === 'green') {
         this.theme = 'green-theme';
