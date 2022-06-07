@@ -43,25 +43,29 @@
   list-style: none;
   border-radius: 0.25rem;
 }
-p.message-error {
-  text-align: center;
-  background-color: #fb2f2fcf;
-  padding: 10px 0px;
-  border-radius: 5px;
-  margin: 0;
+.mobile {
+  display: none;
 }
-
-.mobile{
-  display: none ;
-}
-.pc{
+.pc {
   display: flex;
 }
+
+.btn-back {
+  padding: 10px 20px;
+  margin-left: 14px;
+  background-color: ywllow;
+  background-color: var(--color-primary);
+  border-radius: 10px;
+}
+
 @media only screen and (max-width: 645px) {
   .mobile{
     display: flex;
   }
-  .pc{
-    display: none ;
+  .pc {
+    display: none;
+  }
+  .btn-back {
+    display: none;
   }
 }

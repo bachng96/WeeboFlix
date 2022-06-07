@@ -48,6 +48,12 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    let box = document.querySelector('.navbar') as HTMLElement;
+    let width = box.offsetWidth;
+    if (width < 750) {
+      this.toggleSearch = false;
+    }
+
     this.search.valueChanges
       .pipe(
         tap((v: string) => {
@@ -86,15 +92,15 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event']) onScroll(event) {
     let element = document.querySelector('.navbar') as HTMLElement;
-    if (window.location.href !== 'http://localhost:4200/home') {
+    // if (window.location.href !== 'http://localhost:4200/home') {
+    //   element.classList.add('navbar-inverse');
+    // } else {
+    if (window.pageYOffset > element.clientHeight) {
       element.classList.add('navbar-inverse');
     } else {
-      if (window.pageYOffset > element.clientHeight) {
-        element.classList.add('navbar-inverse');
-      } else {
-        element.classList.remove('navbar-inverse');
-      }
+      element.classList.remove('navbar-inverse');
     }
+    // }
   }
   @HostListener('window:resize', ['$event']) onResize(event) {
     let box = document.querySelector('.navbar') as HTMLElement;
@@ -104,6 +110,7 @@ export class NavbarComponent implements OnInit {
     }
     if (width < 750) {
       this.toggleSearch = false;
+      this.show = false;
     }
   }
   close(event) {

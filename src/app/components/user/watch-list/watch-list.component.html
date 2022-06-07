@@ -1,12 +1,6 @@
 <div class="main-container pl-4 col-11" *ngIf="filter; else spinner">
-  <div class="d-flex mt-3">
-    <a class="" routerLink="/home" class="text-decoration-none text-white"
-      >Home</a
-    >
-  </div>
-  <h1 class="watch-list"><i class="fas fa-heart"></i> Watch List</h1>
-  <div class="d-flex justify-content-left flex-wrap
-  ">
+  <h1 class="watch-list mb-3 mt-3"><i class="fas fa-heart"></i> Watch List</h1>
+  <div class="d-flex justify-content-left flex-wrap">
     <button
       class="btn btn-custom px-3 mb-3 mr-2 {{
         watchListType == 'all' ? 'active' : ''

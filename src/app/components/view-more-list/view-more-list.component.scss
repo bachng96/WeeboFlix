@@ -36,21 +36,33 @@
 .genres-title {
   color: var(--color-primary);
 }
-.text-custom{
+.text-custom {
   color: var(--color-primary);
 }
 
-.mobile{
-  display: none ;
+.mobile {
+  display: none;
 }
-.pc{
+.pc {
   display: flex;
 }
+
+.btn-back {
+  padding: 10px 20px;
+  margin-left: 14px;
+  background-color: ywllow;
+  background-color: var(--color-primary);
+  border-radius: 10px;
+}
+
 @media only screen and (max-width: 645px) {
   .mobile{
     display: flex;
   }
-  .pc{
-    display: none ;
+  .pc {
+    display: none;
+  }
+  .btn-back {
+    display: none;
   }
 }

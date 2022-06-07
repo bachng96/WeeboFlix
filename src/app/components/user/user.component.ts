@@ -12,7 +12,7 @@ export class UserComponent implements OnInit {
     backgroundImage: `url(${this.userService.user.avatar})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    height: '20vh',
+    height: '30vh',
     filter: 'blur(8px)',
   };
   ngOnInit(): void {

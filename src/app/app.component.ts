@@ -20,8 +20,6 @@ export class AppComponent {
   ) {}
   ngOnInit() {
     let color = this.userService.theme;
-    console.log(color);
-
     if (color) {
       if (color === 'green') {
         this.theme = 'green-theme';
@@ -35,6 +33,7 @@ export class AppComponent {
     } else {
       this.theme = 'yellow-theme';
     }
+
     console.log(this.theme);
     this.initialTheme();
   }
