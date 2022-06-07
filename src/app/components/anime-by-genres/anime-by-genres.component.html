@@ -1,9 +1,8 @@
-<div class="user__header border-bottom border-warning" >
-    <div class="user__header--bg"></div>
-    <div class="user__header--text"></div>
+<div class="user__header border-bottom border-warning">
+  <div class="user__header--bg"></div>
+  <div class="user__header--text"></div>
 </div>
 <div class="share py-3" *ngIf="listAnimeByGenres; else spinner">
-  
   <div class="d-flex">
     <button routerLink="/home" class="btn-back">
       <i class="fas fa-backward mr-2"></i> <span> Back</span>
@@ -18,6 +17,7 @@
         <app-social-media></app-social-media>
       </div>
     </div>
+  </div>
 
   <div class="">
     <div class="anime-by-genres">
