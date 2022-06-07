@@ -127,7 +127,7 @@
                   (click)="$event.stopPropagation(); $event.preventDefault()"
                   ><i class="fas fa-play icon-play"></i>
                   <div
-                    class="film-poster-ahref-2 p-3"
+                    class="film-poster-ahref-2 p-3" *ngIf="!dropDown"
                     (click)="$event.stopPropagation(); $event.preventDefault()"
                   >
                     <div class="d-flex w-100 justify-content-start">
