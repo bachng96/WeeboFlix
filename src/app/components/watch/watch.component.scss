@@ -40,7 +40,7 @@ iframe {
     iframe {
         display: block;
         width: 100%;
-        height: 80vh;
+        height: 60vh;
     }
 }
 
@@ -48,7 +48,8 @@ iframe {
   max-height: 85%;
   overflow: scroll;
 }
-.ep-list::-webkit-scrollbar {
+
+.ep-list::-webkit-scrollbar, .ep-container::-webkit-scrollbar {
   display: none;
 }
 
@@ -146,14 +147,14 @@ iframe {
         iframe {
             display: block;
             width: 100%;
-            height: 20vh;
+            height: 40vh;
         }
     }
 
     .ep-container-all{
         order: 2;
         margin-bottom: 20px;
-        max-width: 300px;
+        padding: 0;   
     }
 
     .detail-container {

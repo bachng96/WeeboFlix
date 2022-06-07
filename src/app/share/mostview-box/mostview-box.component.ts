@@ -4,6 +4,7 @@ import { Params } from '@angular/router';
 import { ToastService } from 'src/app/core/services/toast.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { WatchListService } from 'src/app/core/services/watch-list.service';
+import { Anime } from 'src/app/core/model/app.model';
 
 @Component({
   selector: 'app-mostview-box',
@@ -11,7 +12,7 @@ import { WatchListService } from 'src/app/core/services/watch-list.service';
   styleUrls: ['./mostview-box.component.scss'],
 })
 export class MostviewBoxComponent implements OnInit {
-  topAnime;
+  topAnime: Anime[];
   filter = 'score';
   score = true;
   scored_by = false;

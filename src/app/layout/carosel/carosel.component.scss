@@ -24,6 +24,7 @@
     position: absolute;
     bottom: 50px;
     left: 0;
+
   }
   &-img {
     position: relative;
@@ -38,7 +39,7 @@
     left: 0;
     background: linear-gradient(
       0deg,
-      black 16%,
+      black 10%,
       rgba(0, 0, 0, 0) 80%,
       #2e2727 100%
     );
@@ -150,6 +151,7 @@
     transform: translateY(0);
   }
 }
+
 
 //reponsive carousel
 @media screen and (max-width: 768px) {

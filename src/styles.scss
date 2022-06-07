@@ -59,6 +59,9 @@ li.page-item {
   --box-color: #fff;
   --box-shadow: #fff;
 }
+.carousel-control-next , .carousel-control-prev{
+  // z-index :10 !important;
+}
 .page-item.active .page-link {
   background-color: var(--color-primary) !important;
   border-color: var(--color-primary) !important;

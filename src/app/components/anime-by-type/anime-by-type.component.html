@@ -21,7 +21,12 @@
             *ngIf="listAnimeByType; else spinner"
           >
             <div class="anime-by-type--title col-12">
-              <h3 class="mt-4 text-white">
+              <div class="d-flex mt-2">
+                <a class="" routerLink="/home" class="text-decoration-none text-white"
+                  >Home</a
+                >
+              </div>
+              <h3 class="mt-2 text-white">
                 <span *ngIf="searchByName"
                   >Search results for "{{ searchKeyword }}"
                 </span>
