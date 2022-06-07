@@ -1,5 +1,7 @@
-
 <div class="share py-3" *ngIf="listAnimeByType; else spinner">
+  <button routerLink="/home" class="btn-back">
+    <i class="fas fa-backward"></i> <span>Back</span>
+  </button>
   <div class="pc px-3">
     <span class="share--title">Share anime for your friends</span>
     <app-social-media></app-social-media>
@@ -21,11 +23,7 @@
             *ngIf="listAnimeByType; else spinner"
           >
             <div class="anime-by-type--title col-12">
-              <div class="d-flex mt-2">
-                <a class="" routerLink="/home" class="text-decoration-none text-white"
-                  >Home</a
-                >
-              </div>
+              <div class="d-flex mt-2"></div>
               <h3 class="mt-2 text-white">
                 <span *ngIf="searchByName"
                   >Search results for "{{ searchKeyword }}"

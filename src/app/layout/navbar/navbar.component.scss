@@ -213,7 +213,6 @@ input:focus {
   position: relative;
   top: -4px;
   transition: all 0.8s;
-  animation: moveInLeft 0.5s ease-out 0.75s;
   &--color {
     margin-right: 10px;
     width: 20px;
@@ -283,7 +282,7 @@ input:focus {
         height: 100%;
         opacity: 0;
         transition: all 0.5s;
-        box-shadow: 0 0 10px 40px #0088cc;
+        box-shadow: 0 0 10px 2000px #0088cc;
       }
       &:active:after {
         box-shadow: 0 0 0 0 #0088cc;

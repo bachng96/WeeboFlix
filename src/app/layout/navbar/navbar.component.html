@@ -72,17 +72,14 @@
         <div class="dropwdown-palette--list-color d-flex px-2 pt-3">
           <div
             class="dropwdown-palette--color dropwdown-palette--color__yellow clicked"
-            [ngClass]="userService.theme === 'yellow' ? 'active-color' : ''"
             (click)="changeTheme('yellow')"
           ></div>
           <div
             class="dropwdown-palette--color dropwdown-palette--color__green"
-            [ngClass]="userService.theme === 'green' ? 'active-color' : ''"
             (click)="changeTheme('green')"
           ></div>
           <div
             class="dropwdown-palette--color dropwdown-palette--color__sky"
-            [ngClass]="userService.theme === 'sky' ? 'active-color' : ''"
             (click)="changeTheme('sky')"
           ></div>
         </div>
@@ -110,7 +107,7 @@
         <!-- dropwdown -->
         <div
           ngbDropdown
-          class="d-inline-block"
+          class="d-inline-block mr-3"
           placement="bottom-start"
           #myDrop="ngbDropdown"
         >
@@ -206,10 +203,24 @@
           <li class="list-menu--item pl-3 pr-5 pb-3" routerLink="/home">
             Home
           </li>
-          <li class="list-menu--item pl-3 pr-5 pb-3" routerLink="/type/movie">Movie</li>
-          <li class="list-menu--item pl-3 pr-5 pb-3" routerLink="/viewmore/lastest">Lastest Update</li>
-          <li class="list-menu--item pl-3 pr-5 pb-3" routerLink="/viewmore/new">New On Available</li>
-          <li class="list-menu--item pl-3 pr-5 pb-3" routerLink="/viewmore/upcoming">Up Coming</li>
+          <li class="list-menu--item pl-3 pr-5 pb-3" routerLink="/type/movie">
+            Movie
+          </li>
+          <li
+            class="list-menu--item pl-3 pr-5 pb-3"
+            routerLink="/viewmore/lastest"
+          >
+            Lastest Update
+          </li>
+          <li class="list-menu--item pl-3 pr-5 pb-3" routerLink="/viewmore/new">
+            New On Available
+          </li>
+          <li
+            class="list-menu--item pl-3 pr-5 pb-3"
+            routerLink="/viewmore/upcoming"
+          >
+            Up Coming
+          </li>
           <li class="list-menu--item pl-3 pr-5 pb-3">Genre</li>
         </ul>
         <div class="row px-3">
