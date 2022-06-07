@@ -1,3 +1,7 @@
+<div class="user__header border-bottom border-warning" >
+  <div class="user__header--bg"></div>
+  <div class="user__header--text"></div>
+</div>
 <div class="share py-3">
   <div class="pc px-3">
     <span class="share--title">Share anime for your friends</span>
@@ -7,11 +11,12 @@
     <span class="share--title">Share anime for your friends</span>
     <app-social-media type="icon"></app-social-media>
   </div>
-  <div class="">
+
+  <div class="" *ngIf="animes; else spinner">
     <div class="anime-by-type">
       <div class="d-flex flex-wrap">
         <div class="col-12 col-lg-9 d-flex justify-content-center">
-          <div class="row mx-2" *ngIf="animes; else spinner">
+          <div class="row mx-2" >
             <div class="anime-by-type--title col-12 pl-0">
               <h2 class="mt-4 text-custom pl-0">
                 {{animeHeader | titlecase}} ({{
@@ -34,13 +39,7 @@
             ></ngb-pagination>
           </div>
 
-          <ng-template #spinner>
-            <div
-              class="d-flex justify-content-center align-items-center spinner"
-            >
-              <app-spinner></app-spinner>
-            </div>
-          </ng-template>
+
         </div>
 
         <div class="col-12 col-lg-3 mb-5">
@@ -61,3 +60,10 @@
     </div>
   </div>
 </div>
+<ng-template #spinner>
+  <div
+    class="d-flex justify-content-center align-items-center spinner"
+  >
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>

@@ -1,9 +1,13 @@
 <div class="share py-3" *ngIf="listAnimeByGenres; else spinner">
-  <div class="px-3 mobile">
+  <div class="user__header border-bottom border-warning" >
+    <div class="user__header--bg"></div>
+    <div class="user__header--text"></div>
+  </div>
+  <div class="px-3 mt-3 mobile">
     <span class="share--title">Share anime for your friends</span>
     <app-social-media type="icon"></app-social-media>
   </div>
-  <div class="px-3 pc">
+  <div class="px-3 mt-3 pc">
     <span class="share--title">Share anime for your friends</span>
     <app-social-media></app-social-media>
   </div>
@@ -18,13 +22,13 @@
 
           <div class="row p-0" style="width: 100%">
             <div class="anime-by-genres--title col-12">
-              <div class="d-flex mt-4">
+              <!-- <div class="d-flex mt-4">
                 <a class="" routerLink="/home" class="text-decoration-none text-white"
                   >Home</a
                 >
-              </div>
-              <h3 class="mt-2 text-white">
-                {{ type }} Anime <span *ngIf="year"> of {{ year }} </span>({{
+              </div> -->
+              <h3 class="mt-4 text-white">
+                Anime <span *ngIf="year"> of {{ year }} </span>({{
                   pagination.items.total
                 }})
               </h3>
