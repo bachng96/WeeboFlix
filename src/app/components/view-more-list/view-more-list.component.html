@@ -1,11 +1,18 @@
 <div class="share py-3">
-  <div class="pc px-3">
-    <span class="share--title">Share anime for your friends</span>
-    <app-social-media></app-social-media>
-  </div>
-  <div class="mobile px-3">
-    <span class="share--title">Share anime for your friends</span>
-    <app-social-media type="icon"></app-social-media>
+  <div class="d-flex">
+    <button routerLink="/home" class="btn-back">
+      <i class="fas fa-backward mr-2"></i> <span> Back</span>
+    </button>
+    <div>
+      <div class="px-3 mobile">
+        <span class="share--title">Share anime for your friends</span>
+        <app-social-media type="icon"></app-social-media>
+      </div>
+      <div class="px-3 pc">
+        <span class="share--title">Share anime for your friends</span>
+        <app-social-media></app-social-media>
+      </div>
+    </div>
   </div>
   <div class="">
     <div class="anime-by-type">
@@ -14,18 +21,24 @@
           <div class="row mx-2" *ngIf="animes; else spinner">
             <div class="anime-by-type--title col-12 pl-0">
               <h2 class="mt-4 text-custom pl-0">
-                {{animeHeader | titlecase}} ({{
+                {{ animeHeader | titlecase }} ({{
                   pagination?.items.total
-                }} Anime)
+                }}
+                Anime)
               </h2>
             </div>
             <div class="anime-by-type--list w-100" style="margin-top: 4px">
-                <app-anime-list [animeList]="listAnimeDisplayBig"  [bigger]="true"></app-anime-list>
-                <app-anime-list [animeList]="listAnimeDisplayMedium" [bigger]="false"></app-anime-list>
-
+              <app-anime-list
+                [animeList]="listAnimeDisplayBig"
+                [bigger]="true"
+              ></app-anime-list>
+              <app-anime-list
+                [animeList]="listAnimeDisplayMedium"
+                [bigger]="false"
+              ></app-anime-list>
             </div>
             <ngb-pagination
-              [collectionSize]="pagination?.last_visible_page*10"
+              [collectionSize]="pagination?.last_visible_page * 10"
               [(page)]="page"
               [maxSize]="2"
               [rotate]="true"
@@ -47,13 +60,10 @@
           <div>
             <h2 class="genres-title py-4 mb-0">Genres</h2>
             <div class="col-12 px-0">
-
               <app-genres-box></app-genres-box>
             </div>
           </div>
           <div class="col-12 px-0">
-
-
             <app-mostview-box></app-mostview-box>
           </div>
         </div>

@@ -1,14 +1,18 @@
 <div class="share py-3" *ngIf="listAnimeByType; else spinner">
-  <button routerLink="/home" class="btn-back">
-    <i class="fas fa-backward"></i> <span>Back</span>
-  </button>
-  <div class="pc px-3">
-    <span class="share--title">Share anime for your friends</span>
-    <app-social-media></app-social-media>
-  </div>
-  <div class="mobile px-3">
-    <span class="share--title">Share anime for your friends</span>
-    <app-social-media type="icon"></app-social-media>
+  <div class="d-flex">
+    <button routerLink="/home" class="btn-back">
+      <i class="fas fa-backward mr-2"></i> <span> Back</span>
+    </button>
+    <div>
+      <div class="px-3 mobile">
+        <span class="share--title">Share anime for your friends</span>
+        <app-social-media type="icon"></app-social-media>
+      </div>
+      <div class="px-3 pc">
+        <span class="share--title">Share anime for your friends</span>
+        <app-social-media></app-social-media>
+      </div>
+    </div>
   </div>
   <div class="">
     <div class="anime-by-type">
