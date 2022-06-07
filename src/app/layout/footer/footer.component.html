@@ -22,7 +22,7 @@
         Searching anime order by alphabet name A to Z
       </p>
     </div>
-    <ul class="row ">
+    <ul class="row list-letter ">
       <li class="ml-3"><button class="btn btn-secondary btn-letter" routerLink="az-list"><p>All</p></button></li>
       <li *ngFor="let item of alphabet"><button class="btn btn-secondary btn-letter" routerLink="/az-list/{{item}}" routerLinkActive="router-link-active" ><p>{{item | uppercase}}</p></button></li>
     </ul>

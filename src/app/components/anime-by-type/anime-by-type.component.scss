@@ -1,6 +1,25 @@
 @import "../../style/variable";
+.user__header{
+  &--bg{
+    background: url("../../../assets/backgroud-user.jpg") no-repeat center;
+    height: 20vh;
+    filter: blur(8px);
+  }
+  &--text{
+    position: absolute;
+  top: 20vh;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  }
+  &--menu{
+    font-size: 20px;
+    text-decoration: none;
+    color: #ddd;
+
+  }
+}
 .share {
-  margin-top: 80px;
   &--title {
     width: 145px;
     color: $color-white;
@@ -38,14 +57,15 @@
   background-color: var(--color-primary);
   border-radius: 10px;
 }
-@media only screen and (max-width: 400px) {
-  .btn-back {
-    display: none;
-  }
-  .mobile {
+
+@media only screen and (max-width: 645px) {
+  .mobile{
     display: flex;
   }
   .pc {
+    display: none;
+  }
+  .btn-back {
     display: none;
   }
 }

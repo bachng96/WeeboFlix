@@ -1,3 +1,7 @@
+<div class="user__header border-bottom border-warning" >
+    <div class="user__header--bg"></div>
+    <div class="user__header--text"></div>
+ </div>
 <div class="share py-3" *ngIf="listAnimeByType; else spinner">
   <div class="d-flex">
     <button routerLink="/home" class="btn-back">
@@ -27,8 +31,8 @@
             *ngIf="listAnimeByType; else spinner"
           >
             <div class="anime-by-type--title col-12">
-              <div class="d-flex mt-2"></div>
-              <h3 class="mt-2 text-white">
+
+              <h3 class="mt-4 text-white">
                 <span *ngIf="searchByName"
                   >Search results for "{{ searchKeyword }}"
                 </span>
