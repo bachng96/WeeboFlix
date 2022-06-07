@@ -4,7 +4,6 @@
   [autohide]="true"
   [delay]="toast.delay || 5000"
   (hidden)="toastService.remove(toast)"
-  header="Notification !"
 >
   <ng-template [ngIf]="isTemplate(toast)" [ngIfElse]="text">
     <ng-template [ngTemplateOutlet]="toast.textOrTpl"></ng-template>
