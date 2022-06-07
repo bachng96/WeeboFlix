@@ -12,12 +12,12 @@
       <div class="d-flex flex-wrap">
         <div class="col-12 col-lg-9 d-flex justify-content-center">
           <div class="row mx-2" *ngIf="animes; else spinner">
-            <div class="anime-by-type--title col-12">
-              <h3 class="mt-4 text-white">
+            <div class="anime-by-type--title col-12 pl-0">
+              <h2 class="mt-4 text-custom pl-0">
                 {{animeHeader | titlecase}} ({{
                   pagination?.items.total
                 }} Anime)
-              </h3>
+              </h2>
             </div>
             <div class="anime-by-type--list w-100" style="margin-top: 4px">
                 <app-anime-list [animeList]="listAnimeDisplayBig"  [bigger]="true"></app-anime-list>
