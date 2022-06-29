@@ -24,7 +24,6 @@
     position: absolute;
     bottom: 50px;
     left: 0;
-
   }
   &-img {
     position: relative;
@@ -37,12 +36,30 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(
-      0deg,
-      black 10%,
-      rgba(0, 0, 0, 0) 80%,
-      #2e2727 100%
-    );
+    &--left {
+      background: linear-gradient(
+        0deg,
+        black 10%,
+        rgba(0, 0, 0, 0) 80%,
+        #2e2727 100%
+      );
+    }
+    &--right {
+      background: linear-gradient(
+        0deg,
+        black 10%,
+        rgba(0, 0, 0, 0) 80%,
+        #2e2727 100%
+      );
+    }
+    &--bottom {
+      background: linear-gradient(
+        0deg,
+        black 10%,
+        rgba(0, 0, 0, 0) 80%,
+        #2e2727 100%
+      );
+    }
   }
 }
 
@@ -152,7 +169,6 @@
   }
 }
 
-
 //reponsive carousel
 @media screen and (max-width: 768px) {
   .full-width {
@@ -180,5 +196,4 @@
   .group-btn {
     justify-content: center;
   }
-
 }

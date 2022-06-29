@@ -19,10 +19,7 @@ export class LoginFormComponent implements OnInit {
       Validators.maxLength(20),
       Validators.email,
     ]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-    ]),
+    password: new FormControl('', [Validators.required]),
   });
   constructor(
     private userService: UserService,
@@ -32,10 +29,10 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {}
 
   //get
-  get get_password() {
+  get _password() {
     return this.signForm.get('password');
   }
-  get get_email() {
+  get _email() {
     return this.signForm.get('email');
   }
   user = {
@@ -55,7 +52,7 @@ export class LoginFormComponent implements OnInit {
             this.loading = false;
             this.activeModal.close('Close click');
             this.showDanger('Login success !');
-          }, 2000);
+          }, 1000);
         }
       },
       (err) => {

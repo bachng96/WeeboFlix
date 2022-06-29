@@ -31,10 +31,12 @@ export class AnimeByTypeComponent implements OnInit {
         .getAnimeByName(this.searchKeyword)
         .subscribe((res: any) => {
           console.log(res);
+          console.log(res.data);
 
           this.pagination = res.pagination;
           this.listAnimeByType = res.data.slice(4, 24);
           this.listAnimeDisplayBig = res.data.slice(0, 4);
+          console.log(this.listAnimeByType);
         });
       this.searchByName = true;
     } else {
@@ -43,6 +45,7 @@ export class AnimeByTypeComponent implements OnInit {
         this.pagination = res.pagination;
         this.listAnimeByType = res.data.slice(4, 24);
         this.listAnimeDisplayBig = res.data.slice(0, 4);
+        console.log('relate' + this.listAnimeByType);
       });
     }
   }
@@ -57,7 +60,7 @@ export class AnimeByTypeComponent implements OnInit {
         this.listAnimeDisplayBig = res.data.slice(0, 4);
       });
   }
-  logPage() {
+  changePage() {
     this.listAnimeByType = null;
     this.animeService
       .getAnimeByType(this.type, this.page)
