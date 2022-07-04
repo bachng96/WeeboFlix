@@ -1,10 +1,13 @@
 import {
   Component,
+  ElementRef,
   EventEmitter,
+  HostBinding,
   HostListener,
   Input,
   OnInit,
   Output,
+  Renderer2,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -44,7 +47,9 @@ export class NavbarComponent implements OnInit {
     private router: Router,
     private animeService: AnimeService,
     private toastService: ToastService,
-    public watchListService: WatchListService
+    public watchListService: WatchListService,
+    private el: ElementRef,
+    private renderer: Renderer2
   ) {}
 
   ngOnInit(): void {

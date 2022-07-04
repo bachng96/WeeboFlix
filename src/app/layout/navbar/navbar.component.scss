@@ -69,6 +69,8 @@ input:focus {
   }
   &-login {
     background-color: var(--color-primary);
+    outline: none;
+    border: none;
   }
   &-filter {
     padding: 0px 8px;
