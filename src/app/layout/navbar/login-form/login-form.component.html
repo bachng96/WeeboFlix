@@ -8,7 +8,7 @@
     class="fas fa-times close-button"
     (click)="activeModal.close('Close click')"
   ></i>
-  <h3 class="text-center my-3">Wellcome back</h3>
+  <h3 class="text-center my-3">Welcome back</h3>
   <div class="form-group">
     <label for="email">Email address:</label>
     <input
@@ -18,16 +18,32 @@
       id="email"
       formControlName="email"
     />
+    <div class="alert alert-danger" *ngIf="_email.errors && _email.touched">
+      <ng-container *ngIf="_email.errors.required">
+        email is required
+      </ng-container>
+      <ng-container *ngIf="_email.errors.email">
+        email is not correct format
+      </ng-container>
+    </div>
   </div>
   <div class="form-group">
-    <label for="pwd">Password:</label>
+    <label for="password">Password:</label>
     <input
       type="password"
       class="form-control"
       placeholder="Enter password"
-      id="pwd"
+      id="password"
       formControlName="password"
     />
+    <div
+      class="alert alert-danger"
+      *ngIf="_password.errors && _password.touched"
+    >
+      <ng-container *ngIf="_password.errors.required">
+        Password is required
+      </ng-container>
+    </div>
   </div>
   <div class="form-group form-check d-flex justify-content-between mt-4">
     <label class="form-check-label">

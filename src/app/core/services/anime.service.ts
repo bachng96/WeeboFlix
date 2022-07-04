@@ -20,7 +20,7 @@ export class AnimeService {
     return this.http.get(this.BASE_URL + 'anime/' + id + '/reviews');
   }
 
-  getAnimeByName(query, limit: number = 5) {
+  getAnimeByName(query, limit: number = 24) {
     return this.http.get(this.BASE_URL + 'anime?q=', {
       params: {
         q: query,

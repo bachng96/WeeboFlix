@@ -12,6 +12,9 @@ export class UserService {
   public user = null;
   public theme = null;
   toggleNavbar = new EventEmitter();
+
+
+
   constructor(private http: HttpClient) {
     let token = localStorage.getItem(this.tokenSave);
     this.theme = localStorage.getItem('theme');
@@ -21,6 +24,12 @@ export class UserService {
       this.user.token = token;
     }
   }
+
+
+
+
+  
+
   login(user) {
     return this.http.post(`${this.baseURL}api/login`, user).pipe(
       map(
@@ -35,6 +44,9 @@ export class UserService {
       })
     );
   }
+
+
+  
   isLogin() {
     return !!this.user;
   }
